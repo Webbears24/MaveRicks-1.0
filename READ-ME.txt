@@ -1,0 +1,9 @@
+  =>  Template Name    : MaverRicks
+
+  =>  Template Link    : https://htmlcodex.com/renewable-energy-website-template
+
+  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+
+  =>  Template Author  : WebBears
+
+  =>  Author Website   : https://htmlcodex.com
