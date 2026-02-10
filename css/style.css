@@ -167,6 +167,14 @@
     }
 }
 
+/* /nav logo/ */
+/* Navbar Logo */
+.navbar-logo {
+    height: 60px;          /* perfect for your 75px navbar */
+    width: auto;
+    object-fit: contain;
+}
+
 
 /*** Header ***/
 .owl-carousel-inner {
@@ -750,4 +758,47 @@
 
 .footer .copyright a:hover {
     color: var(--primary);
+}
+
+/* footer logo */
+/* Footer Brand / Logo Block */
+.footer .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* Footer Logo Rounded Corners */
+.footer .footer-brand img {
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 30px;   /* 👈 corners round */
+    overflow: hidden;
+
+    display: block;
+}
+
+
+/* Footer Slogan / Text */
+.footer .footer-brand p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+/* Mobile adjustment */
+@media (max-width: 576px) {
+    .footer .footer-brand img {
+        max-width: 140px;
+    }
+
+    .footer .footer-brand p {
+        font-size: 13px;
+    }
 }
