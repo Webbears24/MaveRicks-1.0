@@ -92,8 +92,7 @@
 }
 
 
-.navbar .navbar-brand,
-.navbar a.btn {
+.navbar .navbar-brand, .navbar a.btn {
     height: 75px;
 }
 
@@ -170,9 +169,10 @@
 /* /nav logo/ */
 /* Navbar Logo */
 .navbar-logo {
-    height: 60px;          /* perfect for your 75px navbar */
+    height: 75px;          /* perfect for your 75px navbar */
     width: auto;
     object-fit: contain;
+    border-radius: 75px;
 }
 
 
@@ -782,7 +782,12 @@
 
     display: block;
 }
-
+.footer-logo{
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
 
 /* Footer Slogan / Text */
 .footer .footer-brand p {
