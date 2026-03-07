@@ -93,7 +93,8 @@
 
 
 .navbar .navbar-brand, .navbar a.btn {
-    height: 75px;
+    height: 85px;
+    margin: 2px;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -136,6 +137,52 @@
     margin-left: 8px;
 }
 
+/* ============================= */
+/* Glass Navbar for Mobile Only */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        background: rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        width: 98%;
+        border-radius: 16px;
+    }
+
+    /* Collapse menu background glass */
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        border-radius: 20px;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    /* Dropdown glass */
+    .dropdown-menu {
+        background: rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+    .navbar-logo {
+        border-radius: 10px !important;
+    }
+
+
+}
+
+
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link  {
         margin-right: 0;
@@ -169,10 +216,10 @@
 /* /nav logo/ */
 /* Navbar Logo */
 .navbar-logo {
-    height: 75px;          /* perfect for your 75px navbar */
+    height: 82px;          /* perfect for your 75px navbar */
     width: auto;
     object-fit: contain;
-    border-radius: 75px;
+border-radius: 75px 0 0 75px;
 }
 
 
@@ -191,7 +238,7 @@
 @media (max-width: 768px) {
     .header-carousel .owl-carousel-item {
         position: relative;
-        min-height: 500px;
+        min-height: 735px;
     }
 
     .header-carousel .owl-carousel-item img {

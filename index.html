@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet"> 
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -30,6 +30,12 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- language switcher styles and script -->
+     <link rel="stylesheet" href="/css/translate-engine.css">
+   <script src="/js/translate-engine.js"></script>
+   
 </head>
 
 <body>
@@ -52,33 +58,21 @@
             <!-- Address with Dropdown -->
             <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
                 <small class="fa fa-map-marker-alt text-primary me-2"></small>
-
-                <!-- Default Branch -->
                 <small id="topbar-branch-text" style="cursor:pointer;">
-                    Mumbai Branch, Andheri East
+                    <span data-key="branch_mumbai_label">Mumbai Branch, Andheri East</span>
                     <i class="fa fa-caret-down ms-1"></i>
                 </small>
 
                 <!-- Dropdown -->
                 <div id="topbar-branch-dropdown"
-                     style="
-                        display:none;
-                        position:absolute;
-                        top:100%;
-                        left:0;
-                        background:#222;
-                        padding:10px 14px;
-                        border-radius:6px;
-                        min-width:220px;
-                        z-index:999;
-                     ">
+                     style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
                     <small class="d-block text-white mb-1">
-                        <strong>Mumbai Branch</strong><br>
-                        Andheri East, Mumbai
+                        <strong data-key="branch_mumbai">Mumbai Branch</strong><br>
+                        <span data-key="branch_mumbai_addr">Andheri East, Mumbai</span>
                     </small>
                     <small class="d-block text-white">
-                        <strong>Nagpur Branch</strong><br>
-                        Parsodi, Nagpur
+                        <strong data-key="branch_nagpur">Nagpur Branch</strong><br>
+                        <span data-key="branch_nagpur_addr">Parsodi, Nagpur</span>
                     </small>
                 </div>
             </div>
@@ -86,17 +80,16 @@
             <!-- Time -->
             <div class="h-100 d-inline-flex align-items-center">
                 <small class="far fa-clock text-primary me-2"></small>
-                <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                <small data-key="working_hours">Mon - Fri : 09.00 AM - 09.00 PM</small>
             </div>
         </div>
 
         <!-- RIGHT SIDE -->
-        <div class="col-lg-5 px-5 text-end">
+        <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="fa fa-phone-alt text-primary me-2"></small>
                 <small>+91 84840 09873</small>
             </div>
-
             <div class="h-100 d-inline-flex align-items-center mx-n2">
                 <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-twitter"></i></a>
@@ -110,39 +103,38 @@
 <!-- Topbar End -->
 
 
-
     <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
-            <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <!-- <h2 class="m-0 text-primary">MaveRicks</h2> -->
-                 <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="project.html" class="nav-item nav-link">Project</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu bg-light m-0">
-                        <a href="feature.html" class="dropdown-item">Feature</a>
-                        <a href="quote.html" class="dropdown-item">Free Quote</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
+        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+             <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link active" data-key="nav_home">Home</a>
+            <a href="about.html" class="nav-item nav-link" data-key="nav_about">About</a>
+            <a href="service.html" class="nav-item nav-link" data-key="nav_service">Service</a>
+            <a href="project.html" class="nav-item nav-link" data-key="nav_project">Project</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-key="nav_pages">Pages</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="feature.html" class="dropdown-item" data-key="nav_feature">Feature</a>
+                    <a href="quote.html" class="dropdown-item" data-key="nav_quote">Free Quote</a>
+                    <a href="team.html" class="dropdown-item" data-key="nav_team">Our Team</a>
+                    <a href="testimonial.html" class="dropdown-item" data-key="nav_testimonial">Testimonial</a>
+                    <a href="404.html" class="dropdown-item" data-key="nav_404">404 Page</a>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-<a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
-    Get A Quote <i class="fa fa-arrow-right ms-3"></i>
-</a>        </div>
-    </nav>
-    <!-- Navbar End -->
+            <a href="contact.html" class="nav-item nav-link" data-key="nav_contact">Contact</a>
+        </div>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn" data-key="btn_get_quote">
+            Get A Quote <i class="fa fa-arrow-right ms-3"></i>
+        </a>
+    </div>
+</nav>
+<!-- Navbar End -->
 
 
 <!-- Carousel Start -->
@@ -156,16 +148,14 @@
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">
+                            <h1 class="display-2 text-white animated slideInDown" data-key="slide1_title">
                                 Powering India With Smart Solar Energy
                             </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                            <p class="fs-5 fw-medium text-white mb-4 pb-3" data-key="slide1_desc">
                                 End-to-end solar EPC solutions for residential, commercial and
                                 industrial needs, designed for savings and long-term performance.
                             </p>
-                            <a href="#about" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">
-                                Explore More
-                            </a>
+                            <a href="#about" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft" data-key="btn_explore">Explore More</a>
                         </div>
                     </div>
                 </div>
@@ -179,16 +169,14 @@
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">
+                            <h1 class="display-2 text-white animated slideInDown" data-key="slide2_title">
                                 Rooftop & EPC Solar Solutions
                             </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                            <p class="fs-5 fw-medium text-white mb-4 pb-3" data-key="slide2_desc">
                                 On-grid and hybrid solar systems engineered with proven technology,
                                 expert execution and trusted components.
                             </p>
-                            <a href="#services" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">
-                                Our Solutions
-                            </a>
+                            <a href="#services" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft" data-key="btn_solutions">Our Solutions</a>
                         </div>
                     </div>
                 </div>
@@ -202,16 +190,14 @@
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">
+                            <h1 class="display-2 text-white animated slideInDown" data-key="slide3_title">
                                 Trusted Solar Partner For Long-Term Savings
                             </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                            <p class="fs-5 fw-medium text-white mb-4 pb-3" data-key="slide3_desc">
                                 Delivering clean, reliable and cost-effective solar power solutions
                                 with a focus on quality, safety and customer satisfaction.
                             </p>
-                            <a href="#contact" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">
-                                Get Free Consultation
-                            </a>
+                            <a href="#contact" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft" data-key="btn_consultation">Free Consultation</a>
                         </div>
                     </div>
                 </div>
@@ -223,13 +209,11 @@
 <!-- Carousel End -->
 
 
-
 <!-- Feature Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
 
-            <!-- Feature 1 -->
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
@@ -237,14 +221,10 @@
                     </div>
                     <h1 class="mb-0" data-toggle="counter-up">3453</h1>
                 </div>
-                <h5 class="mb-3">Satisfied Clients</h5>
-                <span>
-                    Trusted by residential, commercial and industrial clients
-                    for reliable solar energy solutions.
-                </span>
+                <h5 class="mb-3" data-key="stat1_title">Satisfied Clients</h5>
+                <span data-key="stat1_desc">Trusted by residential, commercial and industrial clients for reliable solar energy solutions.</span>
             </div>
 
-            <!-- Feature 2 -->
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
@@ -252,14 +232,10 @@
                     </div>
                     <h1 class="mb-0" data-toggle="counter-up">4234</h1>
                 </div>
-                <h5 class="mb-3">Projects Completed</h5>
-                <span>
-                    Successfully delivered on-grid, hybrid and EPC solar
-                    projects across multiple sectors.
-                </span>
+                <h5 class="mb-3" data-key="stat2_title">Projects Completed</h5>
+                <span data-key="stat2_desc">Successfully delivered on-grid, hybrid and EPC solar projects across multiple sectors.</span>
             </div>
 
-            <!-- Feature 3 -->
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
@@ -267,14 +243,10 @@
                     </div>
                     <h1 class="mb-0" data-toggle="counter-up">3123</h1>
                 </div>
-                <h5 class="mb-3">Quality Milestones</h5>
-                <span>
-                    Commitment to quality, safety standards and long-term
-                    performance in every installation.
-                </span>
+                <h5 class="mb-3" data-key="stat3_title">Quality Milestones</h5>
+                <span data-key="stat3_desc">Commitment to quality, safety standards and long-term performance in every installation.</span>
             </div>
 
-            <!-- Feature 4 -->
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
@@ -282,18 +254,14 @@
                     </div>
                     <h1 class="mb-0" data-toggle="counter-up">1831</h1>
                 </div>
-                <h5 class="mb-3">Expert Team</h5>
-                <span>
-                    Skilled engineers and technicians delivering efficient,
-                    safe and optimized solar solutions.
-                </span>
+                <h5 class="mb-3" data-key="stat4_title">Expert Team</h5>
+                <span data-key="stat4_desc">Skilled engineers and technicians delivering efficient, safe and optimized solar solutions.</span>
             </div>
 
         </div>
     </div>
 </div>
 <!-- Feature End -->
-
 
 
 <!-- About Start -->
@@ -303,39 +271,20 @@
 
             <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100"
-                         src="img/about.png"
-                         style="object-fit: cover;"
-                         alt="Mavericks Green Energy Solar Installation">
+                    <img class="position-absolute img-fluid w-100 h-100" src="img/about.png" style="object-fit: cover;" alt="Mavericks Green Energy Solar Installation">
                 </div>
             </div>
 
             <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 pe-lg-0">
-                    <h6 class="text-primary">About Us</h6>
-                    <h1 class="mb-4">
-                        End-to-End Solar EPC Solutions You Can Trust
-                    </h1>
-
-                    <p>
-                        Mavericks Green Energy is a forward-integrated solar EPC company
-                        delivering reliable, efficient and cost-effective renewable energy
-                        solutions across residential, commercial and industrial sectors.
-                    </p>
-
-                    <p>
-                        With proven technology, expert engineering and strict quality
-                        management processes, we design, install and commission solar
-                        systems built for long-term performance and savings.
-                    </p>
-
-                    <p><i class="fa fa-check-circle text-primary me-3"></i>Turnkey EPC solutions from design to commissioning</p>
-                    <p><i class="fa fa-check-circle text-primary me-3"></i>On-Grid and Hybrid solar rooftop systems</p>
-                    <p><i class="fa fa-check-circle text-primary me-3"></i>Trusted components, skilled team and timely execution</p>
-
-                    <a href="#services" class="btn btn-primary rounded-pill py-3 px-5 mt-3">
-                        Know More
-                    </a>
+                    <h6 class="text-primary" data-key="about_label">About Us</h6>
+                    <h1 class="mb-4" data-key="about_title">End-to-End Solar EPC Solutions You Can Trust</h1>
+                    <p data-key="about_p1">Mavericks Green Energy is a forward-integrated solar EPC company delivering reliable, efficient and cost-effective renewable energy solutions across residential, commercial and industrial sectors.</p>
+                    <p data-key="about_p2">With proven technology, expert engineering and strict quality management processes, we design, install and commission solar systems built for long-term performance and savings.</p>
+                    <p><i class="fa fa-check-circle text-primary me-3"></i><span data-key="about_check1">Turnkey EPC solutions from design to commissioning</span></p>
+                    <p><i class="fa fa-check-circle text-primary me-3"></i><span data-key="about_check2">On-Grid and Hybrid solar rooftop systems</span></p>
+                    <p><i class="fa fa-check-circle text-primary me-3"></i><span data-key="about_check3">Trusted components, skilled team and timely execution</span></p>
+                    <a href="#services" class="btn btn-primary rounded-pill py-3 px-5 mt-3" data-key="btn_know_more">Know More</a>
                 </div>
             </div>
 
@@ -345,133 +294,84 @@
 <!-- About End -->
 
 
-
 <!-- Service Start -->
 <div class="container-xxl py-5 services-glass-section">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary">Our Services</h6>
-            <h1 class="mb-4">Comprehensive Solar & Renewable Energy Solutions</h1>
+            <h6 class="text-primary" data-key="services_label">Our Services</h6>
+            <h1 class="mb-4" data-key="services_title">Comprehensive Solar & Renewable Energy Solutions</h1>
         </div>
 
         <div class="row g-4">
 
-            <!-- Service 1 -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-1.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-solar-panel fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Solar Panels</h4>
-                        <p>
-                            High-efficiency solar PV modules designed for long life,
-                            consistent performance and maximum energy generation.
-                        </p>
-                        <a class="small fw-medium" href="">
-                            Read More<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="service-icon"><i class="fa fa-solar-panel fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc1_title">Solar Panels</h4>
+                        <p data-key="svc1_desc">High-efficiency solar PV modules designed for long life, consistent performance and maximum energy generation.</p>
+                        <a class="small fw-medium" href="/solar-panel.html" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 2 -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-2.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-charging-station fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Solar Power Solutions</h4>
-                        <p>
-                            On-grid and hybrid solar power systems engineered for
-                            residential, commercial and industrial applications.
-                        </p>
-                        <a class="small fw-medium" href="">
-                            Read More<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="service-icon"><i class="fa fa-charging-station fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc2_title">Solar Power Solutions</h4>
+                        <p data-key="svc2_desc">On-grid and hybrid solar power systems engineered for residential, commercial and industrial applications.</p>
+                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 3 -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-3.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-project-diagram fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">EPC Solar Projects</h4>
-                        <p>
-                            Complete turnkey EPC services including design,
-                            procurement, installation and commissioning.
-                        </p>
-                        <a class="small fw-medium" href="">
-                            Read More<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="service-icon"><i class="fa fa-project-diagram fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc3_title">EPC Solar Projects</h4>
+                        <p data-key="svc3_desc">Complete turnkey EPC services including design, procurement, installation and commissioning.</p>
+                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 4 -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-4.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-bolt fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Solar Electrical Equipment</h4>
-                        <p>
-                            Supply of quality-tested solar electrical components
-                            ensuring safety, efficiency and system reliability.
-                        </p>
-                        <a class="small fw-medium" href="">
-                            Read More<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="service-icon"><i class="fa fa-bolt fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc4_title">Solar Electrical Equipment</h4>
+                        <p data-key="svc4_desc">Supply of quality-tested solar electrical components ensuring safety, efficiency and system reliability.</p>
+                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 5 -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-5.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-plug fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Inverters & Power Systems</h4>
-                        <p>
-                            Advanced solar inverters and power conditioning systems
-                            for stable output and efficient energy management.
-                        </p>
-                        <a class="small fw-medium" href="">
-                            Read More<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="service-icon"><i class="fa fa-plug fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc5_title">Inverters & Power Systems</h4>
+                        <p data-key="svc5_desc">Advanced solar inverters and power conditioning systems for stable output and efficient energy management.</p>
+                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 6 -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-6.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-cogs fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Fabrication & Mounting Structures</h4>
-                        <p>
-                            Robust and precision-fabricated mounting structures
-                            designed for durability and optimal panel alignment.
-                        </p>
-                        <a class="small fw-medium" href="">
-                            Read More<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="service-icon"><i class="fa fa-cogs fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc6_title">Fabrication & Mounting Structures</h4>
+                        <p data-key="svc6_desc">Robust and precision-fabricated mounting structures designed for durability and optimal panel alignment.</p>
+                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -482,239 +382,178 @@
 <!-- Service End -->
 
 
-
-<!-- Feature Start -->
+<!-- Why Choose Us Start -->
 <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
     <div class="container feature px-lg-0">
         <div class="row g-0 mx-lg-0">
 
             <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="p-lg-5 ps-lg-0">
-                    <h6 class="text-primary">Why Choose Us</h6>
-                    <h1 class="mb-4">Reliable Solar EPC Solutions for Every Need</h1>
-
-                    <p class="mb-4 pb-2">
-                        Mavericks Green Energy delivers complete solar EPC solutions for
-                        residential, commercial and industrial applications. With proven
-                        technology, expert engineering and strict quality control, we ensure
-                        long-term performance, safety and maximum energy savings.
-                    </p>
+                    <h6 class="text-primary" data-key="why_label">Why Choose Us</h6>
+                    <h1 class="mb-4" data-key="why_title">Reliable Solar EPC Solutions for Every Need</h1>
+                    <p class="mb-4 pb-2" data-key="why_desc">Mavericks Green Energy delivers complete solar EPC solutions for residential, commercial and industrial applications. With proven technology, expert engineering and strict quality control, we ensure long-term performance, safety and maximum energy savings.</p>
 
                     <div class="row g-4">
-
                         <div class="col-6">
                             <div class="d-flex align-items-center">
-                                <div class="btn-lg-square bg-primary rounded-circle">
-                                    <i class="fa fa-check text-white"></i>
-                                </div>
+                                <div class="btn-lg-square bg-primary rounded-circle"><i class="fa fa-check text-white"></i></div>
                                 <div class="ms-4">
-                                    <p class="mb-0">Assured</p>
-                                    <h5 class="mb-0">Quality Standards</h5>
+                                    <p class="mb-0" data-key="why_f1_sub">Assured</p>
+                                    <h5 class="mb-0" data-key="why_f1_title">Quality Standards</h5>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-6">
                             <div class="d-flex align-items-center">
-                                <div class="btn-lg-square bg-primary rounded-circle">
-                                    <i class="fa fa-user-check text-white"></i>
-                                </div>
+                                <div class="btn-lg-square bg-primary rounded-circle"><i class="fa fa-user-check text-white"></i></div>
                                 <div class="ms-4">
-                                    <p class="mb-0">Skilled</p>
-                                    <h5 class="mb-0">Expert Team</h5>
+                                    <p class="mb-0" data-key="why_f2_sub">Skilled</p>
+                                    <h5 class="mb-0" data-key="why_f2_title">Expert Team</h5>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-6">
                             <div class="d-flex align-items-center">
-                                <div class="btn-lg-square bg-primary rounded-circle">
-                                    <i class="fa fa-drafting-compass text-white"></i>
-                                </div>
+                                <div class="btn-lg-square bg-primary rounded-circle"><i class="fa fa-drafting-compass text-white"></i></div>
                                 <div class="ms-4">
-                                    <p class="mb-0">End-to-End</p>
-                                    <h5 class="mb-0">EPC Execution</h5>
+                                    <p class="mb-0" data-key="why_f3_sub">End-to-End</p>
+                                    <h5 class="mb-0" data-key="why_f3_title">EPC Execution</h5>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-6">
                             <div class="d-flex align-items-center">
-                                <div class="btn-lg-square bg-primary rounded-circle">
-                                    <i class="fa fa-headphones text-white"></i>
-                                </div>
+                                <div class="btn-lg-square bg-primary rounded-circle"><i class="fa fa-headphones text-white"></i></div>
                                 <div class="ms-4">
-                                    <p class="mb-0">Dedicated</p>
-                                    <h5 class="mb-0">Customer Support</h5>
+                                    <p class="mb-0" data-key="why_f4_sub">Dedicated</p>
+                                    <h5 class="mb-0" data-key="why_f4_title">Customer Support</h5>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100"
-                         src="img/feature.png"
-                         style="object-fit: cover;"
-                         alt="Why Choose Mavericks Green Energy">
+                    <img class="position-absolute img-fluid w-100 h-100" src="img/feature.png" style="object-fit: cover;" alt="Why Choose Mavericks Green Energy">
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<!-- Feature End -->
-
+<!-- Why Choose Us End -->
 
 
 <!-- Projects Start -->
 <div class="container-xxl py-5">
     <div class="container">
-
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary">Our Projects</h6>
-            <h1 class="mb-4">Our Solar Installations & EPC Project Portfolio</h1>
+            <h6 class="text-primary" data-key="projects_label">Our Projects</h6>
+            <h1 class="mb-4" data-key="projects_title">Our Solar Installations & EPC Project Portfolio</h1>
         </div>
 
         <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
             <div class="col-12 text-center">
                 <ul class="list-inline mb-5" id="portfolio-flters">
-                    <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".first">Solar Panels</li>
-                    <li class="mx-2" data-filter=".second">Solar Power Systems</li>
-                    <li class="mx-2" data-filter=".third">EPC Installations</li>
+                    <li class="mx-2 active" data-filter="*" data-key="filter_all">All</li>
+                    <li class="mx-2" data-filter=".first" data-key="filter_panels">Solar Panels</li>
+                    <li class="mx-2" data-filter=".second" data-key="filter_power">Solar Power Systems</li>
+                    <li class="mx-2" data-filter=".third" data-key="filter_epc">EPC Installations</li>
                 </ul>
             </div>
         </div>
 
         <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
 
-            <!-- Project 1 -->
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-6.png" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-                           href="img/img-600x400-6.png" data-lightbox="portfolio">
-                           <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="">
-                           <i class="fa fa-link"></i>
-                        </a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-6.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="pt-3">
-                    <p class="text-primary mb-0">Solar Panels</p>
+                    <p class="text-primary mb-0" data-key="filter_panels">Solar Panels</p>
                     <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">High-Efficiency Rooftop Solar Panel Installation</h5>
+                    <h5 class="lh-base" data-key="proj1_title">High-Efficiency Rooftop Solar Panel Installation</h5>
                 </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-5.png" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-                           href="img/img-600x400-5.png" data-lightbox="portfolio">
-                           <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="">
-                           <i class="fa fa-link"></i>
-                        </a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-5.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="pt-3">
-                    <p class="text-primary mb-0">Solar Power Systems</p>
+                    <p class="text-primary mb-0" data-key="filter_power">Solar Power Systems</p>
                     <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">On-Grid Solar Power System for Commercial Facility</h5>
+                    <h5 class="lh-base" data-key="proj2_title">On-Grid Solar Power System for Commercial Facility</h5>
                 </div>
             </div>
 
-            <!-- Project 3 -->
             <div class="col-lg-4 col-md-6 portfolio-item third">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-4.png" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-                           href="img/img-600x400-4.png" data-lightbox="portfolio">
-                           <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="">
-                           <i class="fa fa-link"></i>
-                        </a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-4.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="pt-3">
-                    <p class="text-primary mb-0">EPC Installation</p>
+                    <p class="text-primary mb-0" data-key="filter_epc">EPC Installation</p>
                     <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Turnkey EPC Solar Project with Complete Commissioning</h5>
+                    <h5 class="lh-base" data-key="proj3_title">Turnkey EPC Solar Project with Complete Commissioning</h5>
                 </div>
             </div>
 
-            <!-- Project 4 -->
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-3.png" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-                           href="img/img-600x400-3.png" data-lightbox="portfolio">
-                           <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="">
-                           <i class="fa fa-link"></i>
-                        </a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-3.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="pt-3">
-                    <p class="text-primary mb-0">Solar Panels</p>
+                    <p class="text-primary mb-0" data-key="filter_panels">Solar Panels</p>
                     <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Residential Rooftop Solar Installation Project</h5>
+                    <h5 class="lh-base" data-key="proj4_title">Residential Rooftop Solar Installation Project</h5>
                 </div>
             </div>
 
-            <!-- Project 5 -->
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-2.png" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-                           href="img/img-600x400-2.png" data-lightbox="portfolio">
-                           <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="">
-                           <i class="fa fa-link"></i>
-                        </a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-2.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="pt-3">
-                    <p class="text-primary mb-0">Solar Power Systems</p>
+                    <p class="text-primary mb-0" data-key="filter_power">Solar Power Systems</p>
                     <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Hybrid Solar Power System with Battery Backup</h5>
+                    <h5 class="lh-base" data-key="proj5_title">Hybrid Solar Power System with Battery Backup</h5>
                 </div>
             </div>
 
-            <!-- Project 6 -->
             <div class="col-lg-4 col-md-6 portfolio-item third">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-1.png" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-                           href="img/img-600x400-1.png" data-lightbox="portfolio">
-                           <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="">
-                           <i class="fa fa-link"></i>
-                        </a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-1.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="pt-3">
-                    <p class="text-primary mb-0">EPC Installation</p>
+                    <p class="text-primary mb-0" data-key="filter_epc">EPC Installation</p>
                     <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Industrial-Scale Solar EPC Project Execution</h5>
+                    <h5 class="lh-base" data-key="proj6_title">Industrial-Scale Solar EPC Project Execution</h5>
                 </div>
             </div>
 
@@ -724,6 +563,210 @@
 <!-- Projects End -->
 
 
+<!-- =============================================
+     CLIENT LOGOS SLIDER — Projects ke neeche
+     ============================================= -->
+<section class="clients-section wow fadeInUp" data-wow-delay="0.1s">
+    <div class="section-heading">
+        <h6 data-key="clients_label">Our Trusted Clients</h6>
+        <h2 data-key="clients_title">Companies We've Worked With</h2>
+        <p data-key="clients_subtitle">Proud to have delivered solar solutions for leading organizations across India</p>
+    </div>
+
+    <div class="clients-slider-wrapper">
+        <div class="clients-track" id="clientsTrack">
+
+            <!-- ── ORIGINAL SET ── -->
+
+            <!-- 1. Tata Power Solar -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png"
+                         alt="Tata Power Solar"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">TATA</span>
+                </div>
+                <span class="client-name">Tata Power Solar</span>
+            </div>
+
+            <!-- 2. Adani Solar -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Adani_2012_logo.svg/200px-Adani_2012_logo.svg.png"
+                         alt="Adani Solar"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">ADANI</span>
+                </div>
+                <span class="client-name">Adani Solar</span>
+            </div>
+
+            <!-- 3. L&T -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Larsen_and_Toubro_Logo.svg/200px-Larsen_and_Toubro_Logo.svg.png"
+                         alt="L&T"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">L&T</span>
+                </div>
+                <span class="client-name">L&amp;T</span>
+            </div>
+
+            <!-- 4. Havells -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Havells_logo.svg/200px-Havells_logo.svg.png"
+                         alt="Havells"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">HAVELLS</span>
+                </div>
+                <span class="client-name">Havells</span>
+            </div>
+
+            <!-- 5. Schneider Electric -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Schneider_Electric_2007.svg/200px-Schneider_Electric_2007.svg.png"
+                         alt="Schneider Electric"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">SCHNEIDER</span>
+                </div>
+                <span class="client-name">Schneider Electric</span>
+            </div>
+
+            <!-- 6. Mahindra -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahindra_logo.svg/200px-Mahindra_logo.svg.png"
+                         alt="Mahindra Solar"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">MAHINDRA</span>
+                </div>
+                <span class="client-name">Mahindra Solar</span>
+            </div>
+
+            <!-- 7. ABB -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/200px-ABB_logo.svg.png"
+                         alt="ABB"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">ABB</span>
+                </div>
+                <span class="client-name">ABB India</span>
+            </div>
+
+            <!-- 8. NTPC -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/NTPC_Logo.svg/200px-NTPC_Logo.svg.png"
+                         alt="NTPC"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">NTPC</span>
+                </div>
+                <span class="client-name">NTPC</span>
+            </div>
+
+            <!-- 9. Luminous -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Luminous_Power_Technologies_Logo.svg/200px-Luminous_Power_Technologies_Logo.svg.png"
+                         alt="Luminous"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">LUMINOUS</span>
+                </div>
+                <span class="client-name">Luminous Power</span>
+            </div>
+
+            <!-- 10. Waaree -->
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="img/client-waaree.png"
+                         alt="Waaree"
+                         onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text" style="display:flex">WAAREE</span>
+                </div>
+                <span class="client-name">Waaree Energies</span>
+            </div>
+
+            <!-- ── DUPLICATE SET (seamless infinite loop) ── -->
+
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" alt="Tata Power Solar" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">TATA</span>
+                </div>
+                <span class="client-name">Tata Power Solar</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Adani_2012_logo.svg/200px-Adani_2012_logo.svg.png" alt="Adani Solar" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">ADANI</span>
+                </div>
+                <span class="client-name">Adani Solar</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Larsen_and_Toubro_Logo.svg/200px-Larsen_and_Toubro_Logo.svg.png" alt="L&T" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">L&T</span>
+                </div>
+                <span class="client-name">L&amp;T</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Havells_logo.svg/200px-Havells_logo.svg.png" alt="Havells" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">HAVELLS</span>
+                </div>
+                <span class="client-name">Havells</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Schneider_Electric_2007.svg/200px-Schneider_Electric_2007.svg.png" alt="Schneider Electric" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">SCHNEIDER</span>
+                </div>
+                <span class="client-name">Schneider Electric</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahindra_logo.svg/200px-Mahindra_logo.svg.png" alt="Mahindra Solar" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">MAHINDRA</span>
+                </div>
+                <span class="client-name">Mahindra Solar</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/200px-ABB_logo.svg.png" alt="ABB" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">ABB</span>
+                </div>
+                <span class="client-name">ABB India</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/NTPC_Logo.svg/200px-NTPC_Logo.svg.png" alt="NTPC" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">NTPC</span>
+                </div>
+                <span class="client-name">NTPC</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Luminous_Power_Technologies_Logo.svg/200px-Luminous_Power_Technologies_Logo.svg.png" alt="Luminous" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text">LUMINOUS</span>
+                </div>
+                <span class="client-name">Luminous Power</span>
+            </div>
+            <div class="client-card">
+                <div class="logo-wrap">
+                    <img src="img/client-waaree.png" alt="Waaree" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='flex'">
+                    <span class="logo-text" style="display:flex">WAAREE</span>
+                </div>
+                <span class="client-name">Waaree Energies</span>
+            </div>
+
+        </div><!-- /.clients-track -->
+    </div><!-- /.clients-slider-wrapper -->
+</section>
+<!-- Client Logos Slider End -->
+
+
 <!-- Quote Start -->
 <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
     <div class="container quote px-lg-0">
@@ -731,74 +774,45 @@
 
             <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100"
-                         src="img/quote.png"
-                         style="object-fit: cover;"
-                         alt="Free Solar Consultation">
+                    <img class="position-absolute img-fluid w-100 h-100" src="img/quote.png" style="object-fit: cover;" alt="Free Solar Consultation">
                 </div>
             </div>
 
             <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 pe-lg-0">
-                    <h6 class="text-primary">Free Consultation</h6>
-                    <h1 class="mb-4">Get Your Solar Project Quote</h1>
-
-                    <p class="mb-4 pb-2">
-                        Planning to switch to solar? Get a free site assessment and
-                        customized solar solution from our expert EPC team.
-                        We help you maximize savings with reliable and efficient systems.
-                    </p>
+                    <h6 class="text-primary" data-key="quote_label">Free Consultation</h6>
+                    <h1 class="mb-4" data-key="quote_title">Get Your Solar Project Quote</h1>
+                    <p class="mb-4 pb-2" data-key="quote_desc">Planning to switch to solar? Get a free site assessment and customized solar solution from our expert EPC team. We help you maximize savings with reliable and efficient systems.</p>
 
                     <form>
                         <div class="row g-3">
-
                             <div class="col-12 col-sm-6">
-                                <input type="text"
-                                       class="form-control border-0"
-                                       placeholder="Your Name"
-                                       style="height: 55px;">
+                                <input type="text" class="form-control border-0" id="ph_name" placeholder="Your Name" style="height: 55px;">
                             </div>
-
                             <div class="col-12 col-sm-6">
-                                <input type="email"
-                                       class="form-control border-0"
-                                       placeholder="Your Email"
-                                       style="height: 55px;">
+                                <input type="email" class="form-control border-0" id="ph_email" placeholder="Your Email" style="height: 55px;">
                             </div>
-
                             <div class="col-12 col-sm-6">
-                                <input type="text"
-                                       class="form-control border-0"
-                                       placeholder="Your Mobile Number"
-                                       style="height: 55px;">
+                                <input type="text" class="form-control border-0" id="ph_mobile" placeholder="Your Mobile Number" style="height: 55px;">
                             </div>
-
                             <div class="col-12 col-sm-6">
-                                <select class="form-select border-0" style="height: 55px;">
-                                    <option selected>Select Service Type</option>
-                                    <option value="solar-panels">Solar Panels</option>
-                                    <option value="on-grid">On-Grid Solar System</option>
-                                    <option value="hybrid">Hybrid Solar System</option>
-                                    <option value="epc">Complete EPC Solar Project</option>
-                                    <option value="equipment">Solar Electrical Equipment</option>
+                                <select class="form-select border-0" style="height: 55px;" id="service_select">
+                                    <option data-key="form_select_default">Select Service Type</option>
+                                    <option value="solar-panels" data-key="form_opt1">Solar Panels</option>
+                                    <option value="on-grid" data-key="form_opt2">On-Grid Solar System</option>
+                                    <option value="hybrid" data-key="form_opt3">Hybrid Solar System</option>
+                                    <option value="epc" data-key="form_opt4">Complete EPC Solar Project</option>
+                                    <option value="equipment" data-key="form_opt5">Solar Electrical Equipment</option>
                                 </select>
                             </div>
-
                             <div class="col-12">
-                                <textarea class="form-control border-0"
-                                          placeholder="Project Details / Location / Load Requirement"
-                                          rows="4"></textarea>
+                                <textarea class="form-control border-0" id="ph_details" placeholder="Project Details / Location / Load Requirement" rows="4"></textarea>
                             </div>
-
                             <div class="col-12">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">
-                                    Request Free Quote
-                                </button>
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit" data-key="btn_request_quote">Request Free Quote</button>
                             </div>
-
                         </div>
                     </form>
-
                 </div>
             </div>
 
@@ -808,280 +822,168 @@
 <!-- Quote End -->
 
 
-
 <!-- Team Start -->
 <div class="container-xxl py-5">
     <div class="container">
-
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary">Our Team</h6>
-            <h1 class="mb-4">Meet Our Solar Energy Experts</h1>
+            <h6 class="text-primary" data-key="team_label">Our Team</h6>
+            <h1 class="mb-4" data-key="team_title">Meet Our Solar Energy Experts</h1>
         </div>
-
         <div class="row g-4">
-
-            <!-- Team Member 1 -->
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item rounded overflow-hidden">
                     <div class="d-flex">
                         <img class="img-fluid w-75" src="img/team-1.jpg" alt="">
                         <div class="team-social w-25">
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="p-4">
-                        <h5>Project Head</h5>
-                        <span>Solar EPC & Operations</span>
+                        <h5 data-key="team1_role">Project Head</h5>
+                        <span data-key="team1_dept">Solar EPC & Operations</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Team Member 2 -->
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded overflow-hidden">
                     <div class="d-flex">
                         <img class="img-fluid w-75" src="img/team-2.jpg" alt="">
                         <div class="team-social w-25">
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="p-4">
-                        <h5>Senior Solar Engineer</h5>
-                        <span>Design & System Optimization</span>
+                        <h5 data-key="team2_role">Senior Solar Engineer</h5>
+                        <span data-key="team2_dept">Design & System Optimization</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Team Member 3 -->
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item rounded overflow-hidden">
                     <div class="d-flex">
                         <img class="img-fluid w-75" src="img/team-3.jpg" alt="">
                         <div class="team-social w-25">
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="p-4">
-                        <h5>Site Supervisor</h5>
-                        <span>Installation & Commissioning</span>
+                        <h5 data-key="team3_role">Site Supervisor</h5>
+                        <span data-key="team3_dept">Installation & Commissioning</span>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 <!-- Team End -->
 
 
-
 <!-- Testimonial Start -->
 <div class="container-xxl py-5">
     <div class="container">
-
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary">Testimonials</h6>
-            <h1 class="mb-4">What Our Clients Say</h1>
+            <h6 class="text-primary" data-key="testi_label">Testimonials</h6>
+            <h1 class="mb-4" data-key="testi_title">What Our Clients Say</h1>
         </div>
-
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-
-            <!-- Testimonial 1 -->
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
                     <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-1.jpg" alt="">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
+                    <div class="btn-square bg-primary rounded-circle"><i class="fa fa-quote-left text-white"></i></div>
                 </div>
                 <div class="testimonial-text text-center rounded p-4">
-                    <p>
-                        The Mavericks Green Energy team handled our rooftop solar project
-                        professionally from site survey to commissioning. The system is
-                        performing efficiently and our electricity costs have reduced
-                        significantly.
-                    </p>
-                    <h5 class="mb-1">Residential Client</h5>
-                    <span class="fst-italic">Rooftop Solar Installation</span>
+                    <p data-key="testi1_text">The Mavericks Green Energy team handled our rooftop solar project professionally from site survey to commissioning. The system is performing efficiently and our electricity costs have reduced significantly.</p>
+                    <h5 class="mb-1" data-key="testi1_name">Residential Client</h5>
+                    <span class="fst-italic" data-key="testi1_type">Rooftop Solar Installation</span>
                 </div>
             </div>
-
-            <!-- Testimonial 2 -->
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
                     <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-2.jpg" alt="">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
+                    <div class="btn-square bg-primary rounded-circle"><i class="fa fa-quote-left text-white"></i></div>
                 </div>
                 <div class="testimonial-text text-center rounded p-4">
-                    <p>
-                        Their EPC expertise and project execution were excellent.
-                        The on-grid solar system was delivered on time with proper
-                        documentation and net-metering support.
-                    </p>
-                    <h5 class="mb-1">Commercial Client</h5>
-                    <span class="fst-italic">On-Grid Solar EPC Project</span>
+                    <p data-key="testi2_text">Their EPC expertise and project execution were excellent. The on-grid solar system was delivered on time with proper documentation and net-metering support.</p>
+                    <h5 class="mb-1" data-key="testi2_name">Commercial Client</h5>
+                    <span class="fst-italic" data-key="testi2_type">On-Grid Solar EPC Project</span>
                 </div>
             </div>
-
-            <!-- Testimonial 3 -->
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
                     <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-3.jpg" alt="">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
+                    <div class="btn-square bg-primary rounded-circle"><i class="fa fa-quote-left text-white"></i></div>
                 </div>
                 <div class="testimonial-text text-center rounded p-4">
-                    <p>
-                        We appreciate the technical guidance and quality standards followed
-                        during installation. The hybrid solar system provides reliable power
-                        backup and smooth operation.
-                    </p>
-                    <h5 class="mb-1">Industrial Client</h5>
-                    <span class="fst-italic">Hybrid Solar Power System</span>
+                    <p data-key="testi3_text">We appreciate the technical guidance and quality standards followed during installation. The hybrid solar system provides reliable power backup and smooth operation.</p>
+                    <h5 class="mb-1" data-key="testi3_name">Industrial Client</h5>
+                    <span class="fst-italic" data-key="testi3_type">Hybrid Solar Power System</span>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 <!-- Testimonial End -->
 
 
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-<div class="col-lg-3 col-md-6"
-     style="
-        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-        url('img/footer-address-bg.jpg') center/cover no-repeat;
-        border-radius: 8px;
-        padding: 20px;
-     ">
-
-    <h5 class="text-white mb-4">Our Branches</h5>
-
-    <!-- Mumbai Branch (Default) -->
-    <p class="mb-2 text-white">
-        <i class="fa fa-map-marker-alt me-3"></i>
-        Mumbai Branch<br>
-        Andheri East, Mumbai – India
-    </p>
-    <p class="mb-2 text-white">
-        <i class="fa fa-phone-alt me-3"></i>+91 90000 00000
-    </p>
-    <p class="mb-3 text-white">
-        <i class="fa fa-envelope me-3"></i>mumbai@maverickssolar.com
-    </p>
-
-    <!-- Dropdown Button -->
-    <a class="btn btn-sm btn-outline-light mb-3"
-       data-bs-toggle="collapse"
-       href="#nagpurBranch"
-       role="button"
-       aria-expanded="false"
-       aria-controls="nagpurBranch">
-        View Nagpur Branch
-    </a>
-
-    <!-- Nagpur Branch (Dropdown) -->
-    <div class="collapse" id="nagpurBranch">
-        <hr class="text-light">
-        <p class="mb-2 text-white">
-            <i class="fa fa-map-marker-alt me-3"></i>
-            Nagpur Branch<br>
-            Parsodi, Nagpur – India
-        </p>
-        <p class="mb-2 text-white">
-            <i class="fa fa-phone-alt me-3"></i>+91 84840 09873
-        </p>
-        <p class="mb-2 text-white">
-            <i class="fa fa-envelope me-3"></i>nagpur@maverickssolar.com
-        </p>
-    </div>
-
-    <div class="d-flex pt-2">
-        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-</div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Project Gallery</h5>
-                    <div class="row g-2">
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-4.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-5.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-6.jpg" alt="">
-                        </div>
+                <div class="col-lg-3 col-md-6"
+                     style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/footer-address-bg.jpg') center/cover no-repeat; border-radius: 8px; padding: 20px;">
+                    <h5 class="text-white mb-4" data-key="footer_branches">Our Branches</h5>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span data-key="branch_mumbai">Mumbai Branch</span><br><span data-key="branch_mumbai_addr">Andheri East, Mumbai – India</span></p>
+                    <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 90000 00000</p>
+                    <p class="mb-3 text-white"><i class="fa fa-envelope me-3"></i>mumbai@maverickssolar.com</p>
+                    <a class="btn btn-sm btn-outline-light mb-3" data-bs-toggle="collapse" href="#nagpurBranch" role="button" aria-expanded="false" aria-controls="nagpurBranch" data-key="view_nagpur">View Nagpur Branch</a>
+                    <div class="collapse" id="nagpurBranch">
+                        <hr class="text-light">
+                        <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span data-key="branch_nagpur">Nagpur Branch</span><br><span data-key="branch_nagpur_addr">Parsodi, Nagpur – India</span></p>
+                        <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 84840 09873</p>
+                        <p class="mb-2 text-white"><i class="fa fa-envelope me-3"></i>nagpur@maverickssolar.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-<div class="col-lg-3 col-md-6">
-    <h5 class="text-white mb-4">Mavericks Green Energy</h5>
 
-    <!-- Logo -->
-    <div class="mb-3">
-        <img src="/img/mavericks logo.png"
-             alt="Mavericks Green Energy Logo" class="footer-logo">
-    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4" data-key="footer_links">Quick Links</h5>
+                    <a class="btn btn-link" href="" data-key="nav_about">About Us</a>
+                    <a class="btn btn-link" href="" data-key="nav_contact">Contact Us</a>
+                    <a class="btn btn-link" href="" data-key="nav_service">Our Services</a>
+                    <a class="btn btn-link" href="" data-key="footer_terms">Terms & Condition</a>
+                    <a class="btn btn-link" href="" data-key="footer_support">Support</a>
+                </div>
 
-    <!-- Slogan / Tagline -->
-    <p class="text-light small mb-0">
-        Powering a sustainable future with smart, reliable and
-        end-to-end solar EPC solutions for homes, businesses and industries.
-    </p>
-</div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4" data-key="footer_gallery">Project Gallery</h5>
+                    <div class="row g-2">
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-1.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-2.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-3.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-4.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-5.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-6.jpg" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Mavericks Green Energy</h5>
+                    <div class="mb-3">
+                        <img src="/img/mavericks logo.png" alt="Mavericks Green Energy Logo" class="footer-logo">
+                    </div>
+                    <p class="text-light small mb-0" data-key="footer_tagline">Powering a sustainable future with smart, reliable and end-to-end solar EPC solutions for homes, businesses and industries.</p>
+                </div>
 
             </div>
         </div>
@@ -1092,9 +994,7 @@
                         &copy; <a href="#">MaveRicks</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://WebBears.in/credit-removal". Thank you for your support. ***/-->
                         Designed By <a href="https://WebBears.in">WebBears</a>
-                        <!-- <br>Distributed By: <a href="https://WebBears.in" target="_blank">WebBears</a> -->
                     </div>
                 </div>
             </div>
@@ -1102,10 +1002,8 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -1121,5 +1019,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>
