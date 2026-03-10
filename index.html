@@ -35,7 +35,7 @@
     <!-- language switcher styles and script -->
      <link rel="stylesheet" href="/css/translate-engine.css">
    <script src="/js/translate-engine.js"></script>
-   
+
 </head>
 
 <body>
@@ -103,38 +103,118 @@
 <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-             <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
+ <!-- ===== NAVBAR START ===== -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light p-0" id="mainNavbar">
+
+    <!-- Logo — always visible -->
+    <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+        <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
     </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+    <!-- Normal toggler (top state only) -->
+    <button type="button" class="navbar-toggler me-4" id="normalToggler"
+            data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Full nav (visible at top) -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active" data-key="nav_home">Home</a>
-            <a href="about.html" class="nav-item nav-link" data-key="nav_about">About</a>
-            <a href="service.html" class="nav-item nav-link" data-key="nav_service">Service</a>
-            <a href="project.html" class="nav-item nav-link" data-key="nav_project">Project</a>
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-key="nav_pages">Pages</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="feature.html" class="dropdown-item" data-key="nav_feature">Feature</a>
-                    <a href="quote.html" class="dropdown-item" data-key="nav_quote">Free Quote</a>
-                    <a href="team.html" class="dropdown-item" data-key="nav_team">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item" data-key="nav_testimonial">Testimonial</a>
-                    <a href="404.html" class="dropdown-item" data-key="nav_404">404 Page</a>
+                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                <div class="dropdown-menu bg-light m-0 services-dropdown">
+                    <a href="solar-panels.html" class="dropdown-item"><i class="fa fa-solar-panel me-2 text-primary"></i>Solar Panels</a>
+                    <a href="inverters-batteries.html" class="dropdown-item"><i class="fa fa-plug me-2 text-primary"></i>Inverters &amp; Batteries</a>
+                    <a href="electrical-equipment.html" class="dropdown-item"><i class="fa fa-bolt me-2 text-primary"></i>Electrical Equipment</a>
+                    <a href="fabrication-structures.html" class="dropdown-item"><i class="fa fa-cogs me-2 text-primary"></i>Fabrication &amp; Structures</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="service.html" class="dropdown-item"><i class="fa fa-th-large me-2 text-primary"></i>All Services</a>
                 </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link" data-key="nav_contact">Contact</a>
+
+            <a href="project.html" class="nav-item nav-link">Project</a>
+
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="feature.html" class="dropdown-item">Feature</a>
+                    <a href="quote.html" class="dropdown-item">Free Quote</a>
+                    <a href="team.html" class="dropdown-item">Our Team</a>
+                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    <a href="404.html" class="dropdown-item">404 Page</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn" data-key="btn_get_quote">
+        <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
             Get A Quote <i class="fa fa-arrow-right ms-3"></i>
         </a>
     </div>
+
+    <!-- Scroll hamburger — hidden by default, shown on scroll (both desktop+mobile) -->
+    <button class="scroll-ham" id="scrollHam">
+        <span></span><span></span><span></span>
+    </button>
+
 </nav>
-<!-- Navbar End -->
+
+<!-- ===== SCROLL PANEL ===== -->
+<div class="sp" id="scrollPanel">
+
+    <!-- Logo inside panel -->
+    <div class="sp-head">
+        <a href="index.html" class="sp-logo-link">
+            <img src="/img/mavericks logo.png" alt="Mavericks" class="sp-logo-img">
+        </a>
+        <button class="sp-x" id="spClose">&times;</button>
+    </div>
+
+    <!-- Highlighted Services -->
+    <p class="sp-label">⚡ Our Services</p>
+    <div class="sp-grid">
+        <a href="solar-panels.html" class="sp-card">
+            <div class="sp-icon"><i class="fa fa-solar-panel"></i></div>
+            <span>Solar Panels</span>
+        </a>
+        <a href="inverters-batteries.html" class="sp-card">
+            <div class="sp-icon"><i class="fa fa-plug"></i></div>
+            <span>Inverters &amp; Batteries</span>
+        </a>
+        <a href="electrical-equipment.html" class="sp-card">
+            <div class="sp-icon"><i class="fa fa-bolt"></i></div>
+            <span>Electrical Equipment</span>
+        </a>
+        <a href="fabrication-structures.html" class="sp-card">
+            <div class="sp-icon"><i class="fa fa-cogs"></i></div>
+            <span>Fabrication &amp; Structures</span>
+        </a>
+    </div>
+    <a href="service.html" class="sp-all">View All Services <i class="fa fa-arrow-right ms-1"></i></a>
+
+    <div class="sp-line"></div>
+
+    <!-- Nav Links -->
+    <p class="sp-label">🔗 Navigation</p>
+    <div class="sp-links">
+        <a href="index.html"><i class="fa fa-home me-2"></i>Home</a>
+        <a href="about.html"><i class="fa fa-info-circle me-2"></i>About</a>
+        <a href="project.html"><i class="fa fa-folder me-2"></i>Project</a>
+        <a href="contact.html"><i class="fa fa-phone me-2"></i>Contact</a>
+    </div>
+
+    <a href="quote.html" class="sp-quote">Get A Quote <i class="fa fa-arrow-right ms-2"></i></a>
+</div>
+<div class="sp-overlay" id="spOverlay"></div>
+<!-- ===== NAVBAR END ===== -->
+
+
+
+
+
 
 
 <!-- Carousel Start -->
@@ -293,7 +373,6 @@
 </div>
 <!-- About End -->
 
-
 <!-- Service Start -->
 <div class="container-xxl py-5 services-glass-section">
     <div class="container">
@@ -304,74 +383,96 @@
 
         <div class="row g-4">
 
+            <!-- Solar Panels — CLICKABLE CARD -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-1.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-solar-panel fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc1_title">Solar Panels</h4>
-                        <p data-key="svc1_desc">High-efficiency solar PV modules designed for long life, consistent performance and maximum energy generation.</p>
-                        <a class="small fw-medium" href="/solar-panel.html" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                <a href="/solar-panels.html" class="text-decoration-none d-block h-100">
+                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                        <img class="img-fluid" src="img/img-600x400-1.png" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon"><i class="fa fa-solar-panel fa-3x"></i></div>
+                            <h4 class="mb-3" data-key="svc1_title">Solar Panels</h4>
+                            <p data-key="svc1_desc">High-efficiency solar PV modules designed for long life, consistent performance and maximum energy generation.</p>
+                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                Read More <i class="fa fa-arrow-right ms-2"></i>
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
+            <!-- Solar Electrical Equipment — CLICKABLE CARD -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <a href="/electrical-equipment.html" class="text-decoration-none d-block h-100">
+                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                        <img class="img-fluid" src="img/img-600x400-4.png" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon"><i class="fa fa-bolt fa-3x"></i></div>
+                            <h4 class="mb-3" data-key="svc4_title">Solar Electrical Equipment</h4>
+                            <p data-key="svc4_desc">Supply of quality-tested solar electrical components ensuring safety, efficiency and system reliability.</p>
+                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                Read More <i class="fa fa-arrow-right ms-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Inverters & Batteries — CLICKABLE CARD -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <a href="/inverters-batteries.html" class="text-decoration-none d-block h-100">
+                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                        <img class="img-fluid" src="img/img-600x400-5.png" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon"><i class="fa fa-plug fa-3x"></i></div>
+                            <h4 class="mb-3" data-key="svc5_title">Inverters & Batteries</h4>
+                            <p data-key="svc5_desc">Advanced solar inverters and power conditioning systems for stable output and efficient energy management.</p>
+                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                Read More <i class="fa fa-arrow-right ms-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Power Solutions — NORMAL CARD (no redirection) -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-2.png" alt="">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon"><i class="fa fa-charging-station fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc2_title">Solar Power Solutions</h4>
+                        <h4 class="mb-3" data-key="svc2_title">Power Solutions & Solar Farming</h4>
                         <p data-key="svc2_desc">On-grid and hybrid solar power systems engineered for residential, commercial and industrial applications.</p>
-                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        <!-- <a class="small fw-medium" href="" data-key="read_more">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
                     </div>
                 </div>
             </div>
 
+            <!-- Fabrication & Mounting — CLICKABLE CARD -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <a href="/fabrication-structures.html" class="text-decoration-none d-block h-100">
+                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                        <img class="img-fluid" src="img/img-600x400-6.png" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon"><i class="fa fa-cogs fa-3x"></i></div>
+                            <h4 class="mb-3" data-key="svc6_title">Fabrication & Mounting Structures</h4>
+                            <p data-key="svc6_desc">Robust and precision-fabricated mounting structures designed for durability and optimal panel alignment.</p>
+                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                Read More <i class="fa fa-arrow-right ms-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Street Light — NORMAL CARD (no redirection) + fixed description -->
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-3.png" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-project-diagram fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc3_title">EPC Solar Projects</h4>
-                        <p data-key="svc3_desc">Complete turnkey EPC services including design, procurement, installation and commissioning.</p>
-                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-4.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-bolt fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc4_title">Solar Electrical Equipment</h4>
-                        <p data-key="svc4_desc">Supply of quality-tested solar electrical components ensuring safety, efficiency and system reliability.</p>
-                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-5.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-plug fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc5_title">Inverters & Power Systems</h4>
-                        <p data-key="svc5_desc">Advanced solar inverters and power conditioning systems for stable output and efficient energy management.</p>
-                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-6.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-cogs fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc6_title">Fabrication & Mounting Structures</h4>
-                        <p data-key="svc6_desc">Robust and precision-fabricated mounting structures designed for durability and optimal panel alignment.</p>
-                        <a class="small fw-medium" href="" data-key="read_more">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        <div class="service-icon"><i class="fa fa-lightbulb fa-3x"></i></div>
+                        <h4 class="mb-3" data-key="svc3_title">Solar Street Lights</h4>
+                        <p data-key="svc3_desc">All-in-one and split solar LED street lights for roads, colonies, campuses and parking — dusk-to-dawn auto operation with PIR motion sensor and lithium battery backup.</p>
+                        <!-- <a class="small fw-medium" href="" data-key="read_more">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
                     </div>
                 </div>
             </div>

@@ -28,6 +28,8 @@
   box-shadow    : var(--tr-shadow);
   transition    : box-shadow 0.25s, border-color 0.25s;
   position      : relative;
+  right: 70px;
+  bottom: 15px;
 }
 
 #mav-lang-switcher:hover .mlsw-inner {

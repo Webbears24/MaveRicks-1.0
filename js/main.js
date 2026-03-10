@@ -96,3 +96,41 @@
     
 })(jQuery);
 
+(function () {
+    const navbar     = document.getElementById('mainNavbar');
+    const ham        = document.getElementById('scrollHam');
+    const panel      = document.getElementById('scrollPanel');
+    const overlay    = document.getElementById('spOverlay');
+    const closeBtn   = document.getElementById('spClose');
+    const THRESHOLD  = 80;
+
+    /* scroll → collapse / expand */
+    function onScroll() {
+        if (window.scrollY > THRESHOLD) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+            closePanel();
+        }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run immediately on load
+
+    /* open panel */
+    ham.addEventListener('click', function () {
+        panel.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+
+    /* close panel */
+    function closePanel() {
+        panel.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    closeBtn.addEventListener('click', closePanel);
+    overlay.addEventListener('click', closePanel);
+    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closePanel));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+})();
