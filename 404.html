@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet"> 
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -30,6 +30,12 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- language switcher styles and script -->
+     <link rel="stylesheet" href="/css/translate-engine.css">
+   <script src="/js/translate-engine.js"></script>
+
 </head>
 
 <body>
@@ -42,34 +48,59 @@
     <!-- Spinner End -->
 
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>123 Street, New York, USA</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark p-0">
+    <div class="row gx-0 d-none d-lg-flex">
+
+        <!-- LEFT SIDE -->
+        <div class="col-lg-7 px-5 text-start">
+
+            <!-- Address with Dropdown -->
+            <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
+                <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                <small id="topbar-branch-text" style="cursor:pointer;">
+                    <span data-key="branch_mumbai_label">Mumbai Branch, Andheri East</span>
+                    <i class="fa fa-caret-down ms-1"></i>
+                </small>
+
+                <!-- Dropdown -->
+                <div id="topbar-branch-dropdown"
+                     style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
+                    <small class="d-block text-white mb-1">
+                        <strong data-key="branch_mumbai">Mumbai Branch</strong><br>
+                        <span data-key="branch_mumbai_addr">Andheri East, Mumbai</span>
+                    </small>
+                    <small class="d-block text-white">
+                        <strong data-key="branch_nagpur">Nagpur Branch</strong><br>
+                        <span data-key="branch_nagpur_addr">Parsodi, Nagpur</span>
+                    </small>
                 </div>
             </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+012 345 6789</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
+
+            <!-- Time -->
+            <div class="h-100 d-inline-flex align-items-center">
+                <small class="far fa-clock text-primary me-2"></small>
+                <small data-key="working_hours">Mon - Fri : 09.00 AM - 09.00 PM</small>
             </div>
         </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
+            <div class="h-100 d-inline-flex align-items-center me-4">
+                <small class="fa fa-phone-alt text-primary me-2"></small>
+                <small>+91 84840 09873</small>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center mx-n2">
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-square btn-link rounded-0" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
     </div>
-    <!-- Topbar End -->
+</div>
+<!-- Topbar End -->
 
 
  <!-- ===== NAVBAR START ===== -->
@@ -129,7 +160,6 @@
     </button>
 
 </nav>
-
 <!-- ===== SCROLL PANEL ===== -->
 <div class="sp" id="scrollPanel">
 
