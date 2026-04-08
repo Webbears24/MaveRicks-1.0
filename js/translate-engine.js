@@ -1,7 +1,7 @@
 /**
  * ============================================================
  *  MaverRicks Green Energy — Universal Free Translation Engine
- *  FIXED: Cookie domain issue, active state on reload, EN restore
+ *  FIXED v3: Hard reload on every language switch
  * ============================================================
  */
 
@@ -9,47 +9,51 @@
   "use strict";
 
   const LANGS = [
-    { code: "en", gtCode: null,   label: "EN",     full: "English" },
-    { code: "hi", gtCode: "hi",   label: "हिंदी", full: "Hindi"   },
-    { code: "mr", gtCode: "mr",   label: "मराठी", full: "Marathi" },
+    { code: "en", gtCode: null,  label: "EN",     full: "English" },
+    { code: "hi", gtCode: "hi",  label: "हिंदी", full: "Hindi"   },
+    { code: "mr", gtCode: "mr",  label: "मराठी", full: "Marathi" },
   ];
   const STORAGE_KEY = "mav_lang";
 
-  /* ── Cookie helpers ─────────────────────────────────────── */
+  /* ── Cookie helpers ──────────────────────────────────────── */
   function getCookie(name) {
     const match = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]*)"));
     return match ? decodeURIComponent(match[1]) : null;
   }
 
-  /**
-   * FIX 1: Cookie domain problem
-   * Deployed pe domain= set karne se cookie block ho sakta hai.
-   * Sirf path=/ use karo — domain mat dena.
-   */
   function setGoogCookie(val) {
-    const expires = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    // Pehle saare purane cookies clear karo
-    document.cookie = "googtrans=; path=/; " + expires;
-    document.cookie = "googtrans=; path=/; domain=" + window.location.hostname + "; " + expires;
-    document.cookie = "googtrans=; path=/; domain=." + window.location.hostname + "; " + expires;
-
+    const exp = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    // Clear all variants pehle
+    document.cookie = "googtrans=; path=/; " + exp;
+    document.cookie = "googtrans=; path=/; domain=" + window.location.hostname + "; " + exp;
+    document.cookie = "googtrans=; path=/; domain=." + window.location.hostname + "; " + exp;
     if (val) {
-      // Set WITHOUT domain — most reliable
       document.cookie = "googtrans=" + val + "; path=/";
     }
   }
 
-  /* ── Detect current active language from cookie ─────────── */
-  /**
-   * FIX 2: Cookie se actual active language detect karo
-   * localStorage sirf preference ke liye, active state = cookie
-   */
+  /* ── Active lang = cookie se read karo ──────────────────── */
   function getActiveLang() {
     const cookie = getCookie("googtrans");
     if (!cookie || cookie === "/en/en") return "en";
     const match = cookie.match(/\/en\/(\w+)/);
-    if (match) return match[1];
-    return "en";
+    return match ? match[1] : "en";
+  }
+
+  /* ── KEY FIX: Har switch pe cookie set + hard reload ──────
+     Google Translate widget already translated page pe
+     select.dispatchEvent kabhi kaam nahi karta reliably.
+     Isliye: cookie set karo → reload → Google auto-translate.
+  ──────────────────────────────────────────────────────────── */
+  function switchLang(langCode) {
+    if (langCode === "en") {
+      setGoogCookie(null);
+      localStorage.setItem(STORAGE_KEY, "en");
+    } else {
+      setGoogCookie("/en/" + langCode);
+      localStorage.setItem(STORAGE_KEY, langCode);
+    }
+    window.location.reload();
   }
 
   /* ── Load Google Translate Widget ───────────────────────── */
@@ -80,48 +84,10 @@
     document.head.appendChild(script);
   }
 
-  /* ── Trigger language change ────────────────────────────── */
-  function triggerGoogleTranslate(langCode) {
-    if (langCode === "en") {
-      // FIX 3: English restore — cookie clear + reload
-      setGoogCookie(null);
-      localStorage.setItem(STORAGE_KEY, "en");
-
-      const select = document.querySelector(".goog-te-combo");
-      if (select) {
-        select.value = "en";
-        select.dispatchEvent(new Event("change"));
-        // Widget ke baad bhi cookie check karo
-        setTimeout(() => {
-          const c = getCookie("googtrans");
-          if (c && c !== "/en/en") {
-            window.location.reload();
-          }
-        }, 1200);
-      } else {
-        window.location.reload();
-      }
-      return;
-    }
-
-    const cookieVal = "/en/" + langCode;
-    setGoogCookie(cookieVal);
-    localStorage.setItem(STORAGE_KEY, langCode);
-
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event("change"));
-    } else {
-      window.location.reload();
-    }
-  }
-
   /* ── Build & inject floating switcher ───────────────────── */
   function injectSwitcher() {
     if (document.getElementById("mav-lang-switcher")) return;
 
-    // FIX 2: Active = cookie se, localStorage nahi
     const activeLang = getActiveLang();
     localStorage.setItem(STORAGE_KEY, activeLang);
 
@@ -155,23 +121,25 @@
 
     sw.querySelectorAll(".mlsw-btn").forEach((btn) => {
       btn.addEventListener("click", function () {
-        const lang   = this.dataset.lang;
-        const gtCode = this.dataset.gt;
-        const loading = document.getElementById("mlsw-loading");
+        const lang = this.dataset.lang;
+        const gt   = this.dataset.gt;
 
-        // Same language pe click karo to ignore
+        // Same language — kuch mat karo
         if (lang === getActiveLang()) return;
 
-        sw.querySelectorAll(".mlsw-btn").forEach((b) =>
+        // Spinner dikhao phir switch
+        const loading = document.getElementById("mlsw-loading");
+        if (loading) loading.style.display = "inline-flex";
+
+        // Active state turant update karo (before reload)
+        sw.querySelectorAll(".mlsw-btn").forEach(b =>
           b.classList.toggle("active", b.dataset.lang === lang)
         );
 
-        if (loading) loading.style.display = "inline-flex";
+        // Thoda delay taaki spinner dikh sake, phir reload
         setTimeout(() => {
-          if (loading) loading.style.display = "none";
-        }, 3000);
-
-        triggerGoogleTranslate(lang === "en" ? "en" : gtCode);
+          switchLang(lang === "en" ? "en" : gt);
+        }, 150);
       });
     });
 
@@ -205,13 +173,12 @@
     const saved = localStorage.getItem(STORAGE_KEY) || "en";
     if (saved === "en") return;
 
-    const currentCookie = getCookie("googtrans");
-    const expectedCookie = "/en/" + saved;
+    const current  = getCookie("googtrans");
+    const expected = "/en/" + saved;
+    if (current === expected) return;
 
-    if (currentCookie === expectedCookie) return;
-
-    // Cookie nahi hai — set karo
-    setGoogCookie(expectedCookie);
+    // Cookie missing — set karo (Google widget auto-translate karega)
+    setGoogCookie(expected);
   }
 
   /* ── INIT ──────────────────────────────────────────────────── */
