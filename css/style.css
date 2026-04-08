@@ -90,7 +90,7 @@
     background   : #fff;
     border-radius: 75px;
     box-shadow   : 0 10px 30px rgba(0,0,0,0.12);
-    transition   : all 0.4s cubic-bezier(.4,0,.2,1);
+    transition: all 0.4s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
 }
 
 /* Logo */
@@ -100,7 +100,11 @@
     object-fit   : contain;
     border-radius: 75px 0 0 75px;
 }
-.navbar .navbar-brand { height: 85px; margin: 2px; }
+.navbar .navbar-brand { 
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+
+ }
 .navbar a.btn         { height: 85px; margin: 2px; }
 
 /* Nav links */
@@ -147,6 +151,11 @@
         visibility: visible;
         opacity   : 1;
     }
+    .navbar .navbar-brand { 
+    height: 85px;
+    margin: 2px;
+
+ }
 }
 .services-dropdown .dropdown-item {
     border-radius: 10px;
@@ -174,7 +183,6 @@
     background     : rgba(50,195,108,0.08);
     cursor         : pointer;
     margin-left    : auto;
-    margin-right   : 14px;
     flex-shrink    : 0;
     transition     : background 0.2s, transform 0.2s;
 }
