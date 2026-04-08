@@ -1,7 +1,7 @@
 /**
  * ============================================================
  *  MaverRicks Green Energy — Universal Free Translation Engine
- *  Uses Google Translate Widget (FREE — no API key needed)
+ *  FIXED: Cookie domain issue, active state on reload, EN restore
  * ============================================================
  */
 
@@ -9,35 +9,54 @@
   "use strict";
 
   const LANGS = [
-    { code: "en", gtCode: null, label: "EN",     full: "English" },
-    { code: "hi", gtCode: "hi", label: "हिंदी", full: "Hindi"   },
-    { code: "mr", gtCode: "mr", label: "मराठी", full: "Marathi" },
+    { code: "en", gtCode: null,   label: "EN",     full: "English" },
+    { code: "hi", gtCode: "hi",   label: "हिंदी", full: "Hindi"   },
+    { code: "mr", gtCode: "mr",   label: "मराठी", full: "Marathi" },
   ];
   const STORAGE_KEY = "mav_lang";
 
-  /* ── COOKIE HELPERS ──────────────────────────────────── */
-  function setCookie(name, value) {
-    document.cookie = name + "=" + value + "; path=/";
-    document.cookie = name + "=" + value + "; path=/; domain=" + window.location.hostname;
+  /* ── Cookie helpers ─────────────────────────────────────── */
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]*)"));
+    return match ? decodeURIComponent(match[1]) : null;
   }
 
-  function deleteCookie(name) {
-    var past = "Thu, 01 Jan 1970 00:00:00 GMT";
-    document.cookie = name + "=; expires=" + past + "; path=/";
-    document.cookie = name + "=; expires=" + past + "; path=/; domain=" + window.location.hostname;
-    document.cookie = name + "=; expires=" + past + "; path=/; domain=." + window.location.hostname;
+  /**
+   * FIX 1: Cookie domain problem
+   * Deployed pe domain= set karne se cookie block ho sakta hai.
+   * Sirf path=/ use karo — domain mat dena.
+   */
+  function setGoogCookie(val) {
+    const expires = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    // Pehle saare purane cookies clear karo
+    document.cookie = "googtrans=; path=/; " + expires;
+    document.cookie = "googtrans=; path=/; domain=" + window.location.hostname + "; " + expires;
+    document.cookie = "googtrans=; path=/; domain=." + window.location.hostname + "; " + expires;
+
+    if (val) {
+      // Set WITHOUT domain — most reliable
+      document.cookie = "googtrans=" + val + "; path=/";
+    }
   }
 
-  /* ── DETECT CLEAN EN RELOAD ──────────────────────────── */
-  function isCleanReload() {
-    return window.location.search.indexOf("notranslate=1") !== -1;
+  /* ── Detect current active language from cookie ─────────── */
+  /**
+   * FIX 2: Cookie se actual active language detect karo
+   * localStorage sirf preference ke liye, active state = cookie
+   */
+  function getActiveLang() {
+    const cookie = getCookie("googtrans");
+    if (!cookie || cookie === "/en/en") return "en";
+    const match = cookie.match(/\/en\/(\w+)/);
+    if (match) return match[1];
+    return "en";
   }
 
-  /* ── LOAD GOOGLE TRANSLATE ───────────────────────────── */
+  /* ── Load Google Translate Widget ───────────────────────── */
   function loadGoogleTranslate() {
     if (document.getElementById("google-translate-script")) return;
 
-    var div = document.createElement("div");
+    const div = document.createElement("div");
     div.id = "google_translate_element";
     div.style.cssText = "position:absolute;top:-9999px;left:-9999px;visibility:hidden;";
     document.body.appendChild(div);
@@ -54,46 +73,42 @@
       );
     };
 
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     script.id = "google-translate-script";
     script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
     script.async = true;
     document.head.appendChild(script);
   }
 
-  /* ── RESTORE ENGLISH ─────────────────────────────────── */
-  function restoreEnglish() {
-    // 1. Nuke the cookie
-    deleteCookie("googtrans");
-    localStorage.setItem(STORAGE_KEY, "en");
-
-    // 2. Try widget select first
-    var select = document.querySelector(".goog-te-combo");
-    if (select) {
-      select.value = "en";
-      select.dispatchEvent(new Event("change"));
-    }
-
-    // 3. After brief delay, hard reload WITHOUT googtrans cookie
-    setTimeout(function () {
-      deleteCookie("googtrans"); // delete again in case widget re-set it
-      // Use ?notranslate=1 so we know this is a clean EN load
-      var cleanUrl = window.location.pathname + "?notranslate=1";
-      window.location.replace(cleanUrl);
-    }, 400);
-  }
-
-  /* ── SWITCH TO LANGUAGE ──────────────────────────────── */
-  function switchLang(langCode) {
+  /* ── Trigger language change ────────────────────────────── */
+  function triggerGoogleTranslate(langCode) {
     if (langCode === "en") {
-      restoreEnglish();
+      // FIX 3: English restore — cookie clear + reload
+      setGoogCookie(null);
+      localStorage.setItem(STORAGE_KEY, "en");
+
+      const select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = "en";
+        select.dispatchEvent(new Event("change"));
+        // Widget ke baad bhi cookie check karo
+        setTimeout(() => {
+          const c = getCookie("googtrans");
+          if (c && c !== "/en/en") {
+            window.location.reload();
+          }
+        }, 1200);
+      } else {
+        window.location.reload();
+      }
       return;
     }
 
-    var cookieVal = "/en/" + langCode;
-    setCookie("googtrans", cookieVal);
+    const cookieVal = "/en/" + langCode;
+    setGoogCookie(cookieVal);
+    localStorage.setItem(STORAGE_KEY, langCode);
 
-    var select = document.querySelector(".goog-te-combo");
+    const select = document.querySelector(".goog-te-combo");
     if (select) {
       select.value = langCode;
       select.dispatchEvent(new Event("change"));
@@ -102,104 +117,104 @@
     }
   }
 
-  /* ── INJECT SWITCHER UI ──────────────────────────────── */
+  /* ── Build & inject floating switcher ───────────────────── */
   function injectSwitcher() {
     if (document.getElementById("mav-lang-switcher")) return;
 
-    // On clean reload, force EN active
-    var saved = isCleanReload() ? "en" : (localStorage.getItem(STORAGE_KEY) || "en");
-    if (isCleanReload()) localStorage.setItem(STORAGE_KEY, "en");
+    // FIX 2: Active = cookie se, localStorage nahi
+    const activeLang = getActiveLang();
+    localStorage.setItem(STORAGE_KEY, activeLang);
 
-    var sw = document.createElement("div");
+    const sw = document.createElement("div");
     sw.id = "mav-lang-switcher";
     sw.className = "notranslate";
     sw.setAttribute("translate", "no");
 
-    sw.innerHTML =
-      '<div class="mlsw-inner">' +
-        '<span class="mlsw-globe"><i class="fa fa-globe"></i></span>' +
-        '<div class="mlsw-btns" id="mlsw-btns">' +
-          LANGS.map(function (l) {
-            return '<button class="mlsw-btn ' + (l.code === saved ? "active" : "") + '" ' +
-              'data-lang="' + l.code + '" data-gt="' + (l.gtCode || "") + '" ' +
-              'title="' + l.full + '" translate="no">' + l.label + '</button>';
-          }).join("") +
-        '</div>' +
-        '<span class="mlsw-loading" id="mlsw-loading" style="display:none;">' +
-          '<span class="mlsw-spinner"></span>' +
-        '</span>' +
-      '</div>' +
-      '<div class="mlsw-tooltip" id="mlsw-tooltip">भाषा बदलें / भाषा बदला</div>';
+    sw.innerHTML = `
+      <div class="mlsw-inner">
+        <span class="mlsw-globe"><i class="fa fa-globe"></i></span>
+        <div class="mlsw-btns" id="mlsw-btns">
+          ${LANGS.map(l => `
+            <button
+              class="mlsw-btn ${l.code === activeLang ? "active" : ""}"
+              data-lang="${l.code}"
+              data-gt="${l.gtCode || ""}"
+              title="${l.full}"
+              translate="no"
+            >${l.label}</button>
+          `).join("")}
+        </div>
+        <span class="mlsw-loading" id="mlsw-loading" style="display:none;">
+          <span class="mlsw-spinner"></span>
+        </span>
+      </div>
+      <div class="mlsw-tooltip" id="mlsw-tooltip">भाषा बदलें / भाषा बदला</div>
+    `;
 
     document.body.appendChild(sw);
 
-    sw.querySelectorAll(".mlsw-btn").forEach(function (btn) {
+    sw.querySelectorAll(".mlsw-btn").forEach((btn) => {
       btn.addEventListener("click", function () {
-        var lang    = this.dataset.lang;
-        var gtCode  = this.dataset.gt;
-        var loading = document.getElementById("mlsw-loading");
+        const lang   = this.dataset.lang;
+        const gtCode = this.dataset.gt;
+        const loading = document.getElementById("mlsw-loading");
 
-        sw.querySelectorAll(".mlsw-btn").forEach(function (b) {
-          b.classList.toggle("active", b.dataset.lang === lang);
-        });
+        // Same language pe click karo to ignore
+        if (lang === getActiveLang()) return;
 
-        localStorage.setItem(STORAGE_KEY, lang);
+        sw.querySelectorAll(".mlsw-btn").forEach((b) =>
+          b.classList.toggle("active", b.dataset.lang === lang)
+        );
 
         if (loading) loading.style.display = "inline-flex";
-        setTimeout(function () {
+        setTimeout(() => {
           if (loading) loading.style.display = "none";
-        }, 2500);
+        }, 3000);
 
-        switchLang(lang === "en" ? "en" : gtCode);
+        triggerGoogleTranslate(lang === "en" ? "en" : gtCode);
       });
     });
 
-    sw.addEventListener("mouseenter", function () {
-      var tip = document.getElementById("mlsw-tooltip");
+    sw.addEventListener("mouseenter", () => {
+      const tip = document.getElementById("mlsw-tooltip");
       if (tip) tip.style.opacity = "1";
     });
-    sw.addEventListener("mouseleave", function () {
-      var tip = document.getElementById("mlsw-tooltip");
+    sw.addEventListener("mouseleave", () => {
+      const tip = document.getElementById("mlsw-tooltip");
       if (tip) tip.style.opacity = "0";
     });
   }
 
-  /* ── HIDE GOOGLE BANNER ──────────────────────────────── */
+  /* ── Hide Google banner ──────────────────────────────────── */
   function hideGoogleBanner() {
-    var style = document.createElement("style");
-    style.textContent =
-      ".goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame," +
-      ".goog-tooltip,.goog-tooltip-content{display:none!important;}" +
-      ".goog-te-menu-value:hover{text-decoration:none!important;}" +
-      "body{top:0!important;}" +
-      ".skiptranslate{display:none!important;}" +
-      "font{display:contents!important;}";
+    const style = document.createElement("style");
+    style.textContent = `
+      .goog-te-banner-frame, #goog-gt-tt,
+      .goog-te-balloon-frame, .goog-tooltip,
+      .goog-tooltip-content { display: none !important; }
+      .goog-te-menu-value:hover { text-decoration: none !important; }
+      body { top: 0 !important; }
+      .skiptranslate { display: none !important; }
+      font { display: contents !important; }
+    `;
     document.head.appendChild(style);
   }
 
-  /* ── AUTO RESTORE LAST LANG ON PAGE LOAD ────────────── */
+  /* ── Auto restore on page load ───────────────────────────── */
   function autoRestoreLang() {
-    // Clean EN reload — nuke cookie, do nothing else
-    if (isCleanReload()) {
-      deleteCookie("googtrans");
-      return;
-    }
+    const saved = localStorage.getItem(STORAGE_KEY) || "en";
+    if (saved === "en") return;
 
-    var saved = localStorage.getItem(STORAGE_KEY) || "en";
+    const currentCookie = getCookie("googtrans");
+    const expectedCookie = "/en/" + saved;
 
-    if (saved === "en") {
-      // Always nuke cookie when saved lang is EN
-      deleteCookie("googtrans");
-      return;
-    }
+    if (currentCookie === expectedCookie) return;
 
-    // Non-EN: set cookie if not already set
-    if (document.cookie.indexOf("googtrans=/en/" + saved) === -1) {
-      setCookie("googtrans", "/en/" + saved);
-    }
+    // Cookie nahi hai — set karo
+    setGoogCookie(expectedCookie);
   }
 
-  /* ── INIT ────────────────────────────────────────────── */
+  /* ── INIT ──────────────────────────────────────────────────── */
   function init() {
     hideGoogleBanner();
     autoRestoreLang();

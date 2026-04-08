@@ -1,5 +1,6 @@
 /* ============================================================
    MaverRicks Green Energy — Translation Switcher CSS
+   UPDATED: Better active state, current-page indicator
    ============================================================ */
 
 :root {
@@ -28,8 +29,8 @@
   box-shadow    : var(--tr-shadow);
   transition    : box-shadow 0.25s, border-color 0.25s;
   position      : relative;
-  right: 70px;
-  bottom: 15px;
+  right         : 70px;
+  bottom        : 15px;
 }
 
 #mav-lang-switcher:hover .mlsw-inner {
@@ -65,6 +66,7 @@
   white-space   : nowrap;
   font-family   : 'Noto Sans Devanagari','Open Sans',sans-serif;
   letter-spacing: 0.3px;
+  position      : relative; /* dot ke liye */
 }
 
 .mlsw-btn:hover:not(.active) {
@@ -73,11 +75,28 @@
   background   : #f0fdf4;
 }
 
+/* ── ACTIVE STATE — current language button ───────────────── */
 .mlsw-btn.active {
   background    : var(--tr-primary);
   color         : #ffffff;
   border-color  : var(--tr-primary);
-  box-shadow    : 0 3px 12px rgba(50,195,108,0.38);
+  box-shadow    : 0 3px 12px rgba(50,195,108,0.45),
+                  0 0 0 3px rgba(50,195,108,0.15); /* outer glow ring */
+  transform     : scale(1.05);
+}
+
+/* Active button ke neeche ek small dot indicator */
+.mlsw-btn.active::after {
+  content       : "";
+  position      : absolute;
+  bottom        : -7px;
+  left          : 50%;
+  transform     : translateX(-50%);
+  width         : 5px;
+  height        : 5px;
+  background    : var(--tr-primary);
+  border-radius : 50%;
+  box-shadow    : 0 0 4px rgba(50,195,108,0.6);
 }
 
 /* ── Loading spinner ──────────────────────────────────────── */
@@ -141,7 +160,6 @@ body {
   top : 0 !important;
 }
 
-/* Fix broken font wrapping Google adds */
 font {
   display : contents !important;
 }
@@ -155,6 +173,8 @@ font {
 
   .mlsw-inner {
     padding : 6px 9px 6px 8px;
+    right   : 0;
+    bottom  : 0;
   }
 
   .mlsw-btn {
