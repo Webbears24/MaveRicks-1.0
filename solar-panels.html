@@ -14,7 +14,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -33,8 +35,9 @@
     <link href="css/index.css" rel="stylesheet">
 
     <!-- language switcher styles and script -->
-     <link rel="stylesheet" href="/css/translate-engine.css">
-   <script src="/js/translate-engine.js"></script>    <style>
+    <link rel="stylesheet" href="/css/translate-engine.css">
+    <script src="/js/translate-engine.js"></script>
+    <style>
         :root {
             --primary: #32C36C;
             --light: #F6F7F8;
@@ -51,17 +54,89 @@
         }
 
         /* ===== LANG SWITCHER ===== */
-        .lang-switcher { display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:30px;padding:4px 6px;margin-left:12px; }
-        .lang-btn { background:transparent;border:none;color:#aaa;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;cursor:pointer;transition:all 0.25s;letter-spacing:0.5px; }
-        .lang-btn:hover { color:#fff;background:rgba(255,255,255,0.15); }
-        .lang-btn.active { background:var(--primary);color:#fff; }
-        .lang-divider { color:rgba(255,255,255,0.2);font-size:12px;user-select:none; }
-        body.lang-hi, body.lang-mr { font-family:'Noto Sans Devanagari','Open Sans',sans-serif; }
-        .lang-switcher-mobile { position:fixed;bottom:80px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:6px;background:var(--dark);border:1px solid rgba(50,195,108,0.4);border-radius:14px;padding:8px;box-shadow:0 4px 20px rgba(0,0,0,0.3); }
-        .lang-switcher-mobile .lang-btn { color:#ccc;font-size:11px;padding:6px 12px;text-align:center; }
-        .lang-switcher-mobile .lang-btn.active { background:var(--primary);color:#fff; }
-        @media(min-width:992px){.lang-switcher-mobile{display:none;}}
-        @media(max-width:991px){.lang-switcher-desktop{display:none;}}
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            padding: 4px 6px;
+            margin-left: 12px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.25s;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .lang-divider {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 12px;
+            user-select: none;
+        }
+
+        body.lang-hi,
+        body.lang-mr {
+            font-family: 'Noto Sans Devanagari', 'Open Sans', sans-serif;
+        }
+
+        .lang-switcher-mobile {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: var(--dark);
+            border: 1px solid rgba(50, 195, 108, 0.4);
+            border-radius: 14px;
+            padding: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-switcher-mobile .lang-btn {
+            color: #ccc;
+            font-size: 11px;
+            padding: 6px 12px;
+            text-align: center;
+        }
+
+        .lang-switcher-mobile .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        @media(min-width:992px) {
+            .lang-switcher-mobile {
+                display: none;
+            }
+        }
+
+        @media(max-width:991px) {
+            .lang-switcher-desktop {
+                display: none;
+            }
+        }
 
         /* ===== PAGE HERO BANNER ===== */
         .products-hero {
@@ -70,29 +145,80 @@
             position: relative;
             overflow: hidden;
         }
+
         .products-hero::before {
             content: '';
-            position: absolute; inset: 0;
+            position: absolute;
+            inset: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2332C36C' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
             pointer-events: none;
         }
+
         .products-hero::after {
             content: '';
-            position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
             background: linear-gradient(to bottom, transparent, var(--light));
             pointer-events: none;
         }
-        .products-hero .hero-content { position: relative; z-index: 2; text-align: center; }
-        .products-hero h1 { color: #fff; font-size: 2.8rem; font-weight: 900; margin-bottom: 12px; }
-        .products-hero h1 span { color: var(--primary); }
-        .products-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 600px; margin: 0 auto 24px; }
-        .hero-breadcrumb { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 30px; padding: 6px 18px; color: rgba(255,255,255,0.7); font-size: 13px; }
-        .hero-breadcrumb a { color: var(--primary); text-decoration: none; }
+
+        .products-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .products-hero h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .products-hero h1 span {
+            color: var(--primary);
+        }
+
+        .products-hero p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 6px 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+
+        .hero-breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
         .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(50,195,108,0.15); border: 1px solid rgba(50,195,108,0.4);
-            border-radius: 30px; padding: 6px 16px; color: var(--primary);
-            font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(50, 195, 108, 0.15);
+            border: 1px solid rgba(50, 195, 108, 0.4);
+            border-radius: 30px;
+            padding: 6px 16px;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             margin-bottom: 16px;
         }
 
@@ -100,25 +226,32 @@
         .type-tabs-wrapper {
             background: #fff;
             padding: 20px 0 18px;
-            position: sticky; top: 0; z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
             transition: padding 0.3s ease;
         }
+
         /* Compact state when scrolled */
         .type-tabs-wrapper.scrolled {
             padding: 8px 0 8px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
         }
+
         .type-tabs-wrapper.scrolled .tab-info-strip {
             display: none !important;
         }
+
         .type-tabs-wrapper.scrolled .type-tabs {
             max-width: 480px;
         }
+
         .type-tabs-wrapper.scrolled .type-tab {
             padding: 8px 16px;
             font-size: 13px;
         }
+
         .type-tabs-wrapper.scrolled .type-tab .tab-badge {
             display: none;
         }
@@ -133,6 +266,7 @@
             gap: 4px;
             transition: max-width 0.3s ease;
         }
+
         .type-tab {
             flex: 1;
             padding: 14px 20px;
@@ -144,517 +278,910 @@
             transition: all 0.3s ease;
             background: transparent;
             color: #777;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
+
         .type-tab .tab-badge {
-            font-size: 10px; font-weight: 700; letter-spacing: 1px;
-            padding: 2px 8px; border-radius: 20px;
-            background: rgba(0,0,0,0.1); color: inherit;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
             transition: opacity 0.2s ease;
         }
+
         .type-tab.active {
             background: #fff;
             color: var(--primary);
-            box-shadow: 0 4px 15px rgba(50,195,108,0.2);
+            box-shadow: 0 4px 15px rgba(50, 195, 108, 0.2);
         }
+
         .type-tab.active .tab-badge {
-            background: var(--primary); color: #fff;
+            background: var(--primary);
+            color: #fff;
         }
+
         .type-tab:hover:not(.active) {
-            background: rgba(255,255,255,0.6);
+            background: rgba(255, 255, 255, 0.6);
             color: #444;
         }
 
         /* Tab info strip */
         .tab-info-strip {
-            max-width: 700px; margin: 14px auto 0;
+            max-width: 700px;
+            margin: 14px auto 0;
             padding: 10px 18px;
             border-radius: 10px;
             font-size: 12.5px;
-            display: flex; align-items: flex-start; gap: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
             transition: opacity 0.25s ease, margin 0.25s ease;
         }
+
         .tab-info-strip.dcr-strip {
             background: linear-gradient(135deg, #eafaf0, #d0f5e0);
-            border-left: 3px solid var(--primary); color: #1a6b3a;
+            border-left: 3px solid var(--primary);
+            color: #1a6b3a;
         }
+
         .tab-info-strip.nondcr-strip {
             background: linear-gradient(135deg, #fff5e8, #ffe8cc);
-            border-left: 3px solid #f07c1e; color: #a04d00;
+            border-left: 3px solid #f07c1e;
+            color: #a04d00;
         }
 
         /* ===== PANEL TYPE FILTER ===== */
         .panel-filters {
-            display: flex; flex-wrap: wrap; gap: 10px;
-            justify-content: center; margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
         }
+
         .filter-btn {
-            padding: 8px 22px; border-radius: 30px; border: 2px solid #dde3ec;
-            background: #fff; color: #666; font-size: 13px; font-weight: 600;
-            cursor: pointer; transition: all 0.25s ease;
+            padding: 8px 22px;
+            border-radius: 30px;
+            border: 2px solid #dde3ec;
+            background: #fff;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
         }
-        .filter-btn:hover, .filter-btn.active {
-            border-color: var(--primary); background: var(--primary); color: #fff;
-            box-shadow: 0 4px 14px rgba(50,195,108,0.3);
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(50, 195, 108, 0.3);
         }
 
         /* ===== SECTION HEADING ===== */
         .section-tag {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), #27a85a);
-            color: #fff; font-size: 11px; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase;
-            padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 10px;
         }
+
         .section-tag.orange {
             background: linear-gradient(135deg, #f07c1e, #d45e00);
         }
 
         /* ===== PRODUCT CARDS ===== */
-        .products-section { padding: 60px 0 80px; background: var(--light); }
+        .products-section {
+            padding: 60px 0 80px;
+            background: var(--light);
+        }
 
-        .panel-type-section { margin-bottom: 60px; }
+        .panel-type-section {
+            margin-bottom: 60px;
+        }
+
         .panel-type-heading {
-            display: flex; align-items: center; gap: 16px;
-            margin-bottom: 28px; padding-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
             border-bottom: 2px solid #e2e8f0;
         }
+
         .panel-type-heading .type-icon {
-            width: 52px; height: 52px; border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 22px; flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
         }
-        .panel-type-heading .type-icon.blue { background: linear-gradient(135deg, var(--primary), #27a85a); color: #fff; }
-        .panel-type-heading .type-icon.green { background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; }
-        .panel-type-heading .type-icon.purple { background: linear-gradient(135deg, #6f42c1, #5a2d91); color: #fff; }
-        .panel-type-heading .type-icon.orange { background: linear-gradient(135deg, #f07c1e, #d45e00); color: #fff; }
-        .panel-type-heading h3 { margin: 0 0 4px; font-size: 1.4rem; font-weight: 800; color: var(--dark); }
-        .panel-type-heading p { margin: 0; font-size: 13px; color: #888; }
+
+        .panel-type-heading .type-icon.blue {
+            background: linear-gradient(135deg, var(--primary), #27a85a);
+            color: #fff;
+        }
+
+        .panel-type-heading .type-icon.green {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: #fff;
+        }
+
+        .panel-type-heading .type-icon.purple {
+            background: linear-gradient(135deg, #6f42c1, #5a2d91);
+            color: #fff;
+        }
+
+        .panel-type-heading .type-icon.orange {
+            background: linear-gradient(135deg, #f07c1e, #d45e00);
+            color: #fff;
+        }
+
+        .panel-type-heading h3 {
+            margin: 0 0 4px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .panel-type-heading p {
+            margin: 0;
+            font-size: 13px;
+            color: #888;
+        }
+
         .panel-type-heading .watt-range {
-            margin-left: auto; background: #fff;
-            border: 2px solid #e2e8f0; border-radius: 10px;
-            padding: 8px 16px; text-align: center; flex-shrink: 0;
+            margin-left: auto;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 8px 16px;
+            text-align: center;
+            flex-shrink: 0;
         }
-        .panel-type-heading .watt-range .wr-label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
-        .panel-type-heading .watt-range .wr-value { font-size: 18px; font-weight: 900; color: var(--primary); line-height: 1.1; }
+
+        .panel-type-heading .watt-range .wr-label {
+            font-size: 10px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .panel-type-heading .watt-range .wr-value {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.1;
+        }
 
         /* Product Card */
         .product-card {
             background: #fff;
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+            box-shadow: 0 3px 16px rgba(0, 0, 0, 0.07);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; flex-direction: column;
+            display: flex;
+            flex-direction: column;
             border: 1.5px solid #edf1f7;
         }
+
         .product-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(50,195,108,0.16);
-            border-color: rgba(50,195,108,0.3);
+            box-shadow: 0 16px 40px rgba(50, 195, 108, 0.16);
+            border-color: rgba(50, 195, 108, 0.3);
         }
+
         .card-img-wrap {
-            position: relative; overflow: hidden;
-            height: 260px; background: #f0f4f8;
+            position: relative;
+            overflow: hidden;
+            height: 260px;
+            background: #f0f4f8;
             flex-shrink: 0;
         }
+
         .card-img-wrap img {
-            width: 100%; height: 100%; object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
-        .product-card:hover .card-img-wrap img { transform: scale(1.05); }
+
+        .product-card:hover .card-img-wrap img {
+            transform: scale(1.05);
+        }
+
         .card-type-badge {
-            position: absolute; top: 12px; left: 12px;
-            font-size: 10px; font-weight: 700; letter-spacing: 1px;
-            text-transform: uppercase; padding: 4px 12px;
-            border-radius: 20px; color: #fff;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #fff;
         }
-        .badge-mono { background: linear-gradient(135deg, #1A2A36, #32C36C); }
-        .badge-poly { background: linear-gradient(135deg, #2e7d32, #43a047); }
-        .badge-topcon { background: linear-gradient(135deg, #6f42c1, #5a2d91); }
-        .badge-topcon-bi { background: linear-gradient(135deg, #e91e63, #c2185b); }
+
+        .badge-mono {
+            background: linear-gradient(135deg, #1A2A36, #32C36C);
+        }
+
+        .badge-poly {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+        }
+
+        .badge-topcon {
+            background: linear-gradient(135deg, #6f42c1, #5a2d91);
+        }
+
+        .badge-topcon-bi {
+            background: linear-gradient(135deg, #e91e63, #c2185b);
+        }
+
         .card-watt-badge {
-            position: absolute; top: 12px; right: 12px;
-            background: rgba(0,0,0,0.65); backdrop-filter: blur(4px);
-            color: #fff; font-size: 13px; font-weight: 800;
-            padding: 4px 12px; border-radius: 20px;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
         }
-        .card-body-inner { padding: 16px 18px 18px; display: flex; flex-direction: column; }
-        .card-title { font-size: 14.5px; font-weight: 800; color: var(--dark); margin-bottom: 10px; line-height: 1.3; }
+
+        .card-body-inner {
+            padding: 16px 18px 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
 
         /* ── Collapsible Description ── */
         .card-desc-toggle {
-            display: flex; align-items: center; justify-content: space-between;
-            background: var(--light); border: 1px solid #e2e8f0;
-            border-radius: 8px; padding: 7px 12px;
-            cursor: pointer; font-size: 12px; font-weight: 600;
-            color: #555; margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--light);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 7px 12px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 12px;
             transition: background 0.2s, border-color 0.2s;
             user-select: none;
         }
-        .card-desc-toggle:hover { background: #edfaf3; border-color: var(--primary); color: var(--primary); }
+
+        .card-desc-toggle:hover {
+            background: #edfaf3;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
         .card-desc-toggle .toggle-icon {
-            font-size: 11px; transition: transform 0.3s ease;
+            font-size: 11px;
+            transition: transform 0.3s ease;
             color: #999;
         }
-        .card-desc-toggle.open .toggle-icon { transform: rotate(180deg); color: var(--primary); }
-        .card-desc-toggle.open { background: #edfaf3; border-color: var(--primary); color: var(--primary); }
+
+        .card-desc-toggle.open .toggle-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .card-desc-toggle.open {
+            background: #edfaf3;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
         .card-desc-body {
             display: none;
-            font-size: 12.5px; color: #666; line-height: 1.65;
+            font-size: 12.5px;
+            color: #666;
+            line-height: 1.65;
             padding: 10px 12px 4px;
             border-left: 3px solid var(--primary);
             margin-bottom: 12px;
             background: #fafffe;
             border-radius: 0 6px 6px 0;
         }
-        .card-desc-body.open { display: block; animation: fadeSlide 0.2s ease; }
+
+        .card-desc-body.open {
+            display: block;
+            animation: fadeSlide 0.2s ease;
+        }
+
         @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(-4px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .card-specs {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 8px; margin-bottom: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
         }
+
         .spec-item {
-            background: #f7f9fc; border-radius: 8px;
+            background: #f7f9fc;
+            border-radius: 8px;
             padding: 7px 10px;
         }
-        .spec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; font-weight: 600; }
-        .spec-value { font-size: 13px; font-weight: 700; color: #333; margin-top: 1px; }
-        .card-companies { margin-bottom: 14px; }
-        .companies-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; font-weight: 600; margin-bottom: 6px; }
-        .company-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+        .spec-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaa;
+            font-weight: 600;
+        }
+
+        .spec-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 1px;
+        }
+
+        .card-companies {
+            margin-bottom: 14px;
+        }
+
+        .companies-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaa;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .company-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
         .company-tag {
-            font-size: 11px; font-weight: 700; padding: 3px 10px;
-            border-radius: 20px; background: #edfaf3; color: #1a6b3a;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: #edfaf3;
+            color: #1a6b3a;
             border: 1px solid #c3efd5;
         }
+
         .card-footer-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            padding-top: 14px; border-top: 1px solid #edf1f7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 14px;
+            border-top: 1px solid #edf1f7;
         }
-        .warranty-info { font-size: 11px; color: #888; }
-        .warranty-info strong { color: #333; }
+
+        .warranty-info {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .warranty-info strong {
+            color: #333;
+        }
+
         .enquire-btn {
             background: linear-gradient(135deg, var(--primary), #27a85a);
-            color: #fff; border: none; border-radius: 25px;
-            padding: 8px 20px; font-size: 12px; font-weight: 700;
-            cursor: pointer; transition: all 0.2s ease;
-            text-decoration: none; display: inline-block;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
         }
+
         .enquire-btn:hover {
             background: linear-gradient(135deg, #27a85a, #1e8a47);
-            color: #fff; transform: scale(1.04);
+            color: #fff;
+            transform: scale(1.04);
         }
 
         /* ===== DCR CALLOUT ===== */
         .dcr-callout {
             background: linear-gradient(135deg, #0d2214 0%, #12351c 100%);
-            border-radius: 20px; padding: 40px;
-            color: #fff; position: relative; overflow: hidden;
+            border-radius: 20px;
+            padding: 40px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
             margin-bottom: 50px;
         }
+
         .dcr-callout::before {
             content: '';
-            position: absolute; top: -40px; right: -40px;
-            width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(50,195,108,0.3) 0%, transparent 70%);
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(50, 195, 108, 0.3) 0%, transparent 70%);
             pointer-events: none;
         }
-        .dcr-callout h4 { font-weight: 800; font-size: 1.2rem; margin-bottom: 8px; }
-        .dcr-callout p { color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; }
-        .dcr-pill {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: rgba(50,195,108,0.2); border: 1px solid rgba(50,195,108,0.5);
-            border-radius: 20px; padding: 4px 14px;
-            font-size: 11px; font-weight: 700; color: var(--primary);
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+
+        .dcr-callout h4 {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
+
+        .dcr-callout p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .dcr-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(50, 195, 108, 0.2);
+            border: 1px solid rgba(50, 195, 108, 0.5);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
         .nondcr-callout {
             background: linear-gradient(135deg, #1c0a00 0%, #4a1800 100%);
         }
+
         .nondcr-callout::before {
-            background: radial-gradient(circle, rgba(240,124,30,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(240, 124, 30, 0.3) 0%, transparent 70%);
         }
+
         .nondcr-pill {
-            background: rgba(240,124,30,0.2); border-color: rgba(240,124,30,0.5); color: #f07c1e;
+            background: rgba(240, 124, 30, 0.2);
+            border-color: rgba(240, 124, 30, 0.5);
+            color: #f07c1e;
         }
-        .callout-features { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-        .callout-feat { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.8); }
-        .callout-feat i { color: var(--primary); }
-        .nondcr-callout .callout-feat i { color: #f07c1e; }
+
+        .callout-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .callout-feat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .callout-feat i {
+            color: var(--primary);
+        }
+
+        .nondcr-callout .callout-feat i {
+            color: #f07c1e;
+        }
 
         /* ===== BRAND LOGO OVERLAY ===== */
         .brand-logo-overlay {
-            position: absolute; bottom: 10px; right: 10px;
-            background: rgba(255,255,255,0.92); backdrop-filter: blur(6px);
-            border-radius: 8px; padding: 5px 10px;
-            display: flex; align-items: center; justify-content: center;
-            max-width: 90px; height: 34px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            border-radius: 8px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 90px;
+            height: 34px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
+
         .brand-logo-overlay img {
-            width: auto !important; height: 22px !important;
-            object-fit: contain !important; transform: none !important;
+            width: auto !important;
+            height: 22px !important;
+            object-fit: contain !important;
+            transform: none !important;
             position: static !important;
         }
+
         .brand-text-logo {
-            font-size: 11px; font-weight: 800; color: var(--dark);
-            line-height: 1.2; text-align: center;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+            text-align: center;
             white-space: nowrap;
         }
-        .brand-name-row { margin-bottom: 8px; }
-        .brand-pill {
-            display: inline-block; font-size: 11px; font-weight: 700;
-            padding: 3px 12px; border-radius: 20px; letter-spacing: 0.3px;
+
+        .brand-name-row {
+            margin-bottom: 8px;
         }
-        .adani-pill   { background:#e8f0fe; color:#1a3fcb; border:1px solid #c5d5fc; }
-        .waaree-pill  { background:#fff3e0; color:#b45309; border:1px solid #fcd28a; }
-        .tata-pill    { background:#fce4ec; color:#b71c4a; border:1px solid #f8b9ce; }
-        .premier-pill { background:#f3e8ff; color:#6b21a8; border:1px solid #d9b8f8; }
-        .luminous-pill{ background:#e0f7fa; color:#006064; border:1px solid #a0e0e8; }
-        .roomsolar-pill{background:#e8f5e9; color:#1b5e20; border:1px solid #a5d6a7; }
+
+        .brand-pill {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .adani-pill {
+            background: #e8f0fe;
+            color: #1a3fcb;
+            border: 1px solid #c5d5fc;
+        }
+
+        .waaree-pill {
+            background: #fff3e0;
+            color: #b45309;
+            border: 1px solid #fcd28a;
+        }
+
+        .tata-pill {
+            background: #fce4ec;
+            color: #b71c4a;
+            border: 1px solid #f8b9ce;
+        }
+
+        .premier-pill {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d9b8f8;
+        }
+
+        .luminous-pill {
+            background: #e0f7fa;
+            color: #006064;
+            border: 1px solid #a0e0e8;
+        }
+
+        .roomsolar-pill {
+            background: #e8f5e9;
+            color: #1b5e20;
+            border: 1px solid #a5d6a7;
+        }
 
         /* ===== HIDDEN SECTIONS ===== */
-        .tab-section { display: none; }
-        .tab-section.active { display: block; }
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
 
         /* ===== PANEL CARD HIDDEN ===== */
-        .panel-type-section { display: none; }
-        .panel-type-section.visible { display: block; }
+        .panel-type-section {
+            display: none;
+        }
+
+        .panel-type-section.visible {
+            display: block;
+        }
 
         /* sticky tab spacing handled above */
 
         @media (max-width: 767px) {
-            .products-hero h1 { font-size: 1.9rem; }
-            .panel-type-heading { flex-wrap: wrap; }
-            .panel-type-heading .watt-range { margin-left: 0; }
-            .type-tab { font-size: 13px; padding: 12px 12px; }
-            .dcr-callout { padding: 24px; }
+            .products-hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .panel-type-heading {
+                flex-wrap: wrap;
+            }
+
+            .panel-type-heading .watt-range {
+                margin-left: 0;
+            }
+
+            .type-tab {
+                font-size: 13px;
+                padding: 12px 12px;
+            }
+
+            .dcr-callout {
+                padding: 24px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<!-- Spinner -->
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-border text-primary" style="width:3rem;height:3rem;" role="status"><span class="sr-only">Loading...</span></div>
-</div>
+    <!-- Spinner -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width:3rem;height:3rem;" role="status"><span
+                class="sr-only">Loading...</span></div>
+    </div>
 
-<!-- ===== TOPBAR ===== -->
-<div class="container-fluid bg-dark p-0">
-    <div class="row gx-0 d-none d-lg-flex">
-        <div class="col-lg-7 px-5 text-start">
-            <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
-                <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                <small id="topbar-branch-text" style="cursor:pointer;">
-                    <span data-key="branch_mumbai_label">Mumbai Branch, Andheri East</span>
-                    <i class="fa fa-caret-down ms-1"></i>
-                </small>
-                <div id="topbar-branch-dropdown" style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
-                    <small class="d-block text-white mb-1"><strong data-key="branch_mumbai">Mumbai Branch</strong><br><span data-key="branch_mumbai_addr">Andheri East, Mumbai</span></small>
-                    <small class="d-block text-white"><strong data-key="branch_nagpur">Nagpur Branch</strong><br><span data-key="branch_nagpur_addr">Parsodi, Nagpur</span></small>
+    <!-- ===== TOPBAR ===== -->
+    <div class="container-fluid bg-dark p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small id="topbar-branch-text" style="cursor:pointer;">
+                        <span data-key="branch_mumbai_label">Mumbai Branch, Andheri East</span>
+                        <i class="fa fa-caret-down ms-1"></i>
+                    </small>
+                    <div id="topbar-branch-dropdown"
+                        style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
+                        <small class="d-block text-white mb-1"><strong data-key="branch_mumbai">Mumbai
+                                Branch</strong><br><span data-key="branch_mumbai_addr">Andheri East,
+                                Mumbai</span></small>
+                        <small class="d-block text-white"><strong data-key="branch_nagpur">Nagpur
+                                Branch</strong><br><span data-key="branch_nagpur_addr">Parsodi, Nagpur</span></small>
+                    </div>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small data-key="working_hours">Mon - Fri : 09.00 AM - 09.00 PM</small>
                 </div>
             </div>
-            <div class="h-100 d-inline-flex align-items-center">
-                <small class="far fa-clock text-primary me-2"></small>
-                <small data-key="working_hours">Mon - Fri : 09.00 AM - 09.00 PM</small>
-            </div>
-        </div>
-        <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
-            <div class="h-100 d-inline-flex align-items-center me-4">
-                <small class="fa fa-phone-alt text-primary me-2"></small>
-                <small>+91 84840 09873</small>
-            </div>
+            <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+91 84840 09873</small>
+                </div>
 
-            <div class="h-100 d-inline-flex align-items-center mx-n2">
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-square btn-link rounded-0" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-
- <!-- ===== NAVBAR START ===== -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light p-0" id="mainNavbar">
-
-    <!-- Logo — always visible -->
-    <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
-    </a>
-
-    <!-- Normal toggler (top state only) -->
-    <button type="button" class="navbar-toggler me-4" id="normalToggler"
-            data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Full nav (visible at top) -->
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-
-            <div class="nav-item dropdown">
-                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                <div class="dropdown-menu bg-light m-0 services-dropdown">
-                    <a href="solar-panels.html" class="dropdown-item"><i class="fa fa-solar-panel me-2 text-primary"></i>Solar Panels</a>
-                    <a href="inverters-batteries.html" class="dropdown-item"><i class="fa fa-plug me-2 text-primary"></i>Inverters &amp; Batteries</a>
-                    <a href="electrical-equipment.html" class="dropdown-item"><i class="fa fa-bolt me-2 text-primary"></i>Electrical Equipment</a>
-                    <a href="fabrication-structures.html" class="dropdown-item"><i class="fa fa-cogs me-2 text-primary"></i>Fabrication &amp; Structures</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="service.html" class="dropdown-item"><i class="fa fa-th-large me-2 text-primary"></i>All Services</a>
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
-            <a href="project.html" class="nav-item nav-link">Project</a>
-
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="feature.html" class="dropdown-item">Feature</a>
-                    <a href="quote.html" class="dropdown-item">Free Quote</a>
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                 </div>
-            </div>
-
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
-            Get A Quote <i class="fa fa-arrow-right ms-3"></i>
-        </a>
     </div>
 
-    <!-- Scroll hamburger — hidden by default, shown on scroll (both desktop+mobile) -->
-    <button class="scroll-ham" id="scrollHam">
-        <span></span><span></span><span></span>
-    </button>
+    <!-- ===== NAVBAR START ===== -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light p-0" id="mainNavbar">
 
-</nav>
-
-<!-- ===== SCROLL PANEL ===== -->
-<div class="sp" id="scrollPanel">
-
-    <!-- Logo inside panel -->
-    <div class="sp-head">
-        <a href="index.html" class="sp-logo-link">
-            <img src="/img/mavericks logo.png" alt="Mavericks" class="sp-logo-img">
+        <!-- Logo — always visible -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
         </a>
-        <button class="sp-x" id="spClose">&times;</button>
-    </div>
 
-    <!-- Highlighted Services -->
-    <p class="sp-label">⚡ Our Services</p>
-    <div class="sp-grid">
-        <a href="solar-panels.html" class="sp-card">
-            <div class="sp-icon"><i class="fa fa-solar-panel"></i></div>
-            <span>Solar Panels</span>
-        </a>
-        <a href="inverters-batteries.html" class="sp-card">
-            <div class="sp-icon"><i class="fa fa-plug"></i></div>
-            <span>Inverters &amp; Batteries</span>
-        </a>
-        <a href="electrical-equipment.html" class="sp-card">
-            <div class="sp-icon"><i class="fa fa-bolt"></i></div>
-            <span>Electrical Equipment</span>
-        </a>
-        <a href="fabrication-structures.html" class="sp-card">
-            <div class="sp-icon"><i class="fa fa-cogs"></i></div>
-            <span>Fabrication &amp; Structures</span>
-        </a>
-    </div>
-    <a href="service.html" class="sp-all">View All Services <i class="fa fa-arrow-right ms-1"></i></a>
+        <!-- Normal toggler (top state only) -->
+        <button type="button" class="navbar-toggler me-4" id="normalToggler" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="sp-line"></div>
+        <!-- Full nav (visible at top) -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
 
-    <!-- Nav Links -->
-    <p class="sp-label">🔗 Navigation</p>
-    <div class="sp-links">
-        <a href="index.html"><i class="fa fa-home me-2"></i>Home</a>
-        <a href="about.html"><i class="fa fa-info-circle me-2"></i>About</a>
-        <a href="project.html"><i class="fa fa-folder me-2"></i>Project</a>
-        <a href="contact.html"><i class="fa fa-phone me-2"></i>Contact</a>
-    </div>
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu bg-light m-0 services-dropdown">
+                        <a href="solar-panels.html" class="dropdown-item"><i
+                                class="fa fa-solar-panel me-2 text-primary"></i>Solar Panels</a>
+                        <a href="inverters-batteries.html" class="dropdown-item"><i
+                                class="fa fa-plug me-2 text-primary"></i>Inverters &amp; Batteries</a>
+                        <a href="electrical-equipment.html" class="dropdown-item"><i
+                                class="fa fa-bolt me-2 text-primary"></i>Electrical Equipment</a>
+                        <a href="fabrication-structures.html" class="dropdown-item"><i
+                                class="fa fa-cogs me-2 text-primary"></i>Fabrication &amp; Structures</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="service.html" class="dropdown-item"><i class="fa fa-th-large me-2 text-primary"></i>All
+                            Services</a>
+                    </div>
+                </div>
 
-    <a href="quote.html" class="sp-quote">Get A Quote <i class="fa fa-arrow-right ms-2"></i></a>
-</div>
-<div class="sp-overlay" id="spOverlay"></div>
-<!-- ===== NAVBAR END ===== -->
+                <a href="project.html" class="nav-item nav-link">Project</a>
 
-<!-- ===== HERO BANNER ===== -->
-<section class="products-hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-breadcrumb mb-3">
-                <a href="index.html">Home</a>
-                <i class="fa fa-chevron-right" style="font-size:9px;"></i>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="feature.html" class="dropdown-item">Feature</a>
+                        <a href="quote.html" class="dropdown-item">Free Quote</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
+                Get A Quote <i class="fa fa-arrow-right ms-3"></i>
+            </a>
+        </div>
+
+        <!-- Scroll hamburger — hidden by default, shown on scroll (both desktop+mobile) -->
+        <button class="scroll-ham" id="scrollHam">
+            <span></span><span></span><span></span>
+        </button>
+
+    </nav>
+
+    <!-- ===== SCROLL PANEL ===== -->
+    <div class="sp" id="scrollPanel">
+
+        <!-- Logo inside panel -->
+        <div class="sp-head">
+            <a href="index.html" class="sp-logo-link">
+                <img src="/img/mavericks logo.png" alt="Mavericks" class="sp-logo-img">
+            </a>
+            <button class="sp-x" id="spClose">&times;</button>
+        </div>
+
+        <!-- Highlighted Services -->
+        <p class="sp-label">⚡ Our Services</p>
+        <div class="sp-grid">
+            <a href="solar-panels.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-solar-panel"></i></div>
                 <span>Solar Panels</span>
+            </a>
+            <a href="inverters-batteries.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-plug"></i></div>
+                <span>Inverters &amp; Batteries</span>
+            </a>
+            <a href="electrical-equipment.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-bolt"></i></div>
+                <span>Electrical Equipment</span>
+            </a>
+            <a href="fabrication-structures.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-cogs"></i></div>
+                <span>Fabrication &amp; Structures</span>
+            </a>
+        </div>
+        <a href="service.html" class="sp-all">View All Services <i class="fa fa-arrow-right ms-1"></i></a>
+
+        <div class="sp-line"></div>
+
+        <!-- Nav Links -->
+        <p class="sp-label">🔗 Navigation</p>
+        <div class="sp-links">
+            <a href="index.html"><i class="fa fa-home me-2"></i>Home</a>
+            <a href="about.html"><i class="fa fa-info-circle me-2"></i>About</a>
+            <a href="project.html"><i class="fa fa-folder me-2"></i>Project</a>
+            <a href="contact.html"><i class="fa fa-phone me-2"></i>Contact</a>
+        </div>
+
+        <a href="quote.html" class="sp-quote">Get A Quote <i class="fa fa-arrow-right ms-2"></i></a>
+    </div>
+    <div class="sp-overlay" id="spOverlay"></div>
+    <!-- ===== NAVBAR END ===== -->
+
+    <!-- ===== HERO BANNER ===== -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-breadcrumb mb-3">
+                    <a href="index.html">Home</a>
+                    <i class="fa fa-chevron-right" style="font-size:9px;"></i>
+                    <span>Solar Panels</span>
+                </div>
+                <div class="hero-badge mt-3">
+                    <i class="fa fa-solar-panel"></i>
+                    Complete Panel Range
+                </div>
+                <h1>Solar <span>Panels</span></h1>
+                <p>Explore our curated range of high-performance solar panels — DCR certified for government subsidies
+                    and Non-DCR for private installations with higher wattage options.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
+                    <span
+                        style="background:rgba(50,195,108,0.15);border:1px solid rgba(50,195,108,0.4);color:#5de896;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
+                        <i class="fa fa-check-circle me-2"></i>ALMM / MNRE Approved
+                    </span>
+                    <span
+                        style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
+                        <i class="fa fa-shield-alt me-2"></i>25–30 Year Warranty
+                    </span>
+                    <span
+                        style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
+                        <i class="fa fa-industry me-2"></i>Top Indian Brands
+                    </span>
+                </div>
             </div>
-            <div class="hero-badge mt-3">
-                <i class="fa fa-solar-panel"></i>
-                Complete Panel Range
+        </div>
+    </section>
+
+    <!-- ===== DCR / NON-DCR TOGGLE TABS ===== -->
+    <div class="type-tabs-wrapper">
+        <div class="container">
+            <div class="type-tabs">
+                <button class="type-tab active" id="tab-dcr" onclick="switchTab('dcr')">
+                    <i class="fa fa-certificate" style="color:var(--primary);"></i>
+                    DCR Solar Panels
+                    <span class="tab-badge">Subsidy Eligible</span>
+                </button>
+                <button class="type-tab" id="tab-nondcr" onclick="switchTab('nondcr')">
+                    <i class="fa fa-bolt" style="color:#f07c1e;"></i>
+                    Non-DCR Solar Panels
+                    <span class="tab-badge">Higher Wattage</span>
+                </button>
             </div>
-            <h1>Solar <span>Panels</span></h1>
-            <p>Explore our curated range of high-performance solar panels — DCR certified for government subsidies and Non-DCR for private installations with higher wattage options.</p>
-            <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
-                <span style="background:rgba(50,195,108,0.15);border:1px solid rgba(50,195,108,0.4);color:#5de896;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
-                    <i class="fa fa-check-circle me-2"></i>ALMM / MNRE Approved
-                </span>
-                <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
-                    <i class="fa fa-shield-alt me-2"></i>25–30 Year Warranty
-                </span>
-                <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
-                    <i class="fa fa-industry me-2"></i>Top Indian Brands
-                </span>
+            <div id="dcr-info" class="tab-info-strip dcr-strip">
+                <i class="fa fa-info-circle mt-1" style="flex-shrink:0;"></i>
+                <span><strong>DCR (Domestic Content Requirement)</strong> — Panels manufactured using Indian-made solar
+                    cells. Mandatory for government subsidies under PM Surya Ghar, PM-KUSUM & other MNRE schemes.
+                    Wattage range: <strong>330W – 575W</strong>.</span>
+            </div>
+            <div id="nondcr-info" class="tab-info-strip nondcr-strip" style="display:none;">
+                <i class="fa fa-info-circle mt-1" style="flex-shrink:0;"></i>
+                <span><strong>Non-DCR Panels</strong> — Manufactured using imported cells, offering higher wattage
+                    options. Ideal for private rooftop, commercial & industrial projects. Not eligible for government
+                    subsidies. Wattage range: <strong>555W – 700W+</strong>.</span>
             </div>
         </div>
     </div>
-</section>
 
-<!-- ===== DCR / NON-DCR TOGGLE TABS ===== -->
-<div class="type-tabs-wrapper">
-    <div class="container">
-        <div class="type-tabs">
-            <button class="type-tab active" id="tab-dcr" onclick="switchTab('dcr')">
-                <i class="fa fa-certificate" style="color:var(--primary);"></i>
-                DCR Solar Panels
-                <span class="tab-badge">Subsidy Eligible</span>
-            </button>
-            <button class="type-tab" id="tab-nondcr" onclick="switchTab('nondcr')">
-                <i class="fa fa-bolt" style="color:#f07c1e;"></i>
-                Non-DCR Solar Panels
-                <span class="tab-badge">Higher Wattage</span>
-            </button>
-        </div>
-        <div id="dcr-info" class="tab-info-strip dcr-strip">
-            <i class="fa fa-info-circle mt-1" style="flex-shrink:0;"></i>
-            <span><strong>DCR (Domestic Content Requirement)</strong> — Panels manufactured using Indian-made solar cells. Mandatory for government subsidies under PM Surya Ghar, PM-KUSUM & other MNRE schemes. Wattage range: <strong>330W – 575W</strong>.</span>
-        </div>
-        <div id="nondcr-info" class="tab-info-strip nondcr-strip" style="display:none;">
-            <i class="fa fa-info-circle mt-1" style="flex-shrink:0;"></i>
-            <span><strong>Non-DCR Panels</strong> — Manufactured using imported cells, offering higher wattage options. Ideal for private rooftop, commercial & industrial projects. Not eligible for government subsidies. Wattage range: <strong>555W – 700W+</strong>.</span>
-        </div>
-    </div>
-</div>
+    <!-- ===== PRODUCTS MAIN SECTION ===== -->
+    <section class="products-section">
+        <div class="container">
 
-<!-- ===== PRODUCTS MAIN SECTION ===== -->
-<section class="products-section">
-    <div class="container">
-
-        <!-- Panel Type Filters -->
-        <div class="panel-filters" id="panelFilters">
-            <button class="filter-btn active" data-filter="all">All Types</button>
-            <button class="filter-btn" data-filter="mono">Monocrystalline</button>
-            <button class="filter-btn" data-filter="poly">Polycrystalline</button>
-            <button class="filter-btn" data-filter="topcon">TopCon</button>
-            <button class="filter-btn" data-filter="topcon-bi">TopCon Bifacial</button>
-        </div>
+            <!-- Panel Type Filters -->
+            <div class="panel-filters" id="panelFilters">
+                <button class="filter-btn active" data-filter="all">All Types</button>
+                <button class="filter-btn" data-filter="mono">Monocrystalline</button>
+                <button class="filter-btn" data-filter="poly">Polycrystalline</button>
+                <button class="filter-btn" data-filter="topcon">TopCon</button>
+                <button class="filter-btn" data-filter="topcon-bi">TopCon Bifacial</button>
+            </div>
         </div>
 
         <!-- ============ DCR TAB CONTENT ============ -->
@@ -666,7 +1193,9 @@
                     <div class="col-lg-8">
                         <div class="dcr-pill"><i class="fa fa-certificate"></i> DCR Certified</div>
                         <h4>Government Subsidy Eligible Panels</h4>
-                        <p>DCR panels use 100% India-manufactured solar cells, qualifying for subsidies under PM Surya Ghar Muft Bijli Yojana (up to ₹54,000 for 3kW), PM-KUSUM, and other MNRE schemes. ALMM listed &amp; BIS certified.</p>
+                        <p>DCR panels use 100% India-manufactured solar cells, qualifying for subsidies under PM Surya
+                            Ghar Muft Bijli Yojana (up to ₹54,000 for 3kW), PM-KUSUM, and other MNRE schemes. ALMM
+                            listed &amp; BIS certified.</p>
                         <div class="callout-features">
                             <span class="callout-feat"><i class="fa fa-check-circle"></i> MNRE / ALMM Approved</span>
                             <span class="callout-feat"><i class="fa fa-check-circle"></i> Made in India Cells</span>
@@ -677,7 +1206,8 @@
                     </div>
                     <div class="col-lg-4 text-center mt-3 mt-lg-0">
                         <div style="font-size:4rem;">🏭</div>
-                        <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:8px;">100% Indian Manufacturing</div>
+                        <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:8px;">100% Indian
+                            Manufacturing</div>
                     </div>
                 </div>
             </div>
@@ -699,20 +1229,38 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="product-card">
                             <div class="card-img-wrap">
-                                
+
                                 <img src="/img/solar_panel/mono_perc.png">
                                 <span class="card-type-badge badge-mono">Mono PERC</span>
                                 <span class="card-watt-badge">330W – 545W</span>
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">Mono PERC Half-Cut — DCR Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-1')" id="toggle-desc-1"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-1">ALMM-listed DCR mono panels with M10 144 half-cut cells. Anti-PID, BIS certified, excellent low-light efficiency. Suitable for all PM Surya Ghar &amp; PM-KUSUM subsidy projects. Available in residential (330–400W), commercial (440–500W) and industrial (520–545W) variants from all leading Indian manufacturers.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-1')" id="toggle-desc-1"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-1">ALMM-listed DCR mono panels with M10 144
+                                    half-cut cells. Anti-PID, BIS certified, excellent low-light efficiency. Suitable
+                                    for all PM Surya Ghar &amp; PM-KUSUM subsidy projects. Available in residential
+                                    (330–400W), commercial (440–500W) and industrial (520–545W) variants from all
+                                    leading Indian manufacturers.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">330–545 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">18–21.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">72–144 HC M10</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~38–46V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Power</div>
+                                        <div class="spec-value">330–545 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">18–21.5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Cells</div>
+                                        <div class="spec-value">72–144 HC M10</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~38–46V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -726,7 +1274,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>25 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance:
+                                        <strong>25 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -758,13 +1307,30 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">Poly PERC — DCR Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-2')" id="toggle-desc-2"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-2">Budget-value DCR polycrystalline panels ideal for PM-KUSUM agriculture pump and residential subsidy projects. 72-cell full-frame or 120-cell half-cut, blue diamond texture. Proven performance in Indian heat conditions with BIS certification and ALMM listing.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-2')" id="toggle-desc-2"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-2">Budget-value DCR polycrystalline panels ideal
+                                    for PM-KUSUM agriculture pump and residential subsidy projects. 72-cell full-frame
+                                    or 120-cell half-cut, blue diamond texture. Proven performance in Indian heat
+                                    conditions with BIS certification and ALMM listing.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">330–440 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">17–19%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">72–120 Cell</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~36–42V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Power</div>
+                                        <div class="spec-value">330–440 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">17–19%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Cells</div>
+                                        <div class="spec-value">72–120 Cell</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~36–42V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -777,7 +1343,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance: <strong>25 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance:
+                                        <strong>25 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -809,13 +1376,30 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">N-Type TopCon Monofacial — DCR Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-3')" id="toggle-desc-3"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-3">Premium DCR N-type TopCon. Near-zero LID/LeTID degradation, temperature coefficient -0.30%/°C, ALMM listed. Ga-doped N-type wafer, MBB anti-microcracking. Ideal for commercial rooftops wanting maximum power density with government subsidy. 30-year performance warranty.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-3')" id="toggle-desc-3"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-3">Premium DCR N-type TopCon. Near-zero LID/LeTID
+                                    degradation, temperature coefficient -0.30%/°C, ALMM listed. Ga-doped N-type wafer,
+                                    MBB anti-microcracking. Ideal for commercial rooftops wanting maximum power density
+                                    with government subsidy. 30-year performance warranty.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">545–580 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">21.5–22.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">144 HC M10</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~45–49V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Power</div>
+                                        <div class="spec-value">545–580 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">21.5–22.5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Cells</div>
+                                        <div class="spec-value">144 HC M10</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~45–49V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -826,7 +1410,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>30 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance:
+                                        <strong>30 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -858,13 +1443,30 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">N-Type TopCon Bifacial Dual-Glass — DCR Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-4')" id="toggle-desc-4"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-4">ALMM-listed DCR bifacial TopCon. Dual-glass construction, 70±5% bifaciality, up to 25–30% additional rear-side yield. Excellent for open ground-mount and elevated structures under PM-KUSUM Component-A. Zero PID, MBB technology, 30-year performance guarantee.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-4')" id="toggle-desc-4"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-4">ALMM-listed DCR bifacial TopCon. Dual-glass
+                                    construction, 70±5% bifaciality, up to 25–30% additional rear-side yield. Excellent
+                                    for open ground-mount and elevated structures under PM-KUSUM Component-A. Zero PID,
+                                    MBB technology, 30-year performance guarantee.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Front Power</div><div class="spec-value">550–575 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">21.4–22.4%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Bifaciality</div><div class="spec-value">70 ± 5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~48–51V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Front Power</div>
+                                        <div class="spec-value">550–575 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">21.4–22.4%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Bifaciality</div>
+                                        <div class="spec-value">70 ± 5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~48–51V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -876,7 +1478,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>30 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance:
+                                        <strong>30 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -897,17 +1500,24 @@
                     <div class="col-lg-8">
                         <div class="dcr-pill nondcr-pill"><i class="fa fa-bolt"></i> Non-DCR</div>
                         <h4>Higher Wattage — Private &amp; Commercial Projects</h4>
-                        <p>Non-DCR panels use imported high-efficiency cells, enabling higher wattage output per panel. Perfect for private rooftops, large commercial and industrial projects where maximum power density is the priority. Not subsidy-eligible.</p>
+                        <p>Non-DCR panels use imported high-efficiency cells, enabling higher wattage output per panel.
+                            Perfect for private rooftops, large commercial and industrial projects where maximum power
+                            density is the priority. Not subsidy-eligible.</p>
                         <div class="callout-features">
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Higher Wattage (555W–700W+)</span>
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Fewer Panels Needed</span>
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Private Projects</span>
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> International Cell Tech</span>
+                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Higher Wattage
+                                (555W–700W+)</span>
+                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Fewer Panels
+                                Needed</span>
+                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Private
+                                Projects</span>
+                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> International
+                                Cell Tech</span>
                         </div>
                     </div>
                     <div class="col-lg-4 text-center mt-3 mt-lg-0">
                         <div style="font-size:4rem;">⚡</div>
-                        <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:8px;">Maximum Power Density</div>
+                        <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:8px;">Maximum Power Density
+                        </div>
                     </div>
                 </div>
             </div>
@@ -935,13 +1545,30 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">Non-DCR Mono PERC Half-Cut Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-5')" id="toggle-desc-5"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-5">High-density non-DCR monocrystalline panels with imported G12 cells for commercial and industrial rooftops. 144–156 half-cut cells, IP68 junction box, 1500V system voltage rated. Ultra-high power density reduces number of panels needed, lowering BOS and installation cost significantly.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-5')" id="toggle-desc-5"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-5">High-density non-DCR monocrystalline panels with
+                                    imported G12 cells for commercial and industrial rooftops. 144–156 half-cut cells,
+                                    IP68 junction box, 1500V system voltage rated. Ultra-high power density reduces
+                                    number of panels needed, lowering BOS and installation cost significantly.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">555–600 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">21.5–22.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">144–156 HC G12</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~45–50V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Power</div>
+                                        <div class="spec-value">555–600 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">21.5–22.5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Cells</div>
+                                        <div class="spec-value">144–156 HC G12</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~45–50V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -954,7 +1581,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>25 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance:
+                                        <strong>25 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -986,13 +1614,30 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">Non-DCR Poly PERC Half-Cut Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-6')" id="toggle-desc-6"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-6">High-wattage non-DCR poly panels using imported multi-crystal cells. Excellent thermal performance for hot Indian climates, anodised aluminium frame, IP68 junction box, 3.2mm tempered AR glass. Best value-for-money for private factories, warehouses and large commercial rooftops.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-6')" id="toggle-desc-6"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-6">High-wattage non-DCR poly panels using imported
+                                    multi-crystal cells. Excellent thermal performance for hot Indian climates, anodised
+                                    aluminium frame, IP68 junction box, 3.2mm tempered AR glass. Best value-for-money
+                                    for private factories, warehouses and large commercial rooftops.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">440–520 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">18.5–20.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">144 HC M10</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~40–46V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Power</div>
+                                        <div class="spec-value">440–520 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">18.5–20.5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Cells</div>
+                                        <div class="spec-value">144 HC M10</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~40–46V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -1004,7 +1649,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance: <strong>25 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance:
+                                        <strong>25 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -1036,13 +1682,31 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">Non-DCR N-Type TopCon Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-7')" id="toggle-desc-7"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-7">Ultra-high efficiency non-DCR TopCon with imported N-type G12 cells. 132-cell configuration, 22.5%+ efficiency, near-zero degradation, MBB design, 1500V system voltage. Industry-leading energy yield for large commercial, industrial and EPC projects. Superior performance in India's high-temperature conditions.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-7')" id="toggle-desc-7"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-7">Ultra-high efficiency non-DCR TopCon with
+                                    imported N-type G12 cells. 132-cell configuration, 22.5%+ efficiency, near-zero
+                                    degradation, MBB design, 1500V system voltage. Industry-leading energy yield for
+                                    large commercial, industrial and EPC projects. Superior performance in India's
+                                    high-temperature conditions.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">590–640 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">22.5–23.2%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">132 HC G12</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~48–52V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Power</div>
+                                        <div class="spec-value">590–640 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">22.5–23.2%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Cells</div>
+                                        <div class="spec-value">132 HC G12</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~48–52V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -1054,7 +1718,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance:
+                                        <strong>30 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -1086,13 +1751,30 @@
                             </div>
                             <div class="card-body-inner">
                                 <div class="card-title">Non-DCR TopCon Bifacial Dual-Glass Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-8')" id="toggle-desc-8"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div>
-                                <div class="card-desc-body" id="desc-8">India's highest wattage bifacial modules. Glass-glass construction, 75±5% bifaciality, eliminates PID entirely, up to 30% rear-side yield gain. 132 G12 cells, IP68 junction box, 1500V system voltage. Ideal for utility-scale, MW-scale EPC, elevated farm and carport installations.</div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('desc-8')" id="toggle-desc-8"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="desc-8">India's highest wattage bifacial modules.
+                                    Glass-glass construction, 75±5% bifaciality, eliminates PID entirely, up to 30%
+                                    rear-side yield gain. 132 G12 cells, IP68 junction box, 1500V system voltage. Ideal
+                                    for utility-scale, MW-scale EPC, elevated farm and carport installations.</div>
                                 <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Front Power</div><div class="spec-value">640–700 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">22.8–23.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Bifaciality</div><div class="spec-value">75 ± 5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~51–55V</div></div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Front Power</div>
+                                        <div class="spec-value">640–700 Wp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Efficiency</div>
+                                        <div class="spec-value">22.8–23.5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Bifaciality</div>
+                                        <div class="spec-value">75 ± 5%</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Voltage</div>
+                                        <div class="spec-value">~51–55V</div>
+                                    </div>
                                 </div>
                                 <div class="card-companies">
                                     <div class="companies-label">Available Brands</div>
@@ -1103,7 +1785,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30 yrs</strong></div>
+                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance:
+                                        <strong>30 yrs</strong></div>
                                     <a href="contact.html" class="enquire-btn">Enquire</a>
                                 </div>
                             </div>
@@ -1114,390 +1797,574 @@
 
         </div><!-- /section-nondcr -->
 
+        </div><!-- /container -->
+    </section><!-- /products-section -->
+    <!-- ============ NON-DCR TAB CONTENT ============ -->
+    <div id="section-nondcr" class="tab-section">
+
+        <!-- Non-DCR Callout -->
+        <div class="dcr-callout nondcr-callout">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="dcr-pill nondcr-pill"><i class="fa fa-bolt"></i> Non-DCR</div>
+                    <h4>Higher Wattage — Private & Commercial Projects</h4>
+                    <p>Non-DCR panels use imported high-efficiency cells, enabling higher wattage output per panel.
+                        Perfect for private rooftops, large commercial and industrial projects where maximum power
+                        density is the priority. Not subsidy-eligible.</p>
+                    <div class="callout-features">
+                        <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Higher Wattage
+                            (555W–700W+)</span>
+                        <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Fewer Panels
+                            Needed</span>
+                        <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Private
+                            Projects</span>
+                        <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> International Cell
+                            Tech</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mt-3 mt-lg-0">
+                    <div style="font-size:4rem;">⚡</div>
+                    <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:8px;">Maximum Power Density</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NON-DCR — MONOCRYSTALLINE -->
+        <div class="panel-type-section visible" data-type="mono" data-tab="nondcr">
+            <div class="panel-type-heading">
+                <div class="type-icon blue"><i class="fa fa-sun"></i></div>
+                <div>
+                    <h3>Monocrystalline (Mono PERC)</h3>
+                    <p>Higher wattage mono panels using imported premium cells — more power per panel</p>
+                </div>
+                <div class="watt-range">
+                    <div class="wr-label">Watt Range</div>
+                    <div class="wr-value">555W – 600W</div>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80"
+                                alt="Non-DCR Mono Panel"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-mono">Mono PERC</span>
+                            <span class="card-watt-badge">555W – 575W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR Mono PERC — Commercial Grade</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-37')" id="toggle-desc-37"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-37">High-density monocrystalline panels with imported
+                                cells for commercial rooftops. M10 / G12 wafer technology, 144–156 half-cut cells,
+                                superior temperature coefficient.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Power</div>
+                                    <div class="spec-value">555–575 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">21.5–22%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Cells</div>
+                                    <div class="spec-value">144 HC G12</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~45–48V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Tata Solar</span>
+                                    <span class="company-tag">Waaree</span>
+                                    <span class="company-tag">Adani</span>
+                                    <span class="company-tag">Luminous</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>25
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                                alt="Non-DCR Mono 600W"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-mono">Mono PERC</span>
+                            <span class="card-watt-badge">575W – 600W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR Mono PERC — Industrial Premium</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-38')" id="toggle-desc-38"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-38">Ultra-high output mono panels for large industrial
+                                and utility-scale ground mount projects. Fewer panels needed, lower BOS cost and faster
+                                installation time.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Power</div>
+                                    <div class="spec-value">575–600 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">22–22.5%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Cells</div>
+                                    <div class="spec-value">156 HC G12</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~47–50V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Tata Solar</span>
+                                    <span class="company-tag">Sievert</span>
+                                    <span class="company-tag">Premier Energies</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>25
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NON-DCR — POLYCRYSTALLINE -->
+        <div class="panel-type-section visible mt-5" data-type="poly" data-tab="nondcr">
+            <div class="panel-type-heading">
+                <div class="type-icon green"><i class="fa fa-th"></i></div>
+                <div>
+                    <h3>Polycrystalline (Poly PERC)</h3>
+                    <p>Higher wattage poly panels — practical and cost-effective for large scale</p>
+                </div>
+                <div class="watt-range">
+                    <div class="wr-label">Watt Range</div>
+                    <div class="wr-value">440W – 520W</div>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?w=600&q=80"
+                                alt="Non-DCR Poly Panel"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-poly">Poly PERC</span>
+                            <span class="card-watt-badge">440W – 480W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR Poly PERC — Large Rooftop</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-39')" id="toggle-desc-39"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-39">High wattage polycrystalline panels using imported
+                                multi-crystal cells. Excellent thermal performance for hot Indian climates, sturdy
+                                anodized aluminium frame.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Power</div>
+                                    <div class="spec-value">440–480 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">18.5–19.5%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Cells</div>
+                                    <div class="spec-value">144 HC</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~40–44V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Waaree</span>
+                                    <span class="company-tag">Luminous</span>
+                                    <span class="company-tag">RoomSolar</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance: <strong>25
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?w=600&q=80"
+                                alt="Non-DCR Poly 520W"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-poly">Poly PERC</span>
+                            <span class="card-watt-badge">490W – 520W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR Poly PERC — Industrial Value</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-40')" id="toggle-desc-40"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-40">High-output poly panels for factory and warehouse
+                                rooftops. IP68 junction box, 3.2mm tempered AR glass, rated for high wind and snow
+                                loads. Ideal value proposition.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Power</div>
+                                    <div class="spec-value">490–520 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">19.5–20.5%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Cells</div>
+                                    <div class="spec-value">144 HC M10</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~42–46V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Adani</span>
+                                    <span class="company-tag">Waaree</span>
+                                    <span class="company-tag">RenuSol</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance: <strong>25
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NON-DCR — TOPCON -->
+        <div class="panel-type-section visible mt-5" data-type="topcon" data-tab="nondcr">
+            <div class="panel-type-heading">
+                <div class="type-icon purple"><i class="fa fa-microchip"></i></div>
+                <div>
+                    <h3>TopCon (N-Type Monofacial)</h3>
+                    <p>Cutting-edge N-type cells with higher wattage and superior efficiency ratings</p>
+                </div>
+                <div class="watt-range">
+                    <div class="wr-label">Watt Range</div>
+                    <div class="wr-value">590W – 640W</div>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80"
+                                alt="Non-DCR TopCon 600W"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-topcon">TopCon N-Type</span>
+                            <span class="card-watt-badge">590W – 610W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR N-Type TopCon — Commercial Elite</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-41')" id="toggle-desc-41"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-41">Ultra-high efficiency non-DCR TopCon panels with
+                                imported N-type cells. Excellent performance at high temperatures, low degradation rate
+                                and exceptional energy yield.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Power</div>
+                                    <div class="spec-value">590–610 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">22.5–23%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Cells</div>
+                                    <div class="spec-value">132 HC G12</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~48–51V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Adani</span>
+                                    <span class="company-tag">Waaree</span>
+                                    <span class="company-tag">Premier Energies</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80"
+                                alt="Non-DCR TopCon 640W"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-topcon">TopCon N-Type</span>
+                            <span class="card-watt-badge">615W – 640W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR N-Type TopCon — Industrial Max</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-42')" id="toggle-desc-42"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-42">Industry-leading wattage for large ground-mount and
+                                industrial rooftop projects. G12 wafer, 132-cell configuration with superior anti-PID
+                                protection and MBB design.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Power</div>
+                                    <div class="spec-value">615–640 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">22.5–23.2%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Cells</div>
+                                    <div class="spec-value">132 HC G12</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~50–52V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Adani</span>
+                                    <span class="company-tag">Tata Solar</span>
+                                    <span class="company-tag">Sievert</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NON-DCR — TOPCON BIFACIAL -->
+        <div class="panel-type-section visible mt-5" data-type="topcon-bi" data-tab="nondcr">
+            <div class="panel-type-heading">
+                <div class="type-icon orange"><i class="fa fa-clone"></i></div>
+                <div>
+                    <h3>TopCon Bifacial (Dual-Side)</h3>
+                    <p>Maximum power output — captures light from both sides with premium imported cells</p>
+                </div>
+                <div class="watt-range">
+                    <div class="wr-label">Watt Range</div>
+                    <div class="wr-value">640W – 700W+</div>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=600&q=80"
+                                alt="Non-DCR Bifacial 660W"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-topcon-bi">TopCon Bifacial</span>
+                            <span class="card-watt-badge">640W – 660W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR TopCon Bifacial — Dual Glass</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-43')" id="toggle-desc-43"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-43">Glass-glass bifacial construction for maximum
+                                durability and rear-side light capture. Dual glass eliminates PID entirely. Ideal for
+                                elevated, ground-mounted arrays.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Front Power</div>
+                                    <div class="spec-value">640–660 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">22.8–23.2%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Bifaciality</div>
+                                    <div class="spec-value">75 ± 5%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~50–53V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Waaree</span>
+                                    <span class="company-tag">Adani</span>
+                                    <span class="company-tag">RoomSolar</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?w=600&q=80"
+                                alt="Non-DCR Bifacial 700W"
+                                onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'"
+                                loading="lazy">
+                            <span class="card-type-badge badge-topcon-bi">TopCon Bifacial</span>
+                            <span class="card-watt-badge">680W – 700W</span>
+                        </div>
+                        <div class="card-body-inner">
+                            <div class="card-title">Non-DCR TopCon Bifacial — Ultra Series</div>
+                            <div class="card-desc-toggle" onclick="toggleDesc('desc-44')" id="toggle-desc-44"><span><i
+                                        class="fa fa-info-circle me-1"></i> View Description</span><span
+                                    class="toggle-icon">&#9660;</span></div>
+                            <div class="card-desc-body" id="desc-44">India's highest wattage bifacial modules for
+                                utility-scale and mega-commercial projects. 132 G12 cells, IP68 junction box, 1500V
+                                system voltage rated for large EPC projects.</div>
+                            <div class="card-specs">
+                                <div class="spec-item">
+                                    <div class="spec-label">Front Power</div>
+                                    <div class="spec-value">680–700 Wp</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Efficiency</div>
+                                    <div class="spec-value">23–23.5%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Bifaciality</div>
+                                    <div class="spec-value">75 ± 5%</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Voltage</div>
+                                    <div class="spec-value">~52–55V</div>
+                                </div>
+                            </div>
+                            <div class="card-companies">
+                                <div class="companies-label">Available Brands</div>
+                                <div class="company-tags">
+                                    <span class="company-tag">Waaree</span>
+                                    <span class="company-tag">Premier Energies</span>
+                                    <span class="company-tag">Adani</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-inner">
+                                <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30
+                                        yrs</strong></div>
+                                <a href="contact.html" class="enquire-btn">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div><!-- /section-nondcr -->
+
     </div><!-- /container -->
-</section><!-- /products-section -->
-        <!-- ============ NON-DCR TAB CONTENT ============ -->
-        <div id="section-nondcr" class="tab-section">
-
-            <!-- Non-DCR Callout -->
-            <div class="dcr-callout nondcr-callout">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <div class="dcr-pill nondcr-pill"><i class="fa fa-bolt"></i> Non-DCR</div>
-                        <h4>Higher Wattage — Private & Commercial Projects</h4>
-                        <p>Non-DCR panels use imported high-efficiency cells, enabling higher wattage output per panel. Perfect for private rooftops, large commercial and industrial projects where maximum power density is the priority. Not subsidy-eligible.</p>
-                        <div class="callout-features">
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Higher Wattage (555W–700W+)</span>
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Fewer Panels Needed</span>
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> Private Projects</span>
-                            <span class="callout-feat"><i class="fa fa-bolt" style="color:#f07c1e;"></i> International Cell Tech</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center mt-3 mt-lg-0">
-                        <div style="font-size:4rem;">⚡</div>
-                        <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:8px;">Maximum Power Density</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NON-DCR — MONOCRYSTALLINE -->
-            <div class="panel-type-section visible" data-type="mono" data-tab="nondcr">
-                <div class="panel-type-heading">
-                    <div class="type-icon blue"><i class="fa fa-sun"></i></div>
-                    <div>
-                        <h3>Monocrystalline (Mono PERC)</h3>
-                        <p>Higher wattage mono panels using imported premium cells — more power per panel</p>
-                    </div>
-                    <div class="watt-range">
-                        <div class="wr-label">Watt Range</div>
-                        <div class="wr-value">555W – 600W</div>
-                    </div>
-                </div>
-                <div class="row g-4">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Non-DCR Mono Panel" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-mono">Mono PERC</span>
-                                <span class="card-watt-badge">555W – 575W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR Mono PERC — Commercial Grade</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-37')" id="toggle-desc-37"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-37">High-density monocrystalline panels with imported cells for commercial rooftops. M10 / G12 wafer technology, 144–156 half-cut cells, superior temperature coefficient.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">555–575 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">21.5–22%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">144 HC G12</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~45–48V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Tata Solar</span>
-                                        <span class="company-tag">Waaree</span>
-                                        <span class="company-tag">Adani</span>
-                                        <span class="company-tag">Luminous</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>25 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Non-DCR Mono 600W" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-mono">Mono PERC</span>
-                                <span class="card-watt-badge">575W – 600W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR Mono PERC — Industrial Premium</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-38')" id="toggle-desc-38"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-38">Ultra-high output mono panels for large industrial and utility-scale ground mount projects. Fewer panels needed, lower BOS cost and faster installation time.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">575–600 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">22–22.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">156 HC G12</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~47–50V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Tata Solar</span>
-                                        <span class="company-tag">Sievert</span>
-                                        <span class="company-tag">Premier Energies</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>12 yrs</strong> | Performance: <strong>25 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- NON-DCR — POLYCRYSTALLINE -->
-            <div class="panel-type-section visible mt-5" data-type="poly" data-tab="nondcr">
-                <div class="panel-type-heading">
-                    <div class="type-icon green"><i class="fa fa-th"></i></div>
-                    <div>
-                        <h3>Polycrystalline (Poly PERC)</h3>
-                        <p>Higher wattage poly panels — practical and cost-effective for large scale</p>
-                    </div>
-                    <div class="watt-range">
-                        <div class="wr-label">Watt Range</div>
-                        <div class="wr-value">440W – 520W</div>
-                    </div>
-                </div>
-                <div class="row g-4">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?w=600&q=80" alt="Non-DCR Poly Panel" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-poly">Poly PERC</span>
-                                <span class="card-watt-badge">440W – 480W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR Poly PERC — Large Rooftop</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-39')" id="toggle-desc-39"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-39">High wattage polycrystalline panels using imported multi-crystal cells. Excellent thermal performance for hot Indian climates, sturdy anodized aluminium frame.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">440–480 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">18.5–19.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">144 HC</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~40–44V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Waaree</span>
-                                        <span class="company-tag">Luminous</span>
-                                        <span class="company-tag">RoomSolar</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance: <strong>25 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?w=600&q=80" alt="Non-DCR Poly 520W" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-poly">Poly PERC</span>
-                                <span class="card-watt-badge">490W – 520W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR Poly PERC — Industrial Value</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-40')" id="toggle-desc-40"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-40">High-output poly panels for factory and warehouse rooftops. IP68 junction box, 3.2mm tempered AR glass, rated for high wind and snow loads. Ideal value proposition.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">490–520 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">19.5–20.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">144 HC M10</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~42–46V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Adani</span>
-                                        <span class="company-tag">Waaree</span>
-                                        <span class="company-tag">RenuSol</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>10 yrs</strong> | Performance: <strong>25 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- NON-DCR — TOPCON -->
-            <div class="panel-type-section visible mt-5" data-type="topcon" data-tab="nondcr">
-                <div class="panel-type-heading">
-                    <div class="type-icon purple"><i class="fa fa-microchip"></i></div>
-                    <div>
-                        <h3>TopCon (N-Type Monofacial)</h3>
-                        <p>Cutting-edge N-type cells with higher wattage and superior efficiency ratings</p>
-                    </div>
-                    <div class="watt-range">
-                        <div class="wr-label">Watt Range</div>
-                        <div class="wr-value">590W – 640W</div>
-                    </div>
-                </div>
-                <div class="row g-4">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80" alt="Non-DCR TopCon 600W" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-topcon">TopCon N-Type</span>
-                                <span class="card-watt-badge">590W – 610W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR N-Type TopCon — Commercial Elite</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-41')" id="toggle-desc-41"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-41">Ultra-high efficiency non-DCR TopCon panels with imported N-type cells. Excellent performance at high temperatures, low degradation rate and exceptional energy yield.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">590–610 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">22.5–23%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">132 HC G12</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~48–51V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Adani</span>
-                                        <span class="company-tag">Waaree</span>
-                                        <span class="company-tag">Premier Energies</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80" alt="Non-DCR TopCon 640W" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-topcon">TopCon N-Type</span>
-                                <span class="card-watt-badge">615W – 640W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR N-Type TopCon — Industrial Max</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-42')" id="toggle-desc-42"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-42">Industry-leading wattage for large ground-mount and industrial rooftop projects. G12 wafer, 132-cell configuration with superior anti-PID protection and MBB design.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value">615–640 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">22.5–23.2%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Cells</div><div class="spec-value">132 HC G12</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~50–52V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Adani</span>
-                                        <span class="company-tag">Tata Solar</span>
-                                        <span class="company-tag">Sievert</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- NON-DCR — TOPCON BIFACIAL -->
-            <div class="panel-type-section visible mt-5" data-type="topcon-bi" data-tab="nondcr">
-                <div class="panel-type-heading">
-                    <div class="type-icon orange"><i class="fa fa-clone"></i></div>
-                    <div>
-                        <h3>TopCon Bifacial (Dual-Side)</h3>
-                        <p>Maximum power output — captures light from both sides with premium imported cells</p>
-                    </div>
-                    <div class="watt-range">
-                        <div class="wr-label">Watt Range</div>
-                        <div class="wr-value">640W – 700W+</div>
-                    </div>
-                </div>
-                <div class="row g-4">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?w=600&q=80" alt="Non-DCR Bifacial 660W" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-topcon-bi">TopCon Bifacial</span>
-                                <span class="card-watt-badge">640W – 660W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR TopCon Bifacial — Dual Glass</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-43')" id="toggle-desc-43"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-43">Glass-glass bifacial construction for maximum durability and rear-side light capture. Dual glass eliminates PID entirely. Ideal for elevated, ground-mounted arrays.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Front Power</div><div class="spec-value">640–660 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">22.8–23.2%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Bifaciality</div><div class="spec-value">75 ± 5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~50–53V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Waaree</span>
-                                        <span class="company-tag">Adani</span>
-                                        <span class="company-tag">RoomSolar</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card">
-                            <div class="card-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?w=600&q=80" alt="Non-DCR Bifacial 700W" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80'" loading="lazy">
-                                <span class="card-type-badge badge-topcon-bi">TopCon Bifacial</span>
-                                <span class="card-watt-badge">680W – 700W</span>
-                            </div>
-                            <div class="card-body-inner">
-                                <div class="card-title">Non-DCR TopCon Bifacial — Ultra Series</div>
-                                <div class="card-desc-toggle" onclick="toggleDesc('desc-44')" id="toggle-desc-44"><span><i class="fa fa-info-circle me-1"></i> View Description</span><span class="toggle-icon">&#9660;</span></div><div class="card-desc-body" id="desc-44">India's highest wattage bifacial modules for utility-scale and mega-commercial projects. 132 G12 cells, IP68 junction box, 1500V system voltage rated for large EPC projects.</div>
-                                <div class="card-specs">
-                                    <div class="spec-item"><div class="spec-label">Front Power</div><div class="spec-value">680–700 Wp</div></div>
-                                    <div class="spec-item"><div class="spec-label">Efficiency</div><div class="spec-value">23–23.5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Bifaciality</div><div class="spec-value">75 ± 5%</div></div>
-                                    <div class="spec-item"><div class="spec-label">Voltage</div><div class="spec-value">~52–55V</div></div>
-                                </div>
-                                <div class="card-companies">
-                                    <div class="companies-label">Available Brands</div>
-                                    <div class="company-tags">
-                                        <span class="company-tag">Waaree</span>
-                                        <span class="company-tag">Premier Energies</span>
-                                        <span class="company-tag">Adani</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer-inner">
-                                    <div class="warranty-info">Product: <strong>15 yrs</strong> | Performance: <strong>30 yrs</strong></div>
-                                    <a href="contact.html" class="enquire-btn">Enquire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div><!-- /section-nondcr -->
-
-    </div><!-- /container -->
-</section><!-- /products-section -->
+    </section><!-- /products-section -->
 
 
-<!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6"
-                     style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/footer-address-bg.jpg') center/cover no-repeat; border-radius: 8px; padding: 20px;">
+                    style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/footer-address-bg.jpg') center/cover no-repeat; border-radius: 8px; padding: 20px;">
                     <h5 class="text-white mb-4" data-key="footer_branches">Our Branches</h5>
-                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span data-key="branch_mumbai">Mumbai Branch</span><br><span data-key="branch_mumbai_addr">Andheri East, Mumbai – India</span></p>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span
+                            data-key="branch_mumbai">Mumbai Branch</span><br><span data-key="branch_mumbai_addr">Andheri
+                            East, Mumbai – India</span></p>
                     <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 85910 99926</p>
                     <p class="mb-3 text-white"><i class="fa fa-envelope me-3"></i>mavericks.m3@gmail.com</p>
-                    <a class="btn btn-sm btn-outline-light mb-3" data-bs-toggle="collapse" href="#nagpurBranch" role="button" aria-expanded="false" aria-controls="nagpurBranch" data-key="view_nagpur">View Nagpur Branch</a>
+                    <a class="btn btn-sm btn-outline-light mb-3" data-bs-toggle="collapse" href="#nagpurBranch"
+                        role="button" aria-expanded="false" aria-controls="nagpurBranch" data-key="view_nagpur">View
+                        Nagpur Branch</a>
                     <div class="collapse" id="nagpurBranch">
                         <hr class="text-light">
-                        <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span data-key="branch_nagpur">Nagpur Branch</span><br><span data-key="branch_nagpur_addr">Parsodi, Nagpur – India</span></p>
+                        <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span
+                                data-key="branch_nagpur">Nagpur Branch</span><br><span
+                                data-key="branch_nagpur_addr">Parsodi, Nagpur – India</span></p>
                         <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 84840 09873</p>
                         <p class="mb-2 text-white"><i class="fa fa-envelope me-3"></i>mavericks.m3@gmail.com</p>
                     </div>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
@@ -1527,7 +2394,8 @@
                     <div class="mb-3">
                         <img src="/img/mavericks logo.png" alt="Mavericks Green Energy Logo" class="footer-logo">
                     </div>
-                    <p class="text-light small mb-0" data-key="footer_tagline">Powering a sustainable future with smart, reliable and end-to-end solar EPC solutions for homes, businesses and industries.</p>
+                    <p class="text-light small mb-0" data-key="footer_tagline">Powering a sustainable future with smart,
+                        reliable and end-to-end solar EPC solutions for homes, businesses and industries.</p>
                 </div>
 
             </div>
@@ -1549,7 +2417,8 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -1565,101 +2434,102 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-<script>
-/* ===== DESCRIPTION TOGGLE ===== */
-function toggleDesc(id) {
-    const body   = document.getElementById(id);
-    const toggle = document.getElementById('toggle-' + id);
-    const isOpen = body.classList.contains('open');
-    body.classList.toggle('open', !isOpen);
-    toggle.classList.toggle('open', !isOpen);
-    toggle.querySelector('span:first-child').innerHTML = isOpen
-        ? '<i class="fa fa-info-circle me-1"></i> View Description'
-        : '<i class="fa fa-chevron-up me-1"></i> Hide Description';
-}
-
-/* ===== COMPACT TAB BAR ON SCROLL ===== */
-(function() {
-    const wrapper = document.querySelector('.type-tabs-wrapper');
-    let heroBottom = 0;
-    function updateHeroBottom() {
-        const hero = document.querySelector('.products-hero');
-        heroBottom = hero ? hero.getBoundingClientRect().bottom + window.scrollY : 200;
-    }
-    updateHeroBottom();
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > heroBottom - 80) {
-            wrapper.classList.add('scrolled');
-        } else {
-            wrapper.classList.remove('scrolled');
+    <script>
+        /* ===== DESCRIPTION TOGGLE ===== */
+        function toggleDesc(id) {
+            const body = document.getElementById(id);
+            const toggle = document.getElementById('toggle-' + id);
+            const isOpen = body.classList.contains('open');
+            body.classList.toggle('open', !isOpen);
+            toggle.classList.toggle('open', !isOpen);
+            toggle.querySelector('span:first-child').innerHTML = isOpen
+                ? '<i class="fa fa-info-circle me-1"></i> View Description'
+                : '<i class="fa fa-chevron-up me-1"></i> Hide Description';
         }
-    }, { passive: true });
-})();
 
-/* ===== TAB SWITCHING ===== */
-let currentTab = 'dcr';
+        /* ===== COMPACT TAB BAR ON SCROLL ===== */
+        (function () {
+            const wrapper = document.querySelector('.type-tabs-wrapper');
+            let heroBottom = 0;
+            function updateHeroBottom() {
+                const hero = document.querySelector('.products-hero');
+                heroBottom = hero ? hero.getBoundingClientRect().bottom + window.scrollY : 200;
+            }
+            updateHeroBottom();
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > heroBottom - 80) {
+                    wrapper.classList.add('scrolled');
+                } else {
+                    wrapper.classList.remove('scrolled');
+                }
+            }, { passive: true });
+        })();
 
-function switchTab(tab) {
-    currentTab = tab;
+        /* ===== TAB SWITCHING ===== */
+        let currentTab = 'dcr';
 
-    // Toggle tab buttons
-    document.getElementById('tab-dcr').classList.toggle('active', tab === 'dcr');
-    document.getElementById('tab-nondcr').classList.toggle('active', tab === 'nondcr');
+        function switchTab(tab) {
+            currentTab = tab;
 
-    // Toggle info strips
-    document.getElementById('dcr-info').style.display = tab === 'dcr' ? 'flex' : 'none';
-    document.getElementById('nondcr-info').style.display = tab === 'nondcr' ? 'flex' : 'none';
+            // Toggle tab buttons
+            document.getElementById('tab-dcr').classList.toggle('active', tab === 'dcr');
+            document.getElementById('tab-nondcr').classList.toggle('active', tab === 'nondcr');
 
-    // Toggle sections
-    document.getElementById('section-dcr').classList.toggle('active', tab === 'dcr');
-    document.getElementById('section-nondcr').classList.toggle('active', tab === 'nondcr');
+            // Toggle info strips
+            document.getElementById('dcr-info').style.display = tab === 'dcr' ? 'flex' : 'none';
+            document.getElementById('nondcr-info').style.display = tab === 'nondcr' ? 'flex' : 'none';
 
-    // Re-apply filter for current tab
-    const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
-    applyFilter(activeFilter);
+            // Toggle sections
+            document.getElementById('section-dcr').classList.toggle('active', tab === 'dcr');
+            document.getElementById('section-nondcr').classList.toggle('active', tab === 'nondcr');
 
-    // Scroll to section
-    document.querySelector('.type-tabs-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+            // Re-apply filter for current tab
+            const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+            applyFilter(activeFilter);
 
-/* ===== PANEL TYPE FILTER ===== */
-function applyFilter(filter) {
-    const activeSection = document.getElementById('section-' + currentTab);
-    const sections = activeSection.querySelectorAll('.panel-type-section');
-    sections.forEach(sec => {
-        if (filter === 'all' || sec.dataset.type === filter) {
-            sec.classList.add('visible');
-        } else {
-            sec.classList.remove('visible');
+            // Scroll to section
+            document.querySelector('.type-tabs-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-    });
-}
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        applyFilter(this.dataset.filter);
-    });
-});
+        /* ===== PANEL TYPE FILTER ===== */
+        function applyFilter(filter) {
+            const activeSection = document.getElementById('section-' + currentTab);
+            const sections = activeSection.querySelectorAll('.panel-type-section');
+            sections.forEach(sec => {
+                if (filter === 'all' || sec.dataset.type === filter) {
+                    sec.classList.add('visible');
+                } else {
+                    sec.classList.remove('visible');
+                }
+            });
+        }
 
-/* ===== TOPBAR DROPDOWN ===== */
-document.getElementById('topbar-branch-text')?.addEventListener('click', function() {
-    const dd = document.getElementById('topbar-branch-dropdown');
-    dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
-});
-document.addEventListener('click', function(e) {
-    const txt = document.getElementById('topbar-branch-text');
-    const dd = document.getElementById('topbar-branch-dropdown');
-    if (dd && txt && !txt.contains(e.target) && !dd.contains(e.target)) dd.style.display = 'none';
-});
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                applyFilter(this.dataset.filter);
+            });
+        });
+
+        /* ===== TOPBAR DROPDOWN ===== */
+        document.getElementById('topbar-branch-text')?.addEventListener('click', function () {
+            const dd = document.getElementById('topbar-branch-dropdown');
+            dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+        });
+        document.addEventListener('click', function (e) {
+            const txt = document.getElementById('topbar-branch-text');
+            const dd = document.getElementById('topbar-branch-dropdown');
+            if (dd && txt && !txt.contains(e.target) && !dd.contains(e.target)) dd.style.display = 'none';
+        });
 
 
-/* ===== SPINNER ===== */
-window.addEventListener('load', () => {
-    const spinner = document.getElementById('spinner');
-    if (spinner) setTimeout(() => { spinner.style.display = 'none'; }, 400);
-});
-</script>
+        /* ===== SPINNER ===== */
+        window.addEventListener('load', () => {
+            const spinner = document.getElementById('spinner');
+            if (spinner) setTimeout(() => { spinner.style.display = 'none'; }, 400);
+        });
+    </script>
 </body>
+
 </html>

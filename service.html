@@ -14,7 +14,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -33,14 +35,15 @@
     <link href="css/index.css" rel="stylesheet">
 
     <!-- language switcher styles and script -->
-     <link rel="stylesheet" href="/css/translate-engine.css">
-   <script src="/js/translate-engine.js"></script>
+    <link rel="stylesheet" href="/css/translate-engine.css">
+    <script src="/js/translate-engine.js"></script>
 
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -48,118 +51,126 @@
     <!-- Spinner End -->
 
 
-<!-- Topbar Start -->
-<div class="container-fluid bg-dark p-0">
-    <div class="row gx-0 d-none d-lg-flex">
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark p-0">
+        <div class="row gx-0 d-none d-lg-flex">
 
-        <!-- LEFT SIDE -->
-        <div class="col-lg-7 px-5 text-start">
+            <!-- LEFT SIDE -->
+            <div class="col-lg-7 px-5 text-start">
 
-            <!-- Address with Dropdown -->
-            <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
-                <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                <small id="topbar-branch-text" style="cursor:pointer;">
-                    <span data-key="branch_mumbai_label">Mumbai Branch, Andheri East</span>
-                </small>
-
-
-                <!-- Dropdown -->
-                <div id="topbar-branch-dropdown"
-                     style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
-                    <small class="d-block text-white mb-1">
-                        <strong data-key="branch_mumbai">Mumbai Branch</strong><br>
-                        <span data-key="branch_mumbai_addr">Andheri East, Mumbai</span>
+                <!-- Address with Dropdown -->
+                <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small id="topbar-branch-text" style="cursor:pointer;">
+                        <span data-key="branch_mumbai_label">Mumbai Branch, Andheri East</span>
                     </small>
-                    <small class="d-block text-white">
-                        <strong data-key="branch_nagpur">Nagpur Branch</strong><br>
-                        <span data-key="branch_nagpur_addr">Parsodi, Nagpur</span>
-                    </small>
+
+
+                    <!-- Dropdown -->
+                    <div id="topbar-branch-dropdown"
+                        style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
+                        <small class="d-block text-white mb-1">
+                            <strong data-key="branch_mumbai">Mumbai Branch</strong><br>
+                            <span data-key="branch_mumbai_addr">Andheri East, Mumbai</span>
+                        </small>
+                        <small class="d-block text-white">
+                            <strong data-key="branch_nagpur">Nagpur Branch</strong><br>
+                            <span data-key="branch_nagpur_addr">Parsodi, Nagpur</span>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Time -->
+                <div class="h-100 d-inline-flex align-items-center">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small data-key="working_hours">Mon - Fri : 09.00 AM - 09.00 PM</small>
                 </div>
             </div>
 
-            <!-- Time -->
-            <div class="h-100 d-inline-flex align-items-center">
-                <small class="far fa-clock text-primary me-2"></small>
-                <small data-key="working_hours">Mon - Fri : 09.00 AM - 09.00 PM</small>
+            <!-- RIGHT SIDE -->
+            <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+91 84840 09873</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-        </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
-            <div class="h-100 d-inline-flex align-items-center me-4">
-                <small class="fa fa-phone-alt text-primary me-2"></small>
-                <small>+91 84840 09873</small>
-            </div>
-            <div class="h-100 d-inline-flex align-items-center mx-n2">
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-square btn-link rounded-0" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
         </div>
-
     </div>
-</div>
-<!-- Topbar End -->
+    <!-- Topbar End -->
 
 
- <!-- ===== NAVBAR START ===== -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light p-0" id="mainNavbar">
+    <!-- ===== NAVBAR START ===== -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light p-0" id="mainNavbar">
 
-    <!-- Logo — always visible -->
-    <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
-    </a>
-
-    <!-- Normal toggler (top state only) -->
-    <button type="button" class="navbar-toggler me-4" id="normalToggler"
-            data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Full nav (visible at top) -->
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-
-            <div class="nav-item dropdown">
-                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                <div class="dropdown-menu bg-light m-0 services-dropdown">
-                    <a href="solar-panels.html" class="dropdown-item"><i class="fa fa-solar-panel me-2 text-primary"></i>Solar Panels</a>
-                    <a href="inverters-batteries.html" class="dropdown-item"><i class="fa fa-plug me-2 text-primary"></i>Inverters &amp; Batteries</a>
-                    <a href="electrical-equipment.html" class="dropdown-item"><i class="fa fa-bolt me-2 text-primary"></i>Electrical Equipment</a>
-                    <a href="fabrication-structures.html" class="dropdown-item"><i class="fa fa-cogs me-2 text-primary"></i>Fabrication &amp; Structures</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="service.html" class="dropdown-item"><i class="fa fa-th-large me-2 text-primary"></i>All Services</a>
-                </div>
-            </div>
-
-            <a href="project.html" class="nav-item nav-link">Project</a>
-
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="feature.html" class="dropdown-item">Feature</a>
-                    <a href="quote.html" class="dropdown-item">Free Quote</a>
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                 </div>
-            </div>
-
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
-        </div>
-        <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
-            Get A Quote <i class="fa fa-arrow-right ms-3"></i>
+        <!-- Logo — always visible -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
         </a>
-    </div>
 
-    <!-- Scroll hamburger — hidden by default, shown on scroll (both desktop+mobile) -->
-    <button class="scroll-ham" id="scrollHam">
-        <span></span><span></span><span></span>
-    </button>
+        <!-- Normal toggler (top state only) -->
+        <button type="button" class="navbar-toggler me-4" id="normalToggler" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-</nav>
+        <!-- Full nav (visible at top) -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu bg-light m-0 services-dropdown">
+                        <a href="solar-panels.html" class="dropdown-item"><i
+                                class="fa fa-solar-panel me-2 text-primary"></i>Solar Panels</a>
+                        <a href="inverters-batteries.html" class="dropdown-item"><i
+                                class="fa fa-plug me-2 text-primary"></i>Inverters &amp; Batteries</a>
+                        <a href="electrical-equipment.html" class="dropdown-item"><i
+                                class="fa fa-bolt me-2 text-primary"></i>Electrical Equipment</a>
+                        <a href="fabrication-structures.html" class="dropdown-item"><i
+                                class="fa fa-cogs me-2 text-primary"></i>Fabrication &amp; Structures</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="service.html" class="dropdown-item"><i class="fa fa-th-large me-2 text-primary"></i>All
+                            Services</a>
+                    </div>
+                </div>
+
+                <a href="project.html" class="nav-item nav-link">Project</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="feature.html" class="dropdown-item">Feature</a>
+                        <a href="quote.html" class="dropdown-item">Free Quote</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
+                Get A Quote <i class="fa fa-arrow-right ms-3"></i>
+            </a>
+        </div>
+
+        <!-- Scroll hamburger — hidden by default, shown on scroll (both desktop+mobile) -->
+        <button class="scroll-ham" id="scrollHam">
+            <span></span><span></span><span></span>
+        </button>
+
+    </nav>
 
 
     <!-- Page Header Start -->
@@ -178,114 +189,125 @@
     <!-- Page Header End -->
 
 
-<!-- Service Start -->
-<div class="container-xxl py-5 services-glass-section">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary" data-key="services_label">Our Services</h6>
-            <h1 class="mb-4" data-key="services_title">Comprehensive Solar & Renewable Energy Solutions</h1>
-        </div>
-
-        <div class="row g-4">
-
-            <!-- Solar Panels — CLICKABLE CARD -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <a href="/solar-panels.html" class="text-decoration-none d-block h-100">
-                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                        <img class="img-fluid" src="img/img-600x400-1.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon"><i class="fa fa-solar-panel fa-3x"></i></div>
-                            <h4 class="mb-3" data-key="svc1_title">Solar Panels</h4>
-                            <p data-key="svc1_desc">High-efficiency solar PV modules designed for long life, consistent performance and maximum energy generation.</p>
-                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
-                                Read More <i class="fa fa-arrow-right ms-2"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
+    <!-- Service Start -->
+    <div class="container-xxl py-5 services-glass-section">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="text-primary" data-key="services_label">Our Services</h6>
+                <h1 class="mb-4" data-key="services_title">Comprehensive Solar & Renewable Energy Solutions</h1>
             </div>
 
-            <!-- Solar Electrical Equipment — CLICKABLE CARD -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <a href="/electrical-equipment.html" class="text-decoration-none d-block h-100">
-                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                        <img class="img-fluid" src="img/img-600x400-4.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon"><i class="fa fa-bolt fa-3x"></i></div>
-                            <h4 class="mb-3" data-key="svc4_title">Solar Electrical Equipment</h4>
-                            <p data-key="svc4_desc">Supply of quality-tested solar electrical components ensuring safety, efficiency and system reliability.</p>
-                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
-                                Read More <i class="fa fa-arrow-right ms-2"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="row g-4">
 
-            <!-- Inverters & Batteries — CLICKABLE CARD -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <a href="/inverters-batteries.html" class="text-decoration-none d-block h-100">
-                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                        <img class="img-fluid" src="img/img-600x400-5.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon"><i class="fa fa-plug fa-3x"></i></div>
-                            <h4 class="mb-3" data-key="svc5_title">Inverters & Batteries</h4>
-                            <p data-key="svc5_desc">Advanced solar inverters and power conditioning systems for stable output and efficient energy management.</p>
-                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
-                                Read More <i class="fa fa-arrow-right ms-2"></i>
-                            </span>
+                <!-- Solar Panels — CLICKABLE CARD -->
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="/solar-panels.html" class="text-decoration-none d-block h-100">
+                        <div class="service-item rounded overflow-hidden h-100"
+                            style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                            <img class="img-fluid" src="img/img-600x400-1.png" alt="">
+                            <div class="position-relative p-4 pt-0">
+                                <div class="service-icon"><i class="fa fa-solar-panel fa-3x"></i></div>
+                                <h4 class="mb-3" data-key="svc1_title">Solar Panels</h4>
+                                <p data-key="svc1_desc">High-efficiency solar PV modules designed for long life,
+                                    consistent performance and maximum energy generation.</p>
+                                <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                    Read More <i class="fa fa-arrow-right ms-2"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
 
-            <!-- Power Solutions — NORMAL CARD (no redirection) -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-2.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-charging-station fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc2_title">Power Solutions & Solar Farming</h4>
-                        <p data-key="svc2_desc">On-grid and hybrid solar power systems engineered for residential, commercial and industrial applications.</p>
-                        <!-- <a class="small fw-medium" href="" data-key="read_more">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
+                <!-- Solar Electrical Equipment — CLICKABLE CARD -->
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="/electrical-equipment.html" class="text-decoration-none d-block h-100">
+                        <div class="service-item rounded overflow-hidden h-100"
+                            style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                            <img class="img-fluid" src="img/img-600x400-4.png" alt="">
+                            <div class="position-relative p-4 pt-0">
+                                <div class="service-icon"><i class="fa fa-bolt fa-3x"></i></div>
+                                <h4 class="mb-3" data-key="svc4_title">Solar Electrical Equipment</h4>
+                                <p data-key="svc4_desc">Supply of quality-tested solar electrical components ensuring
+                                    safety, efficiency and system reliability.</p>
+                                <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                    Read More <i class="fa fa-arrow-right ms-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Inverters & Batteries — CLICKABLE CARD -->
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="/inverters-batteries.html" class="text-decoration-none d-block h-100">
+                        <div class="service-item rounded overflow-hidden h-100"
+                            style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                            <img class="img-fluid" src="img/img-600x400-5.png" alt="">
+                            <div class="position-relative p-4 pt-0">
+                                <div class="service-icon"><i class="fa fa-plug fa-3x"></i></div>
+                                <h4 class="mb-3" data-key="svc5_title">Inverters & Batteries</h4>
+                                <p data-key="svc5_desc">Advanced solar inverters and power conditioning systems for
+                                    stable output and efficient energy management.</p>
+                                <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                    Read More <i class="fa fa-arrow-right ms-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Power Solutions — NORMAL CARD (no redirection) -->
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-2.png" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon"><i class="fa fa-charging-station fa-3x"></i></div>
+                            <h4 class="mb-3" data-key="svc2_title">Power Solutions & Solar Farming</h4>
+                            <p data-key="svc2_desc">On-grid and hybrid solar power systems engineered for residential,
+                                commercial and industrial applications.</p>
+                            <!-- <a class="small fw-medium" href="" data-key="read_more">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Fabrication & Mounting — CLICKABLE CARD -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <a href="/fabrication-structures.html" class="text-decoration-none d-block h-100">
-                    <div class="service-item rounded overflow-hidden h-100" style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                        <img class="img-fluid" src="img/img-600x400-6.png" alt="">
+                <!-- Fabrication & Mounting — CLICKABLE CARD -->
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="/fabrication-structures.html" class="text-decoration-none d-block h-100">
+                        <div class="service-item rounded overflow-hidden h-100"
+                            style="cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                            <img class="img-fluid" src="img/img-600x400-6.png" alt="">
+                            <div class="position-relative p-4 pt-0">
+                                <div class="service-icon"><i class="fa fa-cogs fa-3x"></i></div>
+                                <h4 class="mb-3" data-key="svc6_title">Fabrication & Mounting Structures</h4>
+                                <p data-key="svc6_desc">Robust and precision-fabricated mounting structures designed for
+                                    durability and optimal panel alignment.</p>
+                                <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
+                                    Read More <i class="fa fa-arrow-right ms-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Street Light — NORMAL CARD (no redirection) + fixed description -->
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-3.png" alt="">
                         <div class="position-relative p-4 pt-0">
-                            <div class="service-icon"><i class="fa fa-cogs fa-3x"></i></div>
-                            <h4 class="mb-3" data-key="svc6_title">Fabrication & Mounting Structures</h4>
-                            <p data-key="svc6_desc">Robust and precision-fabricated mounting structures designed for durability and optimal panel alignment.</p>
-                            <span class="btn btn-primary btn-sm rounded-pill px-4 mt-1" data-key="read_more">
-                                Read More <i class="fa fa-arrow-right ms-2"></i>
-                            </span>
+                            <div class="service-icon"><i class="fa fa-lightbulb fa-3x"></i></div>
+                            <h4 class="mb-3" data-key="svc3_title">Solar Street Lights</h4>
+                            <p data-key="svc3_desc">All-in-one and split solar LED street lights for roads, colonies,
+                                campuses and parking — dusk-to-dawn auto operation with PIR motion sensor and lithium
+                                battery backup.</p>
+                            <!-- <a class="small fw-medium" href="" data-key="read_more">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
                         </div>
                     </div>
-                </a>
-            </div>
-
-            <!-- Street Light — NORMAL CARD (no redirection) + fixed description -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-3.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon"><i class="fa fa-lightbulb fa-3x"></i></div>
-                        <h4 class="mb-3" data-key="svc3_title">Solar Street Lights</h4>
-                        <p data-key="svc3_desc">All-in-one and split solar LED street lights for roads, colonies, campuses and parking — dusk-to-dawn auto operation with PIR motion sensor and lithium battery backup.</p>
-                        <!-- <a class="small fw-medium" href="" data-key="read_more">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
-                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
-<!-- Service End -->
+    <!-- Service End -->
 
 
     <!-- Feature Start -->
@@ -296,7 +318,9 @@
                     <div class="p-lg-5 ps-lg-0">
                         <h6 class="text-primary">Why Choose Us!</h6>
                         <h1 class="mb-4">Complete Commercial & Residential Solar Systems</h1>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
+                            amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat
+                            amet</p>
                         <div class="row g-4">
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
@@ -347,7 +371,8 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.png" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.png"
+                            style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>
@@ -372,7 +397,9 @@
                         </div>
                     </div>
                     <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
                         <h5 class="mb-1">Client Name</h5>
                         <span class="fst-italic">Profession</span>
                     </div>
@@ -385,7 +412,9 @@
                         </div>
                     </div>
                     <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
                         <h5 class="mb-1">Client Name</h5>
                         <span class="fst-italic">Profession</span>
                     </div>
@@ -398,7 +427,9 @@
                         </div>
                     </div>
                     <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
                         <h5 class="mb-1">Client Name</h5>
                         <span class="fst-italic">Profession</span>
                     </div>
@@ -407,29 +438,39 @@
         </div>
     </div>
     <!-- Testimonial End -->
-        
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6"
-                     style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/footer-address-bg.jpg') center/cover no-repeat; border-radius: 8px; padding: 20px;">
+                    style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/footer-address-bg.jpg') center/cover no-repeat; border-radius: 8px; padding: 20px;">
                     <h5 class="text-white mb-4" data-key="footer_branches">Our Branches</h5>
-                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span data-key="branch_mumbai">Mumbai Branch</span><br><span data-key="branch_mumbai_addr">Andheri East, Mumbai – India</span></p>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span
+                            data-key="branch_mumbai">Mumbai Branch</span><br><span data-key="branch_mumbai_addr">Andheri
+                            East, Mumbai – India</span></p>
                     <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 85910 99926</p>
                     <p class="mb-3 text-white"><i class="fa fa-envelope me-3"></i>mavericks.m3@gmail.com</p>
-                    <a class="btn btn-sm btn-outline-light mb-3" data-bs-toggle="collapse" href="#nagpurBranch" role="button" aria-expanded="false" aria-controls="nagpurBranch" data-key="view_nagpur">View Nagpur Branch</a>
+                    <a class="btn btn-sm btn-outline-light mb-3" data-bs-toggle="collapse" href="#nagpurBranch"
+                        role="button" aria-expanded="false" aria-controls="nagpurBranch" data-key="view_nagpur">View
+                        Nagpur Branch</a>
                     <div class="collapse" id="nagpurBranch">
                         <hr class="text-light">
-                        <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span data-key="branch_nagpur">Nagpur Branch</span><br><span data-key="branch_nagpur_addr">Parsodi, Nagpur – India</span></p>
+                        <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span
+                                data-key="branch_nagpur">Nagpur Branch</span><br><span
+                                data-key="branch_nagpur_addr">Parsodi, Nagpur – India</span></p>
                         <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 84840 09873</p>
                         <p class="mb-2 text-white"><i class="fa fa-envelope me-3"></i>mavericks.m3@gmail.com</p>
                     </div>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
@@ -459,7 +500,8 @@
                     <div class="mb-3">
                         <img src="/img/mavericks logo.png" alt="Mavericks Green Energy Logo" class="footer-logo">
                     </div>
-                    <p class="text-light small mb-0" data-key="footer_tagline">Powering a sustainable future with smart, reliable and end-to-end solar EPC solutions for homes, businesses and industries.</p>
+                    <p class="text-light small mb-0" data-key="footer_tagline">Powering a sustainable future with smart,
+                        reliable and end-to-end solar EPC solutions for homes, businesses and industries.</p>
                 </div>
 
             </div>
@@ -481,7 +523,8 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
