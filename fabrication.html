@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MaverRicks</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- language switcher styles and script -->
+    <link rel="stylesheet" href="/css/translate-engine.css">
+    <script src="/js/translate-engine.js"></script>
+    <style>
+        :root {
+            --primary: #32C36C;
+            --primary-dark: #28a55a;
+            --light: #F6F7F8;
+            --dark: #1A2A36;
+        }
+
+        /* ===== LANG SWITCHER ===== */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            padding: 4px 6px;
+            margin-left: 12px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.25s;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .lang-divider {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 12px;
+            user-select: none;
+        }
+
+        body.lang-hi,
+        body.lang-mr {
+            font-family: 'Noto Sans Devanagari', 'Open Sans', sans-serif;
+        }
+
+        .lang-switcher-mobile {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: var(--dark);
+            border: 1px solid rgba(50, 195, 108, 0.4);
+            border-radius: 14px;
+            padding: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-switcher-mobile .lang-btn {
+            color: #ccc;
+            font-size: 11px;
+            padding: 6px 12px;
+            text-align: center;
+        }
+
+        .lang-switcher-mobile .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        @media(min-width:992px) {
+            .lang-switcher-mobile {
+                display: none;
+            }
+        }
+
+        @media(max-width:991px) {
+            .lang-switcher-desktop {
+                display: none;
+            }
+        }
+
+        /* ===== HERO — steel/industrial dark tone ===== */
+        .products-hero {
+            background: linear-gradient(135deg, #0c1409 0%, #141e10 45%, #0e2a12 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%2332C36C' fill-opacity='0.04'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            pointer-events: none;
+        }
+
+        .products-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, var(--light));
+            pointer-events: none;
+        }
+
+        .products-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .products-hero h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .products-hero h1 span {
+            color: var(--primary);
+        }
+
+        .products-hero p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 6px 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+
+        .hero-breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(50, 195, 108, 0.15);
+            border: 1px solid rgba(50, 195, 108, 0.4);
+            border-radius: 30px;
+            padding: 6px 16px;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        /* ===== STICKY TABS ===== */
+        .type-tabs-wrapper {
+            background: #fff;
+            padding: 18px 0 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+            transition: padding 0.3s;
+        }
+
+        .type-tabs-wrapper.scrolled {
+            padding: 7px 0 7px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .type-tabs-wrapper.scrolled .tab-info-strip {
+            display: none !important;
+        }
+
+        .type-tabs-wrapper.scrolled .type-tabs {
+            max-width: 800px;
+        }
+
+        .type-tabs-wrapper.scrolled .type-tab {
+            padding: 6px 14px;
+            font-size: 12px;
+        }
+
+        .type-tabs-wrapper.scrolled .type-tab .tab-badge {
+            display: none;
+        }
+
+        .type-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 16px;
+            padding: 5px;
+            gap: 4px;
+        }
+
+        .type-tab {
+            flex: 1;
+            min-width: 130px;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: all 0.25s;
+            background: transparent;
+            color: #777;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .type-tab .tab-badge {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
+        }
+
+        .type-tab.active {
+            background: #fff;
+            color: var(--primary);
+            box-shadow: 0 3px 14px rgba(50, 195, 108, 0.2);
+        }
+
+        .type-tab.active .tab-badge {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .type-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.65);
+            color: #444;
+        }
+
+        .tab-info-strip {
+            max-width: 900px;
+            margin: 12px auto 0;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 12.5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: linear-gradient(135deg, #eafaf0, #d0f5e0);
+            border-left: 3px solid var(--primary);
+            color: #1a6b3a;
+        }
+
+        /* ===== SECTION SHOW/HIDE ===== */
+        .fab-section {
+            display: none;
+        }
+
+        .fab-section.visible {
+            display: block;
+        }
+
+        /* ===== PRODUCTS SECTION ===== */
+        .products-section {
+            padding: 55px 0 80px;
+            background: var(--light);
+        }
+
+        /* ===== CALLOUT ===== */
+        .page-callout {
+            background: linear-gradient(135deg, #0c1409 0%, #132b16 100%);
+            border-radius: 20px;
+            padding: 38px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+
+        .page-callout::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(50, 195, 108, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-callout::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(50, 195, 108, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-callout h4 {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .page-callout p {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .page-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(50, 195, 108, 0.18);
+            border: 1px solid rgba(50, 195, 108, 0.45);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .callout-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .callout-feat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .callout-feat i {
+            color: var(--primary);
+        }
+
+        /* ===== CATEGORY HEADING ===== */
+        .cat-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .cat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            flex-shrink: 0;
+        }
+
+        .ci-green {
+            background: linear-gradient(135deg, var(--primary), #27a85a);
+            color: #fff;
+        }
+
+        .ci-blue {
+            background: linear-gradient(135deg, #3b82f6, #1d40ae);
+            color: #fff;
+        }
+
+        .ci-orange {
+            background: linear-gradient(135deg, #f07c1e, #d45e00);
+            color: #fff;
+        }
+
+        .ci-purple {
+            background: linear-gradient(135deg, #6f42c1, #5a2d91);
+            color: #fff;
+        }
+
+        .ci-teal {
+            background: linear-gradient(135deg, #0d9488, #0f766e);
+            color: #fff;
+        }
+
+        .ci-steel {
+            background: linear-gradient(135deg, #475569, #1e293b);
+            color: #fff;
+        }
+
+        .ci-bronze {
+            background: linear-gradient(135deg, #92400e, #78350f);
+            color: #fff;
+        }
+
+        .cat-heading h3 {
+            margin: 0 0 4px;
+            font-size: 1.38rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .cat-heading p {
+            margin: 0;
+            font-size: 12.5px;
+            color: #888;
+        }
+
+        .cat-range {
+            margin-left: auto;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 8px 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .cat-range .rl {
+            font-size: 9.5px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cat-range .rv {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        /* ===== PRODUCT CARD ===== */
+        .product-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 3px 16px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1.5px solid #edf1f7;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 42px rgba(50, 195, 108, 0.16);
+            border-color: rgba(50, 195, 108, 0.3);
+        }
+
+        .card-img-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            background: #e8edf3;
+            flex-shrink: 0;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .card-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        /* Steel texture overlay on image */
+        .card-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, transparent 55%, rgba(10, 20, 8, 0.55) 100%);
+            pointer-events: none;
+        }
+
+        /* Type badges */
+        .card-type-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .badge-heavygi {
+            background: linear-gradient(135deg, #1d40ae, #1e3a8a);
+        }
+
+        .badge-roofrel {
+            background: linear-gradient(135deg, var(--primary), #27a85a);
+        }
+
+        .badge-prefab {
+            background: linear-gradient(135deg, #6f42c1, #5a2d91);
+        }
+
+        .badge-cchannel {
+            background: linear-gradient(135deg, #f07c1e, #d45e00);
+        }
+
+        .badge-aluminium {
+            background: linear-gradient(135deg, #475569, #334155);
+        }
+
+        .badge-custom {
+            background: linear-gradient(135deg, #0d9488, #0f766e);
+        }
+
+        .card-watt-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .card-body-inner {
+            padding: 16px 18px 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        /* Collapsible desc */
+        .card-desc-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--light);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 7px 12px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 12px;
+            transition: background 0.2s, border-color 0.2s;
+            user-select: none;
+        }
+
+        .card-desc-toggle:hover {
+            background: #edfaf3;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .card-desc-toggle .toggle-icon {
+            font-size: 11px;
+            transition: transform 0.3s;
+            color: #999;
+        }
+
+        .card-desc-toggle.open .toggle-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .card-desc-toggle.open {
+            background: #edfaf3;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .card-desc-body {
+            display: none;
+            font-size: 12.5px;
+            color: #666;
+            line-height: 1.65;
+            padding: 10px 12px 4px;
+            border-left: 3px solid var(--primary);
+            margin-bottom: 12px;
+            background: #fafffe;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .card-desc-body.open {
+            display: block;
+            animation: fadeSlide 0.2s ease;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .spec-item {
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 7px 10px;
+        }
+
+        .spec-label {
+            font-size: 9.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaa;
+            font-weight: 600;
+        }
+
+        .spec-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 1px;
+        }
+
+        .card-footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 13px;
+            border-top: 1px solid #edf1f7;
+        }
+
+        .warranty-info {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .warranty-info strong {
+            color: #333;
+        }
+
+        .enquire-btn {
+            background: linear-gradient(135deg, var(--primary), #27a85a);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .enquire-btn:hover {
+            background: linear-gradient(135deg, #27a85a, #1e8a47);
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+        /* Brand overlay */
+        .brand-logo-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(6px);
+            border-radius: 8px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 92px;
+            height: 33px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+        }
+
+        .brand-logo-overlay img {
+            width: auto !important;
+            height: 21px !important;
+            object-fit: contain !important;
+            transform: none !important;
+            position: static !important;
+        }
+
+        .brand-text-logo {
+            font-size: 10.5px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .brand-name-row {
+            margin-bottom: 8px;
+        }
+
+        .brand-pill {
+            display: inline-block;
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Brand pills */
+        .mav-pill {
+            background: linear-gradient(135deg, rgba(50, 195, 108, 0.15), rgba(50, 195, 108, 0.05));
+            color: var(--primary-dark);
+            border: 1px solid rgba(50, 195, 108, 0.4);
+        }
+
+        .tata-pill {
+            background: #fce4ec;
+            color: #b71c4a;
+            border: 1px solid #f8b9ce;
+        }
+
+        .jsw-pill {
+            background: #e8f0fe;
+            color: #1a3fcb;
+            border: 1px solid #c5d5fc;
+        }
+
+        .sail-pill {
+            background: #fff3e0;
+            color: #b45309;
+            border: 1px solid #fcd28a;
+        }
+
+        .hitech-pill {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d9b8f8;
+        }
+
+        .bondloc-pill {
+            background: #e0f7fa;
+            color: #006064;
+            border: 1px solid #a0e0e8;
+        }
+
+        .triton-pill {
+            background: #f0fdf4;
+            color: #14532d;
+            border: 1px solid #86efac;
+        }
+
+        .custom-pill {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* ===== FEATURE HIGHLIGHTS (per product) ===== */
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .feat-tag {
+            font-size: 10.5px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: #f0fdf4;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+
+        .feat-tag.steel {
+            background: #eff6ff;
+            color: #1e40af;
+            border-color: #bfdbfe;
+        }
+
+        .feat-tag.orange {
+            background: #fff7ed;
+            color: #9a3412;
+            border-color: #fed7aa;
+        }
+
+        .feat-tag.purple {
+            background: #faf5ff;
+            color: #6b21a8;
+            border-color: #e9d5ff;
+        }
+
+        /* ===== PROCESS STEPS ===== */
+        .process-strip {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+            box-shadow: 0 3px 16px rgba(0, 0, 0, 0.06);
+            border: 1.5px solid #edf1f7;
+        }
+
+        .process-strip h5 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            position: relative;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 0 8px;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -12px;
+            top: 16px;
+            font-size: 18px;
+            color: #d1d5db;
+            font-weight: 400;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #27a85a);
+            color: #fff;
+            font-weight: 900;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            box-shadow: 0 4px 12px rgba(50, 195, 108, 0.35);
+        }
+
+        .step-label {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 3px;
+        }
+
+        .step-sub {
+            font-size: 10.5px;
+            color: #888;
+        }
+
+        /* ===== COMPARISON TABLE ===== */
+        .compare-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 48px;
+            box-shadow: 0 3px 16px rgba(0, 0, 0, 0.06);
+            border: 1.5px solid #edf1f7;
+            overflow-x: auto;
+        }
+
+        .compare-box h5 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12.5px;
+        }
+
+        .compare-table th {
+            background: var(--dark);
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .compare-table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #444;
+        }
+
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .compare-table tr:nth-child(even) td {
+            background: #f9fafb;
+        }
+
+        .compare-table td:first-child {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .check-green {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .check-orange {
+            color: #f07c1e;
+            font-weight: 700;
+        }
+
+        .check-gray {
+            color: #aaa;
+        }
+
+        @media(max-width:767px) {
+            .products-hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .cat-heading {
+                flex-wrap: wrap;
+            }
+
+            .cat-range {
+                margin-left: 0;
+            }
+
+            .type-tab {
+                font-size: 12px;
+                padding: 9px 10px;
+            }
+
+            .page-callout {
+                padding: 22px;
+            }
+
+            .card-img-wrap {
+                height: 210px;
+            }
+
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+
+            .process-step {
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width:3rem;height:3rem;" role="status"><span
+                class="sr-only">Loading...</span></div>
+    </div>
+
+    <!-- TOPBAR -->
+    <div class="container-fluid bg-dark p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4 position-relative">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small id="topbar-branch-text" style="cursor:pointer;">Mumbai Branch, Andheri East <i
+                            class="fa fa-caret-down ms-1"></i></small>
+                    <div id="topbar-branch-dropdown"
+                        style="display:none;position:absolute;top:100%;left:0;background:#222;padding:10px 14px;border-radius:6px;min-width:220px;z-index:999;">
+                        <small class="d-block text-white mb-1"><strong>Mumbai Branch</strong><br>Andheri East,
+                            Mumbai</small>
+                        <small class="d-block text-white"><strong>Nagpur Branch</strong><br>Parsodi, Nagpur</small>
+                    </div>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+91 84840 09873</small>
+                </div>
+
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="#"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR START ===== -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light p-0" id="mainNavbar">
+
+        <!-- Logo — always visible -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <img src="/img/mavericks logo.png" alt="Mavericks Solar Logo" class="navbar-logo">
+        </a>
+
+        <!-- Normal toggler (top state only) -->
+        <button type="button" class="navbar-toggler me-4" id="normalToggler" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Full nav (visible at top) -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu bg-light m-0 services-dropdown">
+                        <a href="solar-panels.html" class="dropdown-item"><i
+                                class="fa fa-solar-panel me-2 text-primary"></i>Solar Panels</a>
+                        <a href="inverters-batteries.html" class="dropdown-item"><i
+                                class="fa fa-plug me-2 text-primary"></i>Inverters &amp; Batteries</a>
+                        <a href="electrical-equipment.html" class="dropdown-item"><i
+                                class="fa fa-bolt me-2 text-primary"></i>Electrical Equipment</a>
+                        <a href="fabrication.html" class="dropdown-item"><i
+                                class="fa fa-cogs me-2 text-primary"></i>Fabrication &amp; Structures</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="service.html" class="dropdown-item"><i class="fa fa-th-large me-2 text-primary"></i>All
+                            Services</a>
+                    </div>
+                </div>
+
+                <a href="project.html" class="nav-item nav-link">Project</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="feature.html" class="dropdown-item">Feature</a>
+                        <a href="quote.html" class="dropdown-item">Free Quote</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block get-quote-btn">
+                Get A Quote <i class="fa fa-arrow-right ms-3"></i>
+            </a>
+        </div>
+
+        <!-- Scroll hamburger — hidden by default, shown on scroll (both desktop+mobile) -->
+        <button class="scroll-ham" id="scrollHam">
+            <span></span><span></span><span></span>
+        </button>
+
+    </nav>
+
+    <!-- ===== SCROLL PANEL ===== -->
+    <div class="sp" id="scrollPanel">
+
+        <!-- Logo inside panel -->
+        <div class="sp-head">
+            <a href="index.html" class="sp-logo-link">
+                <img src="/img/mavericks logo.png" alt="Mavericks" class="sp-logo-img">
+            </a>
+            <button class="sp-x" id="spClose">&times;</button>
+        </div>
+
+        <!-- Highlighted Services -->
+        <p class="sp-label">⚡ Our Services</p>
+        <div class="sp-grid">
+            <a href="solar-panels.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-solar-panel"></i></div>
+                <span>Solar Panels</span>
+            </a>
+            <a href="inverters-batteries.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-plug"></i></div>
+                <span>Inverters &amp; Batteries</span>
+            </a>
+            <a href="electrical-equipment.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-bolt"></i></div>
+                <span>Electrical Equipment</span>
+            </a>
+            <a href="fabrication.html" class="sp-card">
+                <div class="sp-icon"><i class="fa fa-cogs"></i></div>
+                <span>Fabrication &amp; Structures</span>
+            </a>
+        </div>
+        <a href="service.html" class="sp-all">View All Services <i class="fa fa-arrow-right ms-1"></i></a>
+
+        <div class="sp-line"></div>
+
+        <!-- Nav Links -->
+        <p class="sp-label">🔗 Navigation</p>
+        <div class="sp-links">
+            <a href="index.html"><i class="fa fa-home me-2"></i>Home</a>
+            <a href="about.html"><i class="fa fa-info-circle me-2"></i>About</a>
+            <a href="project.html"><i class="fa fa-folder me-2"></i>Project</a>
+            <a href="contact.html"><i class="fa fa-phone me-2"></i>Contact</a>
+        </div>
+
+        <a href="quote.html" class="sp-quote">Get A Quote <i class="fa fa-arrow-right ms-2"></i></a>
+    </div>
+    <div class="sp-overlay" id="spOverlay"></div>
+    <!-- ===== NAVBAR END ===== -->
+
+
+    <!-- HERO -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-breadcrumb mb-3">
+                    <a href="index.html">Home</a>
+                    <i class="fa fa-chevron-right" style="font-size:9px;"></i>
+                    <span>Fabrication &amp; Structures</span>
+                </div>
+                <div class="hero-badge mt-3"><i class="fa fa-industry"></i> Custom Solar Structures</div>
+                <h1>Fabrication &amp; <span>Mounting Structures</span></h1>
+                <p>Heavy-duty solar mounting solutions — Hot-dip galvanised GI structures, roof railing systems,
+                    prefabricated modular frames and C-channel sections — engineered for Indian weather and wind loads.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <span
+                        style="background:rgba(50,195,108,0.15);border:1px solid rgba(50,195,108,0.4);color:#6ee89e;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
+                        <i class="fa fa-shield-alt me-1"></i> Hot-Dip Galvanised
+                    </span>
+                    <span
+                        style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
+                        <i class="fa fa-drafting-compass me-1"></i> Custom Fabrication
+                    </span>
+                    <span
+                        style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;">
+                        <i class="fa fa-wind me-1"></i> Wind-Load Certified
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY TABS -->
+    <div class="type-tabs-wrapper">
+        <div class="container">
+            <div class="type-tabs" id="mainTabs">
+                <button class="type-tab active" data-cat="all" onclick="switchCat('all')"> <i class="fa fa-th"></i> All
+                    <span class="tab-badge">4 Types</span></button>
+                <button class="type-tab" data-cat="heavygi" onclick="switchCat('heavygi')"> <i class="fa fa-hammer"></i>
+                    Heavy GI <span class="tab-badge">Welded</span></button>
+                <button class="type-tab" data-cat="roofrail" onclick="switchCat('roofrail')"> <i
+                        class="fa fa-grip-lines"></i> Roof Rails <span class="tab-badge">Clamp</span></button>
+                <button class="type-tab" data-cat="prefab" onclick="switchCat('prefab')"> <i class="fa fa-cubes"></i>
+                    Prefabricated <span class="tab-badge">Modular</span></button>
+                <button class="type-tab" data-cat="cchannel" onclick="switchCat('cchannel')"> <i
+                        class="bi bi-layout-three-columns"></i> C-Channel <span
+                        class="tab-badge">Section</span></button>
+            </div>
+            <div class="tab-info-strip" id="tab-info">
+                <i class="fa fa-info-circle mt-1" style="flex-shrink:0;"></i>
+                <span><strong>Solar Mounting Structures</strong> — All structures are hot-dip galvanised (HDG) or
+                    pre-galvanised as per IS 4759 / IS 2629 with 85μm+ zinc coating for 25+ year outdoor life. Custom
+                    fabrication available for all roof types, tilt angles and wind zones.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section">
+        <div class="container">
+
+            <!-- PAGE CALLOUT -->
+            <div class="page-callout">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="page-pill"><i class="fa fa-industry me-1"></i> Made in India</div>
+                        <h4>Built Tough. Designed for Indian Conditions.</h4>
+                        <p>MaverRicks fabricates and supplies solar mounting structures that withstand Maharashtra's
+                            monsoon, Vidarbha's heat and coastal wind loads. Every structure is engineered to IS 875
+                            wind standards with structural calculation reports available for net metering applications.
+                        </p>
+                        <div class="callout-features">
+                            <span class="callout-feat"><i class="fa fa-check-circle"></i> IS 4759 Hot-Dip
+                                Galvanised</span>
+                            <span class="callout-feat"><i class="fa fa-check-circle"></i> IS 875 Wind Load
+                                Designed</span>
+                            <span class="callout-feat"><i class="fa fa-check-circle"></i> Custom Tilt 10°–30°</span>
+                            <span class="callout-feat"><i class="fa fa-check-circle"></i> Flat / Sloped / Ground
+                                Mount</span>
+                            <span class="callout-feat"><i class="fa fa-check-circle"></i> Structural Drawing
+                                Provided</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center mt-3 mt-lg-0">
+                        <div style="font-size:4rem;">🏗️</div>
+                        <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Fabrication &amp; Supply
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FABRICATION PROCESS -->
+            <div class="process-strip">
+                <h5><i class="fa fa-cogs me-2 text-success"></i> Our Fabrication Process</h5>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-num">1</div>
+                        <div class="step-label">Site Survey</div>
+                        <div class="step-sub">Roof / ground measurement &amp; wind zone</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">2</div>
+                        <div class="step-label">Design</div>
+                        <div class="step-sub">Structural &amp; shadow-free layout drawing</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">3</div>
+                        <div class="step-label">Fabrication</div>
+                        <div class="step-sub">CNC cutting, welding &amp; drilling</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">4</div>
+                        <div class="step-label">Galvanising</div>
+                        <div class="step-sub">Hot-dip zinc coating IS 4759</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">5</div>
+                        <div class="step-label">Delivery</div>
+                        <div class="step-sub">Labelled &amp; packed for site</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">6</div>
+                        <div class="step-label">Installation</div>
+                        <div class="step-sub">Supervised by our technical team</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- HEAVY WELDED GI STRUCTURES             -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="fab-section visible" data-cat="heavygi">
+                <div class="cat-heading">
+                    <div class="cat-icon ci-steel"><i class="fa fa-hammer"></i></div>
+                    <div>
+                        <h3>Heavy Welded GI Structures</h3>
+                        <p>Fully welded hot-dip galvanised steel — for ground-mount, large rooftop &amp; industrial
+                            solar plants</p>
+                    </div>
+                    <div class="cat-range">
+                        <div class="rl">Zinc Coat</div>
+                        <div class="rv">85μm+</div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-5">
+
+                    <!-- Card 1: Ground Mount Heavy GI -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Heavy Welded GI Ground Mount Structure.png">
+                                <span class="card-type-badge badge-heavygi">Heavy GI</span>
+                                <span class="card-watt-badge">Ground Mount</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Heavy Welded GI Ground Mount Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag steel">IS 4759 Galvanised</span>
+                                    <span class="feat-tag">IS 875 Wind Rated</span>
+                                    <span class="feat-tag steel">PILE / ANCHOR Foundation</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f1')" id="toggle-f1"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f1">Fully welded MS/GI hot-dip galvanised ground-mount
+                                    structure. Suitable for open land, farmland and utility-scale solar plants. Designed
+                                    for 10°–30° tilt, single/double row, can accommodate any panel from 300W to 700Wp.
+                                    Pile-driven or concrete anchor foundations available. Complete structural drawings
+                                    and load calculations provided for DISCOM approval.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Material</div>
+                                        <div class="spec-value">MS / GI HDG</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Zinc Coat</div>
+                                        <div class="spec-value">85 μm min</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Tilt</div>
+                                        <div class="spec-value">10° – 30°</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Wind Load</div>
+                                        <div class="spec-value">IS 875 Zone</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Heavy GI Flat Roof -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Heavy Welded GI Ground Mount Structure (2).png">
+                                <span class="card-type-badge badge-heavygi">Heavy GI</span>
+                                <span class="card-watt-badge">Flat Roof</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Heavy Welded GI Flat Roof Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag steel">Ballasted / Anchor</span>
+                                    <span class="feat-tag">RCC Roof Safe</span>
+                                    <span class="feat-tag steel">Anti-Rust 25yr</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f2')" id="toggle-f2"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f2">Hot-dip galvanised welded structure for concrete
+                                    flat-roof installations. Tilt frame design 10°–15° for maximum yield in India.
+                                    Ballast block or chemical anchor options to avoid roof penetration. Distributed load
+                                    design keeps structural load well within RCC slab limits. Supplied pre-cut and
+                                    pre-drilled for fast site assembly.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Roof Type</div>
+                                        <div class="spec-value">RCC Flat</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Zinc Coat</div>
+                                        <div class="spec-value">85 μm min</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Tilt</div>
+                                        <div class="spec-value">10° – 15°</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Fixing</div>
+                                        <div class="spec-value">Ballast / Anchor</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Heavy GI Industrial -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Heavy GI Structure — Industrial Shed Roof.png">
+                                <span class="card-type-badge badge-heavygi">Heavy GI</span>
+                                <span class="card-watt-badge">Industrial Shed</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Heavy GI Structure — Industrial Shed Roof</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag steel">GI Sheet Roof</span>
+                                    <span class="feat-tag steel">Purlin Mount</span>
+                                    <span class="feat-tag">No Penetration</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f3')" id="toggle-f3"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f3">Specifically designed for factory and warehouse GI
+                                    sheet roofs. Clamps directly onto the existing Z-purlins or C-purlins of the shed
+                                    structure — no roof penetration, no leakage risk. L-feet and clamp assembly in SS
+                                    304 / HDG GI. Accommodates panel tilt parallel to roof slope. Widely used across
+                                    Nagpur and Mumbai industrial zones.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Roof Type</div>
+                                        <div class="spec-value">GI Sheet Shed</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Fixing</div>
+                                        <div class="spec-value">Purlin Clamp</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Material</div>
+                                        <div class="spec-value">HDG / SS 304</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Penetration</div>
+                                        <div class="spec-value">None</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Car Parking / Carport -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Solar Carport _ Car Parking Structure.png">
+                                <span class="card-type-badge badge-heavygi">Heavy GI</span>
+                                <span class="card-watt-badge">Car Parking</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Solar Carport / Car Parking Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag">Dual Purpose</span>
+                                    <span class="feat-tag steel">Column &amp; Beam</span>
+                                    <span class="feat-tag">EV Ready</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f4')" id="toggle-f4"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f4">Heavy welded GI column-and-beam carport structure
+                                    that doubles as covered parking and solar generation. Available in single-row
+                                    (cantilever) and double-row (T-post) configurations. Column spacing 5.5m,
+                                    accommodates 4 to 24 cars per row. Integrated cable management channels and optional
+                                    EV charging point conduit. Custom height 2.8m–4.5m clearance.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Type</div>
+                                        <div class="spec-value">Cantilever / T-Post</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Clearance</div>
+                                        <div class="spec-value">2.8 – 4.5 m</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Material</div>
+                                        <div class="spec-value">HDG GI</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Parking</div>
+                                        <div class="spec-value">4–24 cars/row</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /heavygi -->
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- ROOF RAILS / ROOF RAILING SYSTEM       -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="fab-section visible" data-cat="roofrail">
+                <div class="cat-heading">
+                    <div class="cat-icon ci-green"><i class="fa fa-grip-lines"></i></div>
+                    <div>
+                        <h3>Roof Rails &amp; Railing System</h3>
+                        <p>Aluminium &amp; GI rail-based mounting for RCC flat, sloped &amp; metal sheet roofs</p>
+                    </div>
+                    <div class="cat-range">
+                        <div class="rl">Rail Length</div>
+                        <div class="rv">4.2m / 6.4m</div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-5">
+
+                    <!-- Card 5: Aluminium Rail System -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Aluminium Roof Rail Mounting System.png">
+                                <span class="card-type-badge badge-roofrel">Roof Rail</span>
+                                <span class="card-watt-badge">Aluminium</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Aluminium Roof Rail Mounting System</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag">6063-T5 Aluminium</span>
+                                    <span class="feat-tag steel">Mid &amp; End Clamps</span>
+                                    <span class="feat-tag">Anodised Finish</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f5')" id="toggle-f5"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f5">6063-T5 aluminium extruded rail system for
+                                    residential and commercial rooftop solar. 40×40mm and 40×60mm rail profiles,
+                                    anodised silver finish. Complete kit includes: rails, L-feet, mid-clamps,
+                                    end-clamps, splice bars and SS 304 hardware. Suitable for RCC flat, Mangalore tile
+                                    and metal sheet roofs. Light weight allows easy single-person handling on rooftop.
+                                </div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Material</div>
+                                        <div class="spec-value">6063-T5 Al</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Profile</div>
+                                        <div class="spec-value">40×40 / 40×60mm</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">Anodised Silver</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Hardware</div>
+                                        <div class="spec-value">SS 304</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: GI Rail System -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Pre-Galvanised GI Rail System.png">
+                                <span class="card-type-badge badge-roofrel">Roof Rail</span>
+                                <span class="card-watt-badge">Pre-GI Rail</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Pre-Galvanised GI Rail System</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag steel">Pre-Galvanised Steel</span>
+                                    <span class="feat-tag steel">High Load Capacity</span>
+                                    <span class="feat-tag">Commercial Grade</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f6')" id="toggle-f6"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f6">Pre-galvanised steel C-rail and Z-rail system for
+                                    heavy commercial rooftop installations. Higher load capacity than aluminium — ideal
+                                    for large commercial 50kW–500kW systems on industrial shed or RCC roofs. Comes in
+                                    4.2m and 6.4m standard lengths with punched slots for flexible panel spacing. Robust
+                                    bolt-and-nut assembly with anti-theft locking capability.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Material</div>
+                                        <div class="spec-value">Pre-GI Steel</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Lengths</div>
+                                        <div class="spec-value">4.2m / 6.4m</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Load</div>
+                                        <div class="spec-value">High Capacity</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">For</div>
+                                        <div class="spec-value">50kW – 500kW</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>20+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Tile Roof Hook System -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Tile Roof Hook & Rail System.png">
+                                <span class="card-type-badge badge-roofrel">Roof Rail</span>
+                                <span class="card-watt-badge">Tile / Mangalore</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Tile Roof Hook &amp; Rail System</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag">Mangalore / Clay Tile</span>
+                                    <span class="feat-tag steel">Rafter Hook SS 304</span>
+                                    <span class="feat-tag">Leak-Free Seal</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f7')" id="toggle-f7"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f7">Stainless steel 304 rafter hook system designed
+                                    specifically for Mangalore clay tile, concrete tile and corrugated sheet roofs.
+                                    Adjustable hooks fix to rafters below the tile without breaking them. Aluminium
+                                    6063-T5 rails clip on top. EPDM rubber seal on every hook prevents water ingress.
+                                    Perfect for residential homes with sloped roofs in Maharashtra, Goa and coastal
+                                    regions.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Hook</div>
+                                        <div class="spec-value">SS 304</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Rail</div>
+                                        <div class="spec-value">6063-T5 Al</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Seal</div>
+                                        <div class="spec-value">EPDM Rubber</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Roof</div>
+                                        <div class="spec-value">Tile / Sloped</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /roofrail -->
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- PREFABRICATED STRUCTURES               -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="fab-section visible" data-cat="prefab">
+                <div class="cat-heading">
+                    <div class="cat-icon ci-purple"><i class="fa fa-cubes"></i></div>
+                    <div>
+                        <h3>Prefabricated Modular Structures</h3>
+                        <p>Factory-made, numbered &amp; packed — bolt-together assembly on site, no welding required</p>
+                    </div>
+                    <div class="cat-range">
+                        <div class="rl">Assembly</div>
+                        <div class="rv">Bolt-on</div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-5">
+
+                    <!-- Card 8: Prefab Flat Roof -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Prefab Modular Flat Roof Solar Structure.png">
+                                <span class="card-type-badge badge-prefab">Prefabricated</span>
+                                <span class="card-watt-badge">Flat Roof</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Prefab Modular Flat Roof Solar Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag purple">Bolt-Together</span>
+                                    <span class="feat-tag steel">Factory Numbered</span>
+                                    <span class="feat-tag">Fast Install 1–2 Days</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f8')" id="toggle-f8"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f8">Factory pre-fabricated, numbered and bundled
+                                    flat-roof solar structure. All components are drilled, punched and painted /
+                                    galvanised at factory. On-site assembly requires only spanners — no welding, no
+                                    cutting. Modular design allows easy system expansion. Supplied with installation
+                                    manual and assembly drawing. Ideal for 5kW to 500kW rooftop projects requiring fast
+                                    deployment.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Assembly</div>
+                                        <div class="spec-value">Bolt-Together</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">HDG / Powder</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Install Time</div>
+                                        <div class="spec-value">1–2 days/50kW</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Tilt</div>
+                                        <div class="spec-value">10° – 30°</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 9: Prefab Ground Mount -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Prefab Ground Mount Solar Structure.png">
+                                <span class="card-type-badge badge-prefab">Prefabricated</span>
+                                <span class="card-watt-badge">Ground Mount</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Prefab Ground Mount Solar Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag purple">Modular Bay System</span>
+                                    <span class="feat-tag steel">Pile / Screw Foundation</span>
+                                    <span class="feat-tag">Expandable</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f9')" id="toggle-f9"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f9">Modular bay prefabricated ground-mount structure for
+                                    utility and agricultural solar. Each bay module covers 2 rows × 20 panels.
+                                    Factory-welded sub-frames arrive ready for pile insertion. Hot-dip galvanised to
+                                    85μm, all holes pre-drilled. Screw pile or concrete pier foundation options for
+                                    different soil types. Designed for India's wind zones 1–4 per IS 875 Part 3.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">System</div>
+                                        <div class="spec-value">Modular Bay</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Foundation</div>
+                                        <div class="spec-value">Pile / Screw</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">HDG 85μm</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Wind Zone</div>
+                                        <div class="spec-value">IS 875 1–4</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 10: Agrivoltaic / Elevated Prefab -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Elevated Agrivoltaic Solar Structure.png">
+                                <span class="card-type-badge badge-prefab">Prefabricated</span>
+                                <span class="card-watt-badge">Elevated / Agri</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Elevated Agrivoltaic Solar Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag">Farming Below</span>
+                                    <span class="feat-tag purple">3–5m Clearance</span>
+                                    <span class="feat-tag steel">Govt Scheme Ready</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f10')" id="toggle-f10"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f10">Elevated prefabricated structure for agrivoltaic
+                                    (agri + solar) installations — panels mounted at 3–5m height allowing farming
+                                    underneath. Suitable for PM-KUSUM Component-A and agri-solar government schemes.
+                                    Wide column spacing 6–8m minimises shadow on crops. Designed in compliance with MNRE
+                                    agri-solar guidelines. Complete structural and shadow analysis report provided.
+                                </div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Height</div>
+                                        <div class="spec-value">3 – 5 m</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Column Gap</div>
+                                        <div class="spec-value">6 – 8 m</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">HDG 85μm</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Scheme</div>
+                                        <div class="spec-value">PM-KUSUM</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /prefab -->
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- C-CHANNEL STRUCTURES                   -->
+            <!-- ═══════════════════════════════════════ -->
+            <div class="fab-section visible" data-cat="cchannel">
+                <div class="cat-heading">
+                    <div class="cat-icon ci-orange"><i class="bi bi-layout-three-columns"></i></div>
+                    <div>
+                        <h3>C-Channel Solar Structures</h3>
+                        <p>C-section purlin and strut channel systems — versatile, lightweight &amp; fast-erect mounting
+                        </p>
+                    </div>
+                    <div class="cat-range">
+                        <div class="rl">Section</div>
+                        <div class="rv">C41 – C80</div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-5">
+
+                    <!-- Card 11: C41 GI Channel -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/C41 GI C-Channel Solar Structure.png">
+                                <span class="card-type-badge badge-cchannel">C-Channel</span>
+                                <span class="card-watt-badge">C41 × 2.5mm</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">C41 GI C-Channel Solar Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag orange">41mm C-Section</span>
+                                    <span class="feat-tag steel">Pre-Galvanised</span>
+                                    <span class="feat-tag">Residential 1–10kW</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f11')" id="toggle-f11"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f11">C41 × 2.5mm pre-galvanised steel C-channel
+                                    structure for small residential and commercial rooftop solar up to 30kW. Slotted
+                                    holes on flanges allow quick panel and clamp positioning. Delivered pre-cut to
+                                    project length. Lightweight — easy rooftop handling without crane. Ideal for
+                                    bolt-together installation on RCC flat roofs and industrial sheds. All hardware in
+                                    SS 304.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Section</div>
+                                        <div class="spec-value">C41 × 2.5mm</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">Pre-Galvanised</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Capacity</div>
+                                        <div class="spec-value">Up to 30 kW</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Hardware</div>
+                                        <div class="spec-value">SS 304</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>15+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 12: C80 Heavy Channel -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/C80 Heavy GI C-Channel Structure.png">
+                                <span class="card-type-badge badge-cchannel">C-Channel</span>
+                                <span class="card-watt-badge">C80 × 4mm</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">C80 Heavy GI C-Channel Structure</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag orange">80mm C-Section</span>
+                                    <span class="feat-tag steel">HDG Hot-Dip</span>
+                                    <span class="feat-tag">Commercial 50–500kW</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f12')" id="toggle-f12"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f12">C80 × 4mm thick hot-dip galvanised heavy channel
+                                    for large commercial rooftop and ground-mount solar structures. Used as primary
+                                    rafter and purlin members in welded/bolted hybrid structures. High section modulus
+                                    handles long spans up to 6m between supports. Punched channels allow bolt connection
+                                    without drilling on site. Suitable for systems 50kW to 500kW and above.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Section</div>
+                                        <div class="spec-value">C80 × 4mm</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">HDG 85μm</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Capacity</div>
+                                        <div class="spec-value">50–500+ kW</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Span</div>
+                                        <div class="spec-value">Up to 6m</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>25+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 13: Unistrut / P1000 Channel -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="/img/Frabrication/Strut Channel (P1000 Type) Solar Rail.png">
+                                <span class="card-type-badge badge-cchannel">C-Channel</span>
+                                <span class="card-watt-badge">Strut / P1000</span>
+                                <div class="brand-logo-overlay brand-text-logo">MAVERICKS</div>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="brand-name-row"><span class="brand-pill mav-pill">MaverRicks
+                                        Fabrication</span></div>
+                                <div class="card-title">Strut Channel (P1000 Type) Solar Rail</div>
+                                <div class="feature-tags">
+                                    <span class="feat-tag orange">41×41mm Square</span>
+                                    <span class="feat-tag">Continuous Slot</span>
+                                    <span class="feat-tag steel">Hammer-Nut Fix</span>
+                                </div>
+                                <div class="card-desc-toggle" onclick="toggleDesc('f13')" id="toggle-f13"><span><i
+                                            class="fa fa-info-circle me-1"></i> View Description</span><span
+                                        class="toggle-icon">&#9660;</span></div>
+                                <div class="card-desc-body" id="f13">P1000-type 41×41mm inward-lip strut channel
+                                    (Unistrut / Gripple style) used as solar panel rail and secondary structure member.
+                                    Continuous top slot accepts hammer-nuts for infinitely adjustable panel clamp
+                                    positioning — no drilling on site. Pre-galvanised or powder-coated finish. Widely
+                                    used for small rooftop, BIPV, floating solar and carport secondary framing.</div>
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <div class="spec-label">Section</div>
+                                        <div class="spec-value">41×41mm P1000</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Slot</div>
+                                        <div class="spec-value">Continuous Top</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Finish</div>
+                                        <div class="spec-value">Pre-GI / Powder</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-label">Fixing</div>
+                                        <div class="spec-value">Hammer Nut</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-inner">
+                                    <div class="warranty-info">Life: <strong>15+ yrs</strong></div><a
+                                        href="contact.html" class="enquire-btn">Get Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Structure Comparison Table -->
+                <div class="compare-box">
+                    <h5><i class="fa fa-table me-2 text-success"></i> Structure Type Comparison Guide</h5>
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Structure Type</th>
+                                <th>Best For</th>
+                                <th>On-Site Welding</th>
+                                <th>Wind Resistance</th>
+                                <th>Cost Level</th>
+                                <th>Install Speed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Heavy Welded GI</td>
+                                <td>Ground mount, industrial</td>
+                                <td><span class="check-orange">Yes</span></td>
+                                <td><span class="check-green">★★★★★</span></td>
+                                <td>High</td>
+                                <td>3–5 days</td>
+                            </tr>
+                            <tr>
+                                <td>Aluminium Roof Rail</td>
+                                <td>Residential, small commercial</td>
+                                <td><span class="check-green">None</span></td>
+                                <td><span class="check-green">★★★★</span></td>
+                                <td>Medium</td>
+                                <td>1–2 days</td>
+                            </tr>
+                            <tr>
+                                <td>Prefabricated GI</td>
+                                <td>Fast-deploy commercial &amp; EPC</td>
+                                <td><span class="check-green">None</span></td>
+                                <td><span class="check-green">★★★★★</span></td>
+                                <td>Medium</td>
+                                <td>1–2 days/50kW</td>
+                            </tr>
+                            <tr>
+                                <td>C41 Channel</td>
+                                <td>Residential 1–30kW</td>
+                                <td><span class="check-green">None</span></td>
+                                <td><span class="check-green">★★★</span></td>
+                                <td>Low</td>
+                                <td>1 day</td>
+                            </tr>
+                            <tr>
+                                <td>C80 Heavy Channel</td>
+                                <td>Commercial 50–500kW</td>
+                                <td><span class="check-orange">Optional</span></td>
+                                <td><span class="check-green">★★★★</span></td>
+                                <td>Medium</td>
+                                <td>2–3 days</td>
+                            </tr>
+                            <tr>
+                                <td>Strut / P1000</td>
+                                <td>BIPV, small rooftop, carport</td>
+                                <td><span class="check-green">None</span></td>
+                                <td><span class="check-green">★★★</span></td>
+                                <td>Low</td>
+                                <td>&lt; 1 day</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!-- /cchannel -->
+
+        </div><!-- /container -->
+    </section>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6"
+                    style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/footer-address-bg.jpg') center/cover no-repeat; border-radius: 8px; padding: 20px;">
+                    <h5 class="text-white mb-4" data-key="footer_branches">Our Branches</h5>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span
+                            data-key="branch_mumbai">Mumbai Branch</span><br><span data-key="branch_mumbai_addr">Andheri
+                            East, Mumbai – India</span></p>
+                    <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 85910 99926</p>
+                    <p class="mb-3 text-white"><i class="fa fa-envelope me-3"></i>mavericks.m3@gmail.com</p>
+                    <a class="btn btn-sm btn-outline-light mb-3" data-bs-toggle="collapse" href="#nagpurBranch"
+                        role="button" aria-expanded="false" aria-controls="nagpurBranch" data-key="view_nagpur">View
+                        Nagpur Branch</a>
+                    <div class="collapse" id="nagpurBranch">
+                        <hr class="text-light">
+                        <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><span
+                                data-key="branch_nagpur">Nagpur Branch</span><br><span
+                                data-key="branch_nagpur_addr">Parsodi, Nagpur – India</span></p>
+                        <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 84840 09873</p>
+                        <p class="mb-2 text-white"><i class="fa fa-envelope me-3"></i>mavericks.m3@gmail.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="#"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4" data-key="footer_links">Quick Links</h5>
+                    <a class="btn btn-link" href="about.html" data-key="nav_about">About Us</a>
+                    <a class="btn btn-link" href="contact.html" data-key="nav_contact">Contact Us</a>
+                    <a class="btn btn-link" href="service.html" data-key="nav_service">Our Services</a>
+                    <a class="btn btn-link" href="project.html" data-key="footer_terms">Projects</a>
+                    <a class="btn btn-link" href="testimonial.html" data-key="footer_testimonials">Testimonials</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4" data-key="footer_gallery">Project Gallery</h5>
+                    <div class="row g-2">
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-1.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-2.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-3.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-4.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-5.jpg" alt=""></div>
+                        <div class="col-4"><img class="img-fluid rounded" src="img/gallery-6.jpg" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Mavericks Green Energy</h5>
+                    <div class="mb-3">
+                        <img src="/img/mavericks logo.png" alt="Mavericks Green Energy Logo" class="footer-logo">
+                    </div>
+                    <p class="text-light small mb-0" data-key="footer_tagline">Powering a sustainable future with smart,
+                        reliable and end-to-end solar EPC solutions for homes, businesses and industries.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">MaveRicks</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="https://WebBears.in">WebBears</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <script>
+        /* ===== DESCRIPTION TOGGLE ===== */
+        function toggleDesc(id) {
+            const body = document.getElementById(id);
+            const toggle = document.getElementById('toggle-' + id);
+            const isOpen = body.classList.contains('open');
+            body.classList.toggle('open', !isOpen);
+            toggle.classList.toggle('open', !isOpen);
+            toggle.querySelector('span:first-child').innerHTML = isOpen
+                ? '<i class="fa fa-info-circle me-1"></i> View Description'
+                : '<i class="fa fa-chevron-up me-1"></i> Hide Description';
+        }
+
+        /* ===== STICKY COMPACT ON SCROLL ===== */
+        (function () {
+            const wrapper = document.querySelector('.type-tabs-wrapper');
+            const hero = document.querySelector('.products-hero');
+            const heroBottom = hero ? hero.getBoundingClientRect().bottom + window.scrollY : 200;
+            window.addEventListener('scroll', () => {
+                wrapper.classList.toggle('scrolled', window.scrollY > heroBottom - 80);
+            }, { passive: true });
+        })();
+
+        /* ===== CATEGORY FILTER ===== */
+        function switchCat(cat) {
+            document.querySelectorAll('.type-tab').forEach(btn =>
+                btn.classList.toggle('active', btn.dataset.cat === cat));
+            document.querySelectorAll('.fab-section').forEach(sec => {
+                sec.classList.toggle('visible', cat === 'all' || sec.dataset.cat === cat);
+            });
+            document.querySelector('.type-tabs-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        /* ===== TOPBAR DROPDOWN ===== */
+        document.getElementById('topbar-branch-text')?.addEventListener('click', function () {
+            const dd = document.getElementById('topbar-branch-dropdown');
+            dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+        });
+        document.addEventListener('click', function (e) {
+            const txt = document.getElementById('topbar-branch-text');
+            const dd = document.getElementById('topbar-branch-dropdown');
+            if (dd && txt && !txt.contains(e.target) && !dd.contains(e.target)) dd.style.display = 'none';
+        });
+
+    </script>
+</body>
+
+</html>
